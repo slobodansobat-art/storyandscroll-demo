@@ -30,7 +30,7 @@ const hs = o.slika ? slika(o.slika) : null;
       <div class="hpost" style={`background:${o.boja};${o.tamnoSlovo ? 'color:#6E1423;' : ''}`}>
         {hs && <><img src={hs.src} srcset={hs.srcset} sizes="(max-width: 900px) 360px, 380px" alt={o.alt} width="380" height="475" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><span style="position:absolute;inset:0;background:linear-gradient(to top, rgba(24,16,13,.75), rgba(24,16,13,.05) 60%)"></span></>}
         <div class="pt" style="position:relative"><span>{site.naziv}</span></div>
-        <div style="position:relative"><p class="ttl">{o.naslov}</p><p class="lbl" style={o.tamnoSlovo ? 'color:#8C6A2A' : o.oznakaBoja ? `color:${o.oznakaBoja}` : undefined}>{o.oznaka}</p></div>
+        <div style="position:relative"><p class="ttl">{o.naslov}</p><p class="lbl" style={o.tamnoSlovo ? 'color:#6E5220' : o.oznakaBoja ? `color:${o.oznakaBoja}` : undefined}>{o.oznaka}</p></div>
       </div>
       <div>
         <p class="eyebrow">{s.nadnaslov}</p>

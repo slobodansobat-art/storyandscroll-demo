@@ -173,7 +173,7 @@ a{color:#6E1423}a:hover{color:#4F0E19}
 .pc.hi li{border-top-color:rgba(251,246,239,.18)}
 .pc li::before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:2px solid #B8903E;border-bottom:2px solid #B8903E;transform:rotate(-45deg)}
 .pc.hi li::before{border-color:#E8C98A}
-.badge{position:absolute;top:-13px;left:32px;padding:5px 12px;border-radius:999px;background:#B8903E;color:#FBF6EF;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.badge{position:absolute;top:-13px;left:32px;padding:5px 12px;border-radius:999px;background:#7A5C22;color:#FBF6EF;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .btn-p{background:#6E1423;color:#FBF6EF}.btn-p:hover{background:#4F0E19;border-color:#4F0E19;color:#FBF6EF}
 .btn-o{background:transparent;color:#6E1423}.btn-o:hover{background:#6E1423;color:#FBF6EF}
 .pc .btn{width:100%}
