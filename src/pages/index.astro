@@ -55,7 +55,7 @@ const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: 
                   {t.s && <img src={t.s.src} srcset={t.s.srcset} sizes="(max-width: 899px) 33vw, 240px" alt={t.alt} loading="lazy" decoding="async" width="240" height="300">}
                   {t.karusel && <Ikona ime="layers" velicina={20} debljina={1.8} klasa="ic" />}
                   <span class="ttl">{t.naslov}</span>
-                  <span class="lbl" style={t.tamnoSlovo ? 'color:#8C6A2A' : undefined}>{t.oznaka}</span>
+                  <span class="lbl" style={t.tamnoSlovo ? 'color:#8C6A2A' : t.oznakaBoja ? `color:${t.oznakaBoja}` : undefined}>{t.oznaka}</span>
                   <span class="ov" aria-hidden="true"><b>Otvori →</b><small>{t.opis}</small></span>
                 </span>
                 <span class="front" aria-hidden="true"><span class="fimg"></span></span>

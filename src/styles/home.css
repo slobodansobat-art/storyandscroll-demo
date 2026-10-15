@@ -48,7 +48,7 @@
 .tile .back.ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top, rgba(24,16,13,.72), rgba(24,16,13,0) 58%)}
 .tile .ic{position:absolute;top:6cqw;right:6cqw;z-index:2;width:9cqw;height:9cqw}
 .tile .ttl{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:11.5cqw;line-height:1.05}
-.tile .lbl{position:relative;z-index:2;margin-top:4cqw;font-size:4.6cqw;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8C98A}
+.tile .lbl{position:relative;z-index:2;margin-top:4cqw;font-size:max(7.5px, 4.6cqw);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8C98A}
 .tile .ov{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4cqw;padding:10cqw;text-align:center;background:rgba(24,16,13,.64);opacity:0;transition:opacity .25s ease;color:#FBF6EF}
 .tile .ov b{font-size:6.4cqw;font-weight:600;letter-spacing:.06em}
 .tile .ov small{font-size:5.6cqw;line-height:1.45;color:#F1E7DA}
@@ -105,7 +105,7 @@
 .reel .no{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:60px;line-height:1;color:#E8C98A;margin-top:30px}
 .reel h3{margin:auto 0 0;font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:600;line-height:1.12}
 .reel p{margin:12px 0 0;font-size:14px;line-height:1.55;color:#F1E7DA}
-.reel .more2{margin-top:16px;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#E8C98A}
+.reel .more2{margin-top:16px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#F1E7DA}
 @media (max-width: 760px){
   .reels{grid-template-columns:repeat(2, minmax(0,1fr));gap:4px}
   .reel{padding:18px 14px}
@@ -144,3 +144,5 @@
   .seg.cur i{animation:none;width:100%}
   .tile .back,.reel,.hl2,.avb{transition:none}
 }
+
+@media (hover:none), (max-width: 899px){ .tile .ov{display:none} }

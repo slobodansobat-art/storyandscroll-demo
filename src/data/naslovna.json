@@ -8,34 +8,138 @@
     "naslov": "Vaša priča,",
     "naslovIstaknuto": "ispričana pažljivo.",
     "uvod": "Spajamo strategiju, sadržaj i pripovedanje u jednu celinu, tako da svaka objava na Vašem profilu ima svrhu.",
-    "dugme1": { "tekst": "Pogledajte naš feed", "link": "#feed" },
-    "dugme2": { "tekst": "Zakažite konsultacije", "link": "/konsultacije/" }
+    "dugme1": {
+      "tekst": "Pogledajte naš feed",
+      "link": "#feed"
+    },
+    "dugme2": {
+      "tekst": "Zakažite konsultacije",
+      "link": "/konsultacije/"
+    }
   },
   "profil": {
     "brojke": [
-      { "broj": "30+", "tekst": "klijenata", "link": "/o-nama/" },
-      { "broj": "5", "tekst": "usluga", "link": "#feed" },
-      { "broj": "3", "tekst": "paketa", "link": "/paketi/" }
+      {
+        "broj": "30+",
+        "tekst": "klijenata",
+        "link": "/o-nama/"
+      },
+      {
+        "broj": "5",
+        "tekst": "usluga",
+        "link": "#feed"
+      },
+      {
+        "broj": "3",
+        "tekst": "paketa",
+        "link": "/paketi/"
+      }
     ],
     "bioNaslov": "Story & Scroll | Vođenje društvenih mreža",
     "bio": "Strategija, sadržaj i storytelling. Vaša priča, ispričana pažljivo."
   },
   "price": [
-    { "naziv": "Upoznajte studio", "skraceno": "S&S", "boja": "#6E1423", "link": "/o-nama/", "dugme": "Ko smo mi", "slajdovi": ["Story & Scroll Studio vodi društvene mreže za brendove.", "Spajamo strategiju, sadržaj i storytelling u jednu celinu.", "Svaka objava na Vašem profilu treba da ima svrhu."] },
-    { "naziv": "Strategija", "skraceno": "Plan", "boja": "#6E1423", "link": "/strategija/", "dugme": "Pogledajte stranicu", "slajdovi": ["Plan, ne trend.", "Pre prve objave definišemo ciljeve, ton i kalendar.", "Plan prati ciljeve brenda, a ne trendove koji prolaze."] },
-    { "naziv": "Sadržaj", "skraceno": "Foto", "boja": "#6F6A4E", "link": "/sadrzaj/", "dugme": "Pogledajte stranicu", "slajdovi": ["Sadržaj sa svrhom.", "Foto, video, tekst i dizajn u Vašem vizuelnom identitetu.", "Profil koji se prepoznaje na prvi pogled."] },
-    { "naziv": "Oglasi", "skraceno": "Ciljano", "boja": "#4F0E19", "link": "/oglasi/", "dugme": "Pogledajte stranicu", "slajdovi": ["Prava publika.", "Plaćene kampanje na Meta i TikTok mrežama.", "Oglas vide ljudi kojima je zaista namenjen."] },
-    { "naziv": "Analitika", "skraceno": "Brojke", "boja": "#2B211D", "link": "/analitika/", "dugme": "Pogledajte stranicu", "slajdovi": ["Brojke koje govore.", "Pratimo šta radi, a šta ne, i to Vam jasno pokažemo.", "Svakog meseca dobijate izveštaj."] },
-    { "naziv": "Paketi", "skraceno": "Cene", "boja": "#B8903E", "link": "/paketi/", "dugme": "Pogledajte pakete", "slajdovi": ["Tri paketa: Start, Rast i Premium.", "Svaki prilagođavamo obimu i ciljevima Vašeg brenda.", "Cene su javne, bez skrivenih stavki."] }
+    {
+      "naziv": "Upoznajte studio",
+      "skraceno": "S&S",
+      "boja": "#6E1423",
+      "link": "/o-nama/",
+      "dugme": "Ko smo mi",
+      "slajdovi": [
+        "Story & Scroll Studio vodi društvene mreže za brendove.",
+        "Spajamo strategiju, sadržaj i storytelling u jednu celinu.",
+        "Svaka objava na Vašem profilu treba da ima svrhu."
+      ]
+    },
+    {
+      "naziv": "Strategija",
+      "skraceno": "Plan",
+      "boja": "#6E1423",
+      "link": "/strategija/",
+      "dugme": "Pogledajte stranicu",
+      "slajdovi": [
+        "Plan, ne trend.",
+        "Pre prve objave definišemo ciljeve, ton i kalendar.",
+        "Plan prati ciljeve brenda, a ne trendove koji prolaze."
+      ]
+    },
+    {
+      "naziv": "Sadržaj",
+      "skraceno": "Foto",
+      "boja": "#6F6A4E",
+      "link": "/sadrzaj/",
+      "dugme": "Pogledajte stranicu",
+      "slajdovi": [
+        "Sadržaj sa svrhom.",
+        "Foto, video, tekst i dizajn u Vašem vizuelnom identitetu.",
+        "Profil koji se prepoznaje na prvi pogled."
+      ]
+    },
+    {
+      "naziv": "Oglasi",
+      "skraceno": "Ciljano",
+      "boja": "#4F0E19",
+      "link": "/oglasi/",
+      "dugme": "Pogledajte stranicu",
+      "slajdovi": [
+        "Prava publika.",
+        "Plaćene kampanje na Meta i TikTok mrežama.",
+        "Oglas vide ljudi kojima je zaista namenjen."
+      ]
+    },
+    {
+      "naziv": "Analitika",
+      "skraceno": "Brojke",
+      "boja": "#2B211D",
+      "link": "/analitika/",
+      "dugme": "Pogledajte stranicu",
+      "slajdovi": [
+        "Brojke koje govore.",
+        "Pratimo šta radi, a šta ne, i to Vam jasno pokažemo.",
+        "Svakog meseca dobijate izveštaj."
+      ]
+    },
+    {
+      "naziv": "Paketi",
+      "skraceno": "Cene",
+      "boja": "#7A5C22",
+      "link": "/paketi/",
+      "dugme": "Pogledajte pakete",
+      "slajdovi": [
+        "Tri paketa: Start, Rast i Premium.",
+        "Svaki prilagođavamo obimu i ciljevima Vašeg brenda.",
+        "Cene su javne, bez skrivenih stavki."
+      ]
+    }
   ],
   "koraci": {
     "naslov": "Kako",
     "naslovIstaknuto": "radimo",
     "stavke": [
-      { "broj": "01", "naslov": "Besplatne konsultacije", "tekst": "Kratak razgovor o Vašem brendu, ciljevima i tome šta Vam je potrebno.", "boja": "#6E1423" },
-      { "broj": "02", "naslov": "Ponuda po meri", "tekst": "Predlažemo paket i prilagođavamo ga obimu i ciljevima Vašeg brenda.", "boja": "#4F0E19" },
-      { "broj": "03", "naslov": "Strategija i kalendar", "tekst": "Pre prve objave definišemo ton, teme i kalendar objavljivanja.", "boja": "#8C6A2A" },
-      { "broj": "04", "naslov": "Objave i izveštaj", "tekst": "Vodimo profil, a svakog meseca dobijate izveštaj sa rezultatima.", "boja": "#2B211D" }
+      {
+        "broj": "01",
+        "naslov": "Besplatne konsultacije",
+        "tekst": "Kratak razgovor o Vašem brendu, ciljevima i tome šta Vam je potrebno.",
+        "boja": "#6E1423"
+      },
+      {
+        "broj": "02",
+        "naslov": "Ponuda po meri",
+        "tekst": "Predlažemo paket i prilagođavamo ga obimu i ciljevima Vašeg brenda.",
+        "boja": "#4F0E19"
+      },
+      {
+        "broj": "03",
+        "naslov": "Strategija i kalendar",
+        "tekst": "Pre prve objave definišemo ton, teme i kalendar objavljivanja.",
+        "boja": "#7A5C22"
+      },
+      {
+        "broj": "04",
+        "naslov": "Objave i izveštaj",
+        "tekst": "Vodimo profil, a svakog meseca dobijate izveštaj sa rezultatima.",
+        "boja": "#2B211D"
+      }
     ]
   },
   "poziv": {

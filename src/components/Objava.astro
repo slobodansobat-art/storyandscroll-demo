@@ -7,5 +7,5 @@ const s = o.slika ? slika(o.slika) : null;
 ---
 <a class={s ? `${klasa} ph` : klasa} href={o.link} style={`background:${o.boja};${o.tamnoSlovo ? 'color:#6E1423;' : ''}`}>
   {s && <img src={s.src} srcset={s.srcset} sizes={velicine} alt={o.alt} loading="lazy" decoding="async" width="400" height="500">}
-  <span class="ttl">{o.naslov}</span><span class="lbl" style={o.tamnoSlovo ? 'color:#8C6A2A' : undefined}>{o.oznaka}</span>
+  <span class="ttl">{o.naslov}</span><span class="lbl" style={o.tamnoSlovo ? 'color:#8C6A2A' : o.oznakaBoja ? `color:${o.oznakaBoja}` : undefined}>{o.oznaka}</span>
 </a>
