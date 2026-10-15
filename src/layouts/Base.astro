@@ -1,0 +1,51 @@
+---
+import '@fontsource/playfair-display/500.css';
+import '@fontsource/playfair-display/600.css';
+import '@fontsource/playfair-display/400-italic.css';
+import '@fontsource/playfair-display/500-italic.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '../styles/global.css';
+import site from '../data/site.json';
+import Jezicci from '../components/Jezicci.astro';
+import Podnozje from '../components/Podnozje.astro';
+
+interface Props { naslov: string; opis: string; jezicak?: string | null; bezIndeksa?: boolean; preducitaj?: string }
+const { naslov, opis, jezicak = null, bezIndeksa = false, preducitaj } = Astro.props;
+const kanonski = new URL(Astro.url.pathname, Astro.site).href;
+const og = new URL('/img/og.jpg', Astro.site).href;
+const noindex = site.bezIndeksiranja || bezIndeksa;
+---
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{naslov}</title>
+  <meta name="description" content={opis}>
+  <link rel="canonical" href={kanonski}>
+  {noindex && <meta name="robots" content="noindex, nofollow">}
+  <meta name="theme-color" content="#6E1423">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:site_name" content={site.naziv}>
+  <meta property="og:title" content={naslov}>
+  <meta property="og:description" content={opis}>
+  <meta property="og:url" content={kanonski}>
+  <meta property="og:image" content={og}>
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  {preducitaj && <link rel="preload" as="image" href={preducitaj} fetchpriority="high">}
+  <slot name="head" />
+</head>
+<body>
+  <a class="sr skip" href="#sadrzaj">Preskoči na sadržaj</a>
+  <div class="pF">
+    <Jezicci aktivan={jezicak} />
+    <slot />
+    <Podnozje />
+  </div>
+</body>
+</html>

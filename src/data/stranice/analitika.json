@@ -1,0 +1,202 @@
+{
+  "seo": {
+    "naslov": "Analitika i izveštavanje · Story & Scroll Studio",
+    "opis": "Šta pratimo, kako čitamo brojke i šta dobijate u mesečnom izveštaju. Analitika je uključena u sve pakete."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    "Analitika i izveštavanje"
+  ],
+  "objava": "analitika",
+  "nadnaslov": "Usluge",
+  "naslov": "Analitika",
+  "naslovIstaknuto": "i izveštavanje",
+  "opis": "Analitika je deo posla koji se ne vidi na profilu, a pokazuje da li sve ostalo radi. Pratimo šta Vaša publika zaista radi sa sadržajem i na osnovu toga predlažemo sledeće korake.",
+  "znaci": [
+    {
+      "ikona": "check",
+      "tekst": "Uključeno u sve pakete"
+    },
+    {
+      "ikona": "cal",
+      "tekst": "Izveštaj svakog meseca"
+    },
+    {
+      "ikona": "bulb",
+      "tekst": "Predlozi za unapređenje"
+    }
+  ],
+  "link": {
+    "link": "/paketi/",
+    "tekst": "Pogledajte pakete →"
+  },
+  "istaknuto": [
+    {
+      "link": "#sta-je",
+      "boja": "#6E1423",
+      "ikona": "info",
+      "naziv": "Šta je"
+    },
+    {
+      "link": "#prati",
+      "boja": "#6F6A4E",
+      "ikona": "eye",
+      "naziv": "Šta pratimo"
+    },
+    {
+      "link": "#izvestaj",
+      "boja": "#8C6A2A",
+      "ikona": "doc",
+      "naziv": "Izveštaj"
+    },
+    {
+      "link": "#koristimo",
+      "boja": "#4F0E19",
+      "ikona": "bars",
+      "naziv": "Kako koristimo"
+    },
+    {
+      "link": "#pitanja",
+      "boja": "#2B211D",
+      "ikona": "q",
+      "naziv": "Pitanja"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "sta-je",
+      "naslov": "Šta je",
+      "naslovIstaknuto": "analitika",
+      "pasusi": [
+        "Svaka objava ostavlja trag: koliko ljudi ju je videlo, koliko ih je reagovalo, sačuvalo je ili posle nje posetilo profil. Analitika skuplja te tragove i pretvara ih u odgovor na jednostavno pitanje: šta funkcioniše, a šta ne.",
+        "Bez nje, vođenje profila je pogađanje. Sa njom, svaka sledeća objava se oslanja na ono što je publika već pokazala da želi."
+      ]
+    },
+    {
+      "tip": "karusel",
+      "id": "prati",
+      "naslov": "Šta",
+      "naslovIstaknuto": "pratimo",
+      "slajdovi": [
+        {
+          "naslov": "Doseg i prikazi",
+          "tekst": "Koliko različitih ljudi je videlo Vaš sadržaj i koliko puta je prikazan. Pokazuje da li sadržaj uopšte stiže do publike.",
+          "boja": "#6E1423",
+          "ikona": "eye"
+        },
+        {
+          "naslov": "Angažovanje",
+          "tekst": "Lajkovi, komentari, deljenja i čuvanja. Čuvanja i deljenja govore najviše, jer znače da je objava nekome bila vredna.",
+          "boja": "#6F6A4E",
+          "ikona": "heart"
+        },
+        {
+          "naslov": "Rast profila",
+          "tekst": "Novi pratioci, posete profilu i odakle ljudi dolaze. Pokazuje da li sadržaj privlači prave ljude.",
+          "boja": "#8C6A2A",
+          "ikona": "users"
+        },
+        {
+          "naslov": "Akcije",
+          "tekst": "Klikovi na link, poruke i upiti. To su brojke najbliže stvarnom poslu, jer iza njih stoje mogući klijenti.",
+          "boja": "#2B211D",
+          "ikona": "send"
+        }
+      ]
+    },
+    {
+      "tip": "izvestaj",
+      "id": "izvestaj",
+      "naslov": "Mesečni",
+      "naslovIstaknuto": "izveštaj",
+      "tekst": "Na kraju meseca dobijate pregled na jednom mestu: šta se desilo, koje objave su se istakle i šta predlažemo dalje. Bez tabela koje niko ne čita, sa kratkim objašnjenjem šta brojke znače za Vaš brend.",
+      "redovi": [
+        {
+          "naziv": "Start",
+          "tekst": "Mesečni izveštaj"
+        },
+        {
+          "naziv": "Rast",
+          "tekst": "Mesečni izveštaj sa analitikom"
+        },
+        {
+          "naziv": "Premium",
+          "tekst": "Detaljna analitika i optimizacija"
+        }
+      ],
+      "kartica": {
+        "oznaka": "Primer strukture",
+        "naslov": "Izveštaj za mesec",
+        "stavke": [
+          "Pregled ključnih brojki i poređenje sa prethodnim mesecom",
+          "Objave koje su se najviše istakle i zašto",
+          "Šta nije dalo očekivani rezultat",
+          "Kretanje publike: ko prati profil i kada je najaktivniji",
+          "Predlozi za sledeći mesec"
+        ]
+      }
+    },
+    {
+      "tip": "koraci",
+      "id": "koristimo",
+      "naslov": "Kako koristimo",
+      "naslovIstaknuto": "brojke",
+      "stavke": [
+        {
+          "naslov": "Merimo",
+          "tekst": "Pratimo iste pokazatelje iz meseca u mesec, da bi poređenje imalo smisla."
+        },
+        {
+          "naslov": "Tumačimo",
+          "tekst": "Tražimo obrasce: koje teme, formati i termini objavljivanja daju najbolje rezultate."
+        },
+        {
+          "naslov": "Prilagođavamo",
+          "tekst": "Na osnovu toga menjamo plan sadržaja za sledeći mesec."
+        }
+      ]
+    },
+    {
+      "tip": "pitanja",
+      "id": "pitanja",
+      "naslov": "Česta",
+      "naslovIstaknuto": "pitanja",
+      "stavke": [
+        {
+          "pitanje": "Da li mi treba poslovni profil?",
+          "odgovor": "Da. Instagram prikazuje statistiku samo za poslovne i kreatorske profile. Prelazak je besplatan i traje nekoliko minuta."
+        },
+        {
+          "pitanje": "Kada se vide prvi rezultati?",
+          "odgovor": "Za pouzdane zaključke potrebno je nekoliko nedelja redovnog objavljivanja. Zato izveštaj poredi mesece, a ne pojedinačne dane."
+        },
+        {
+          "pitanje": "Da li je analitika uključena u svaki paket?",
+          "odgovor": "Da. Start uključuje mesečni izveštaj, Rast mesečni izveštaj sa analitikom, a Premium detaljnu analitiku i optimizaciju."
+        },
+        {
+          "pitanje": "Da li ću razumeti izveštaj?",
+          "odgovor": "Izveštaj je pisan jednostavnim jezikom, uz objašnjenje šta brojke znače za Vaš brend i šta iz njih sledi."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "strategija",
+    "oglasi",
+    "paketi"
+  ],
+  "poziv": {
+    "naslov": "Želite da znate",
+    "naslovIstaknuto": "šta Vaše brojke govore?",
+    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o Vašem brendu.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "analitika"
+}

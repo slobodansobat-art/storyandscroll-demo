@@ -1,0 +1,93 @@
+{
+  "seo": {
+    "naslov": "Besplatne konsultacije · Story & Scroll Studio",
+    "opis": "Popunite prijavu i javićemo Vam se u najkraćem roku da dogovorimo termin i porazgovaramo o Vašem brendu."
+  },
+  "jezicak": "konsultacije",
+  "putanja": [
+    "Konsultacije"
+  ],
+  "objava": "konsultacije",
+  "nadnaslov": "Konsultacije",
+  "naslov": "Zakažite",
+  "naslovIstaknuto": "besplatne konsultacije",
+  "opis": "Ko vodi Vaše profile na društvenim mrežama? Ako je odgovor „niko” ili „ja, kad stignem”, hajde da porazgovaramo.",
+  "znaci": [
+    {
+      "ikona": "gift",
+      "tekst": "Besplatno"
+    },
+    {
+      "ikona": "scissors",
+      "tekst": "Ponuda po meri"
+    },
+    {
+      "ikona": "clock",
+      "tekst": "Javljamo se u najkraćem roku"
+    }
+  ],
+  "link": {
+    "link": "#prijava",
+    "tekst": "Popunite prijavu →"
+  },
+  "istaknuto": [
+    {
+      "link": "#prijava",
+      "boja": "#C4544E",
+      "ikona": "pen",
+      "naziv": "Prijava"
+    },
+    {
+      "link": "#sledi",
+      "boja": "#6E1423",
+      "ikona": "list",
+      "naziv": "Šta sledi"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "obrazac",
+      "id": "prijava",
+      "naslov": "Prijava",
+      "naslovIstaknuto": "za konsultacije",
+      "tekst": "Popunite obrazac i javićemo Vam se u najkraćem roku da dogovorimo termin i porazgovaramo o Vašem brendu."
+    },
+    {
+      "tip": "kartice",
+      "id": "sledi",
+      "naslov": "Šta se dešava",
+      "naslovIstaknuto": "posle prijave",
+      "kolone": 3,
+      "stavke": [
+        {
+          "ikona": "send",
+          "naslov": "Javljamo se",
+          "tekst": "Odgovaramo na email ili telefon iz prijave i dogovaramo termin."
+        },
+        {
+          "ikona": "chat",
+          "naslov": "Razgovaramo",
+          "tekst": "Pričamo o Vašem brendu, ciljevima i tome šta Vam je potrebno."
+        },
+        {
+          "ikona": "scissors",
+          "naslov": "Ponuda po meri",
+          "tekst": "Predlažemo paket prilagođen Vašem brendu."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "paketi",
+    "saradnja",
+    "onama"
+  ],
+  "poziv": {
+    "naslov": "Više volite",
+    "naslovIstaknuto": "poruku?",
+    "tekst": "Pišite nam direktno na Instagramu, odgovaramo i tamo.",
+    "dugme": "Pišite nam na Instagramu",
+    "link": "https://ig.me/m/storyandscrollstudio"
+  },
+  "slug": "konsultacije"
+}

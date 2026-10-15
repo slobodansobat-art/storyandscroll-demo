@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://storyandscroll.netlify.app/sitemap-index.xml

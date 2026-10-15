@@ -1,0 +1,161 @@
+{
+  "seo": {
+    "naslov": "Strategija i planiranje · Story & Scroll Studio",
+    "opis": "Pre prve objave definišemo ciljeve, publiku, ton i kalendar objavljivanja prilagođen Vašem brendu."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    "Strategija i planiranje"
+  ],
+  "objava": "strategija",
+  "nadnaslov": "Usluge",
+  "naslov": "Strategija",
+  "naslovIstaknuto": "i planiranje",
+  "opis": "Pre prve objave definišemo ciljeve, ton i kalendar objavljivanja prilagođen Vašem brendu, da bi svaka objava imala razlog.",
+  "znaci": [
+    {
+      "ikona": "target",
+      "tekst": "Ciljevi pre objava"
+    },
+    {
+      "ikona": "cal",
+      "tekst": "Kalendar objava"
+    },
+    {
+      "ikona": "pen",
+      "tekst": "Ton Vašeg brenda"
+    }
+  ],
+  "link": {
+    "link": "/paketi/",
+    "tekst": "Pogledajte pakete →"
+  },
+  "istaknuto": [
+    {
+      "link": "#sta-je",
+      "boja": "#6E1423",
+      "ikona": "info",
+      "naziv": "Šta je"
+    },
+    {
+      "link": "#definisemo",
+      "boja": "#6F6A4E",
+      "ikona": "layers",
+      "naziv": "Šta definišemo"
+    },
+    {
+      "link": "#kalendar",
+      "boja": "#8C6A2A",
+      "ikona": "cal",
+      "naziv": "Kalendar"
+    },
+    {
+      "link": "#pitanja",
+      "boja": "#2B211D",
+      "ikona": "q",
+      "naziv": "Pitanja"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "sta-je",
+      "naslov": "Šta je",
+      "naslovIstaknuto": "strategija",
+      "pasusi": [
+        "Strategija je plan pre prve objave. Odgovara na pitanja koja većina profila preskoči: kome se obraćamo, šta želimo da postignemo i po čemu ćemo se razlikovati.",
+        "Trendovi dolaze i prolaze. Plan koji prati ciljeve brenda ostaje, i zato svaka objava ima razlog da postoji."
+      ]
+    },
+    {
+      "tip": "karusel",
+      "id": "definisemo",
+      "naslov": "Šta",
+      "naslovIstaknuto": "definišemo",
+      "slajdovi": [
+        {
+          "naslov": "Ciljevi",
+          "tekst": "Šta profil treba da postigne: prepoznatljivost, upite, posete ili prodaju. Od cilja zavisi sve ostalo.",
+          "boja": "#6E1423",
+          "ikona": "target"
+        },
+        {
+          "naslov": "Publika",
+          "tekst": "Kome se obraćamo, šta ih zanima i gde provode vreme. Sadržaj se piše za njih, ne za sve.",
+          "boja": "#6F6A4E",
+          "ikona": "users"
+        },
+        {
+          "naslov": "Ton i stil",
+          "tekst": "Kako brend zvuči i izgleda: reči, boje, fotografije. Da se profil prepozna i bez logotipa.",
+          "boja": "#8C6A2A",
+          "ikona": "pen"
+        },
+        {
+          "naslov": "Teme i formati",
+          "tekst": "O čemu pričamo i u kom obliku: objave, karuseli, Reels ili Stories, prema paketu.",
+          "boja": "#2B211D",
+          "ikona": "grid"
+        }
+      ]
+    },
+    {
+      "tip": "kalendar",
+      "id": "kalendar",
+      "naslov": "Kalendar",
+      "naslovIstaknuto": "objava",
+      "tekst": "Kalendar pokazuje šta se objavljuje i kada. Unapred znate koje teme dolaze, a profil ima ritam umesto nasumičnih objava.",
+      "redovi": [
+        {
+          "naziv": "Start",
+          "tekst": "8 objava mesečno na jednoj mreži"
+        },
+        {
+          "naziv": "Rast",
+          "tekst": "Strategija sadržaja i kalendar objava"
+        },
+        {
+          "naziv": "Premium",
+          "tekst": "Svakodnevni sadržaj na 2–3 mreže"
+        }
+      ]
+    },
+    {
+      "tip": "pitanja",
+      "id": "pitanja",
+      "naslov": "Česta",
+      "naslovIstaknuto": "pitanja",
+      "stavke": [
+        {
+          "pitanje": "Zašto ne pratimo svaki trend?",
+          "odgovor": "Trend ima smisla samo ako se uklapa u ton i ciljeve brenda. Kada se uklapa, koristimo ga. Kada ne, preskačemo ga bez žaljenja."
+        },
+        {
+          "pitanje": "Da li učestvujem u pravljenju plana?",
+          "odgovor": "Da. Plan se pravi na osnovu razgovora sa Vama, i ništa ne objavljujemo dok se oko pravca ne dogovorimo."
+        },
+        {
+          "pitanje": "Šta ako želim da promenim pravac?",
+          "odgovor": "Plan nije zacementiran. Ako se promene ciljevi ili ponuda, prilagođavamo i plan."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "sadrzaj",
+    "analitika",
+    "paketi"
+  ],
+  "poziv": {
+    "naslov": "Imate brend,",
+    "naslovIstaknuto": "a nemate plan?",
+    "tekst": "Zakažite besplatne konsultacije i napravićemo prvi korak zajedno.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "strategija"
+}

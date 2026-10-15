@@ -1,0 +1,232 @@
+---
+import Ikona from './Ikona.astro';
+import site from '../data/site.json';
+import { slika } from '../data/slike';
+const { s } = Astro.props;
+const naslovHtml = s.naslov || s.naslovIstaknuto ? `${s.naslov ?? ''} <em>${s.naslovIstaknuto ?? ''}</em>` : '';
+const img = s.slika ? slika(s.slika) : null;
+---
+{s.tip === 'tekst' && (
+  <section class="sec two" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div class="prose">{s.pasusi.map((p: string) => <p>{p}</p>)}</div>
+  </section>
+)}
+
+{s.tip === 'kartice' && (
+  <section class="sec" id={s.id}>
+    {naslovHtml && <h2 class="h2" set:html={naslovHtml}></h2>}
+    <div class={s.kolone === 3 ? 'boxes c3' : 'boxes'} style={naslovHtml ? undefined : 'margin-top:0'}>
+      {s.stavke.map((k: any) => (
+        <div class="box"><span class="bi"><Ikona ime={k.ikona} velicina={24} /></span><h3>{k.naslov}</h3><p>{k.tekst}</p></div>
+      ))}
+    </div>
+  </section>
+)}
+
+{s.tip === 'citat' && (
+  <section class="sec two" id={s.id} style="align-items:center">
+    <div class="photo" style="background:#6F6A4E"><img src={img!.src} srcset={img!.srcset} sizes="(max-width: 900px) 92vw, 440px" alt={s.alt} loading="lazy" decoding="async" width="440" height="550"></div>
+    <div>
+      <p class="eyebrow">{s.nadnaslov}</p>
+      <p class="quote">{s.citat} <em>{s.citatIstaknuto}</em> {s.citatKraj}</p>
+      <p class="caption">{s.tekst}</p>
+      {s.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+    </div>
+  </section>
+)}
+
+{(s.tip === 'nivoi') && (
+  <section class="sec two" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div>
+      <div class="tiers">{s.redovi.map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
+      {s.linkPaketi && <p style="margin: 18px 0 0; font-size: 14px"><a href="/paketi/">Uporedite pakete →</a></p>}
+    </div>
+  </section>
+)}
+
+{s.tip === 'karusel' && (
+  <section class="sec" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div class="car" data-karusel>
+      <div class="track" aria-live="polite">
+        {s.slajdovi.map((k: any, i: number) => (
+          <article class="slide" style={`background:${k.boja}`} aria-label={`${i + 1} od ${s.slajdovi.length}`}>
+            <div>
+              <p class="snum">{i + 1} / {s.slajdovi.length}</p>
+              <h3 class="stl">{k.naslov}</h3>
+              <p class="stx">{k.tekst}</p>
+            </div>
+            <div class="sico"><Ikona ime={k.ikona} velicina={48} debljina={1.4} boja="#E8C98A" /></div>
+          </article>
+        ))}
+      </div>
+      <div class="carctl">
+        <div class="dots">
+          {s.slajdovi.map((_k: any, i: number) => <button class={i === 0 ? 'dot on' : 'dot'} type="button" data-idi={i} aria-label={`Slajd ${i + 1}`}></button>)}
+        </div>
+        <div><button class="arr" type="button" data-pret aria-label="Prethodni slajd">‹</button><button class="arr" type="button" data-sled aria-label="Sledeći slajd">›</button></div>
+      </div>
+    </div>
+  </section>
+)}
+
+{s.tip === 'kalendar' && (
+  <section class="sec two" id={s.id}>
+    <div>
+      <h2 class="h2" set:html={naslovHtml}></h2>
+      <p class="caption" style="font-size: 17px">{s.tekst}</p>
+      <div class="tiers">{s.redovi.map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
+      <p style="margin: 18px 0 0; font-size: 14px"><a href="/paketi/">Uporedite pakete →</a></p>
+    </div>
+    <div class="cal">
+      <span class="rep-tag">Primer jedne nedelje</span>
+      <div class="calg" aria-hidden="true">
+        <span class="cald">Pon</span><span class="cald">Uto</span><span class="cald">Sre</span><span class="cald">Čet</span><span class="cald">Pet</span><span class="cald">Sub</span><span class="cald">Ned</span>
+        <span class="calc" style="background:#6E1423">Objava</span><span class="calc e"></span><span class="calc" style="background:#C4544E">Reels</span><span class="calc e"></span><span class="calc" style="background:#8C6A2A">Karusel</span><span class="calc" style="background:#6F6A4E">Stories</span><span class="calc e"></span>
+      </div>
+      <p style="margin:18px 0 0;font-size:13px;color:#8A7B72">Ilustracija. Broj i vrsta objava zavise od paketa.</p>
+    </div>
+  </section>
+)}
+
+{s.tip === 'razgovor' && (
+  <section class="sec two" id={s.id} style="align-items:center">
+    <div>
+      <h2 class="h2" set:html={naslovHtml}></h2>
+      <p class="caption" style="font-size: 17px">{s.tekst}</p>
+    </div>
+    <div class="thread" aria-hidden="true">
+      <span class="rep-tag">Ilustracija razgovora</span>
+      <div class="cm" style="margin-top:14px"><span class="av"></span><span class="w"><i style="width:30%"></i><i style="width:85%"></i><i style="width:60%"></i></span></div>
+      <div class="cm re"><span class="av s">S&amp;S</span><span class="w"><b>Odgovor u tonu brenda</b><i style="width:90%"></i><i style="width:55%"></i></span></div>
+      <div class="cm"><span class="av"></span><span class="w"><i style="width:25%"></i><i style="width:70%"></i></span></div>
+      <div class="cm re"><span class="av s">S&amp;S</span><span class="w"><b>Odgovor u tonu brenda</b><i style="width:75%"></i></span></div>
+    </div>
+  </section>
+)}
+
+{s.tip === 'napomena' && (
+  <section class="sec two" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div>
+      {s.napomene.map((n: string, i: number) => <div class="note" style={i === 0 ? 'margin-top:0' : undefined} set:html={n}></div>)}
+      {s.tekst && <p class="caption" style="font-size: 17px">{s.tekst}</p>}
+      {s.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+    </div>
+  </section>
+)}
+
+{s.tip === 'izvestaj' && (
+  <section class="sec two" id={s.id}>
+    <div>
+      <h2 class="h2" set:html={naslovHtml}></h2>
+      <p class="caption" style="font-size: 17px">{s.tekst}</p>
+      <div class="tiers">{s.redovi.map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
+      <p style="margin: 18px 0 0; font-size: 14px"><a href="/paketi/">Uporedite pakete →</a></p>
+    </div>
+    <div class="report">
+      <span class="rep-tag">{s.kartica.oznaka}</span>
+      <p class="rep-title">{s.kartica.naslov}</p>
+      <div class="rep"><ul>{s.kartica.stavke.map((x: string) => <li>{x}</li>)}</ul></div>
+    </div>
+  </section>
+)}
+
+{s.tip === 'koraci' && (
+  <section class="sec" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div class="steps">
+      {s.stavke.map((k: any, i: number) => <div class="step"><span class="n">{i + 1}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></div>)}
+    </div>
+  </section>
+)}
+
+{s.tip === 'pitanja' && (
+  <section class="sec" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div class="faq">
+      {s.stavke.map((k: any, i: number) => <details open={i === 0}><summary>{k.pitanje}</summary><p>{k.odgovor}</p></details>)}
+    </div>
+  </section>
+)}
+
+{s.tip === 'cene' && (
+  <section class="sec" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div class="prices">
+      {s.paketi.map((p: any) => (
+        <article class={p.istaknut ? 'pc hi' : 'pc'}>
+          {p.oznaka && <span class="badge">{p.oznaka}</span>}
+          <h3 class="pn">{p.naziv}</h3>
+          <p class="pr">{p.cena}<small>{p.period}</small></p>
+          <p class="pd">{p.opis}</p>
+          <ul>{p.stavke.map((x: string) => <li>{x}</li>)}</ul>
+          <a class={p.istaknut ? 'btn btn-c' : 'btn btn-p'} href={`/konsultacije/?paket=${encodeURIComponent(p.naziv)}#prijava`}>Izaberite {p.naziv}</a>
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+{s.tip === 'poredjenje' && (
+  <section class="sec" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <div style="overflow-x:auto">
+      <table class="cmp">
+        <thead><tr><th scope="col">Šta dobijate</th>{s.kolone.map((k: string) => <th scope="col">{k}</th>)}</tr></thead>
+        <tbody>
+          {s.redovi.map((r: string[]) => (
+            <tr>
+              <th scope="row" style="text-align:left;font:500 15px/1.4 'Poppins',sans-serif;border-bottom:1px solid #E1D2C0;padding:15px 12px">{r[0]}</th>
+              {r.slice(1).map((v) => <td>{v === 'da' ? <><span class="yes" aria-hidden="true"></span><span class="sr">Da</span></> : v === 'ne' ? <><span class="no" aria-hidden="true">—</span><span class="sr">Ne</span></> : v}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+)}
+
+{s.tip === 'vremenska' && (
+  <section class="sec" id={s.id}>
+    <h2 class="h2" set:html={naslovHtml}></h2>
+    <ol class="tl" style="list-style:none;margin-left:0">
+      {s.stavke.map((k: any, i: number) => (
+        <li class="tli" style={i === s.stavke.length - 1 ? 'padding-bottom:0' : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></li>
+      ))}
+    </ol>
+  </section>
+)}
+
+{s.tip === 'obrazac' && (
+  <section class="sec two" id={s.id}>
+    <div class="side">
+      <h2 class="h2" set:html={naslovHtml}></h2>
+      <p style="margin-top:22px">{s.tekst}</p>
+      <p>Više volite poruku? <a href={site.poruka}>Pišite nam na Instagramu: @{site.handle}</a></p>
+    </div>
+    <div class="form">
+      <form name="konsultacije" method="POST" action="/hvala/" data-netlify="true" netlify-honeypot="bot-field" data-obrazac>
+        <input type="hidden" name="form-name" value="konsultacije">
+        <input type="hidden" name="subject" value="Nova prijava za konsultacije (demo sajt)">
+        <p class="sr"><label>Ne popunjavajte ovo polje <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <label>Ime i prezime<input type="text" name="ime" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Telefon <span>(neobavezno)</span><input type="tel" name="telefon" autocomplete="tel"></label>
+        <label>Instagram profil ili naziv brenda <span>(neobavezno)</span><input type="text" name="brend"></label>
+        <label>Paket koji Vas zanima <span>(neobavezno)</span><input type="text" name="paket" data-paket></label>
+        <label>Recite nam više o brendu i ciljevima <span>(neobavezno)</span><textarea name="poruka"></textarea></label>
+        <button class="btn btn-p" type="submit">Pošaljite prijavu</button>
+        <p class="ftiny">Slanjem prihvatate <a href={site.privatnost}>politiku privatnosti</a>.</p>
+        <p class="ftiny" data-greska hidden style="color:#C4544E">Slanje nije uspelo. Pokušajte ponovo ili nam pišite na Instagramu.</p>
+      </form>
+      <div class="thanks" data-hvala hidden tabindex="-1">
+        <span class="ok"><Ikona ime="check" velicina={30} debljina={2} /></span>
+        <h3>Hvala na prijavi!</h3>
+        <p>Javićemo Vam se uskoro na navedeni email ili telefon.</p>
+      </div>
+    </div>
+  </section>
+)}

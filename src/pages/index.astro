@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import Ikona from '../components/Ikona.astro';
+import site from '../data/site.json';
+import objave from '../data/objave.json';
+import n from '../data/naslovna.json';
+import { slika } from '../data/slike';
+import '../styles/home.css';
+
+const tiles = objave.map((o, i) => ({ ...o, r: Math.floor(i / 3), c: i % 3, s: o.slika ? slika(o.slika) : null }));
+const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: p.boja, link: p.link, dugme: p.dugme, slajdovi: p.slajdovi }));
+---
+<Base naslov={n.seo.naslov} opis={n.seo.opis} jezicak="pocetna" preducitaj="/img/telefon-1280.webp">
+  <main id="sadrzaj">
+    <section class="intro" data-intro aria-label="Naslovna">
+      <div class="stage">
+        <div class="herobox" data-hero>
+          <span class="hero-shade" data-senka aria-hidden="true"></span>
+          <header class="wrap topC">
+            <a class="markC" href="/">{site.naziv}</a>
+            <a class="igC" href={site.instagram} aria-label={`Instagram: @${site.handle}`}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".9"></circle></svg><span class="ig-t">@{site.handle}</span></a>
+          </header>
+          <div class="h-in" data-tekst>
+            <p class="eyeC">{n.hero.nadnaslov}</p>
+            <h1 class="h1C">{n.hero.naslov} <em>{n.hero.naslovIstaknuto}</em></h1>
+            <div class="stitchC" aria-hidden="true"></div>
+            <p class="leadC">{n.hero.uvod}</p>
+            <div class="hbtns">
+              <a class="btn btn-c" href={n.hero.dugme1.link} data-na-feed>{n.hero.dugme1.tekst}</a>
+              <a class="btn btn-o2" href={n.hero.dugme2.link}>{n.hero.dugme2.tekst}</a>
+            </div>
+          </div>
+          <a class="hint" href="#feed" data-na-feed data-strelica><span>Skrolujte</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
+        </div>
+
+        <div class="feedwrap">
+          <aside class="prof" data-profil aria-label="Profil studija">
+            <div class="prof-top">
+              <button class="avb" type="button" data-prica="0" aria-label="Otvori priču: Upoznajte studio"><span class="ring" data-prsten="0"><span class="avatar">S&amp;S<small>PO MERI</small></span></span></button>
+              <p class="handle"><a href={site.instagram}>{site.handle}</a></p>
+            </div>
+            <div class="stats">
+              {n.profil.brojke.map((b) => <a href={b.link} data-na-feed={b.link === '#feed' ? '' : undefined}><b>{b.broj}</b>{b.tekst}</a>)}
+            </div>
+            <p class="bio"><b>{n.profil.bioNaslov}</b><br>{n.profil.bio}</p>
+            <div class="pbtns">
+              <a class="btn btn-p" href="/konsultacije/">Zakažite konsultacije</a>
+              <a class="btn btn-g" href={site.poruka}>Pišite nam</a>
+            </div>
+          </aside>
+          <div class="grid" data-mreza>
+            {tiles.map((t) => (
+              <a class="tile" href={t.link} data-r={t.r} data-c={t.c} aria-label={`${t.naslov} ${t.oznaka}`}>
+                <span class={t.s ? 'back ph' : 'back'} style={`background:${t.boja};${t.tamnoSlovo ? 'color:#6E1423;' : ''}`}>
+                  {t.s && <img src={t.s.src} srcset={t.s.srcset} sizes="(max-width: 899px) 33vw, 240px" alt={t.alt} loading="lazy" decoding="async" width="240" height="300">}
+                  {t.karusel && <Ikona ime="layers" velicina={20} debljina={1.8} klasa="ic" />}
+                  <span class="ttl">{t.naslov}</span>
+                  <span class="lbl" style={t.tamnoSlovo ? 'color:#8C6A2A' : undefined}>{t.oznaka}</span>
+                  <span class="ov" aria-hidden="true"><b>Otvori →</b><small>{t.opis}</small></span>
+                </span>
+                <span class="front" aria-hidden="true"><span class="fimg"></span></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <span class="feed-anchor" id="feed" aria-hidden="true"></span>
+    </section>
+
+    <nav class="hls2" aria-label="Istaknute priče">
+      {price.slice(1).map((p, i) => (
+        <button class="hl2" type="button" data-prica={i + 1}><span class="ring" data-prsten={i + 1}><i style={`background:${p.boja}`}>{p.skraceno}</i></span>{p.naziv}</button>
+      ))}
+    </nav>
+
+    <section class="reels-sec" aria-labelledby="kako-radimo">
+      <h2 class="h2" id="kako-radimo" style="text-align:center">{n.koraci.naslov} <em>{n.koraci.naslovIstaknuto}</em></h2>
+      <div class="reels">
+        {n.koraci.stavke.map((k) => (
+          <a class="reel" href="/saradnja/" style={`background:${k.boja}`}>
+            <Ikona ime="play" velicina={20} debljina={1.8} klasa="ic" />
+            <span class="no">{k.broj}</span>
+            <h3>{k.naslov}</h3>
+            <p>{k.tekst}</p>
+            <span class="more2">Ceo proces →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>{n.poziv.naslov} <em>{n.poziv.naslovIstaknuto}</em></h2>
+      <p>{n.poziv.tekst}</p>
+      <div style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-p" href={n.poziv.link}>{n.poziv.dugme}</a></div>
+    </section>
+  </main>
+
+  <div class="sv" data-prikaz role="dialog" aria-modal="true" aria-label="Priča" hidden>
+    <div class="sc" data-kartica>
+      <div class="bars" data-trake></div>
+      <div class="sh"><i aria-hidden="true">S&amp;S</i><span data-ime></span><button class="sx" type="button" data-zatvori aria-label="Zatvori priču">×</button></div>
+      <button class="zone zl" type="button" data-nazad aria-label="Prethodni slajd"></button>
+      <button class="zone zr" type="button" data-dalje aria-label="Sledeći slajd"></button>
+      <p class="st"><span class="snum2" data-broj></span><span data-tekst-price></span></p>
+      <a class="sopen" data-otvori href="/">Pogledajte stranicu →</a>
+      <p class="stip">Dodirnite desno za dalje, levo za nazad</p>
+    </div>
+  </div>
+  <script type="application/json" id="price-podaci" set:html={JSON.stringify(price)}></script>
+</Base>
+
+<script>
+  import { pokreniNaslovnu } from '../scripts/naslovna';
+  pokreniNaslovnu();
+</script>

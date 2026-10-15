@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import Zaglavlje from '../components/Zaglavlje.astro';
+---
+<Base naslov="Stranica nije pronađena · Story & Scroll Studio" opis="Ova stranica ne postoji." bezIndeksa={true}>
+  <Zaglavlje />
+  <main class="wrap" id="sadrzaj" style="padding:120px 0;text-align:center">
+    <h1 class="h1">Ova objava <em>ne postoji.</em></h1>
+    <p class="caption" style="margin:24px auto 0">Možda je link pogrešan. Vratite se na feed i izaberite neku drugu.</p>
+    <p style="margin-top:30px"><a class="btn btn-p" href="/">Nazad na feed</a></p>
+  </main>
+</Base>

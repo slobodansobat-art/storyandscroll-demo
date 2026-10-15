@@ -1,0 +1,200 @@
+{
+  "seo": {
+    "naslov": "Paketi i cene · Story & Scroll Studio",
+    "opis": "Start od 24.900 RSD, Rast 54.900 RSD i Premium od 99.900 RSD mesečno. Šta ulazi u koji paket za vođenje društvenih mreža."
+  },
+  "jezicak": "paketi",
+  "putanja": [
+    "Paketi i cene"
+  ],
+  "objava": "paketi",
+  "nadnaslov": "Paketi",
+  "naslov": "Paketi",
+  "naslovIstaknuto": "i cene",
+  "opis": "Tri okvirna paketa za vođenje društvenih mreža. Svaki prilagođavamo obimu i ciljevima Vašeg brenda nakon besplatnih konsultacija.",
+  "znaci": [
+    {
+      "ikona": "check",
+      "tekst": "Cene su javne"
+    },
+    {
+      "ikona": "scissors",
+      "tekst": "Prilagođavamo po meri"
+    },
+    {
+      "ikona": "gift",
+      "tekst": "Prvi razgovor je besplatan"
+    }
+  ],
+  "link": {
+    "link": "#uporedi",
+    "tekst": "Uporedite pakete →"
+  },
+  "istaknuto": [
+    {
+      "link": "#paketi",
+      "boja": "#6F6A4E",
+      "ikona": "list",
+      "naziv": "Paketi"
+    },
+    {
+      "link": "#uporedi",
+      "boja": "#6E1423",
+      "ikona": "grid",
+      "naziv": "Uporedi"
+    },
+    {
+      "link": "#napomene",
+      "boja": "#8C6A2A",
+      "ikona": "info",
+      "naziv": "Napomene"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "cene",
+      "id": "paketi",
+      "naslov": "Izaberite",
+      "naslovIstaknuto": "paket",
+      "paketi": [
+        {
+          "naziv": "Start",
+          "cena": "24.900 RSD",
+          "period": "mesečno",
+          "opis": "Za brendove koji grade prisustvo na jednoj mreži.",
+          "stavke": [
+            "1 društvena mreža (Instagram)",
+            "8 objava mesečno",
+            "Osnovno kreiranje sadržaja (foto i tekst)",
+            "Odgovaranje na komentare i poruke",
+            "Mesečni izveštaj"
+          ]
+        },
+        {
+          "naziv": "Rast",
+          "cena": "54.900 RSD",
+          "period": "mesečno",
+          "opis": "Za brendove koji stabilno rastu na dve mreže uz jasnu strategiju.",
+          "stavke": [
+            "2 društvene mreže (npr. Instagram i TikTok)",
+            "12–16 objava mesečno, uz Reels i Stories",
+            "Strategija sadržaja i kalendar objava",
+            "Upravljanje zajednicom",
+            "Mesečni izveštaj sa analitikom"
+          ],
+          "istaknut": true,
+          "oznaka": "Najtraženiji"
+        },
+        {
+          "naziv": "Premium",
+          "cena": "od 99.900 RSD",
+          "period": "mesečno",
+          "opis": "Za brendove kojima treba sveobuhvatno vođenje na više mreža.",
+          "stavke": [
+            "2–3 društvene mreže",
+            "Svakodnevni sadržaj i profesionalna foto i video produkcija",
+            "Vođenje oglasa (budžet za oglase nije uključen)",
+            "Detaljna analitika i optimizacija",
+            "Prioritetna podrška"
+          ]
+        }
+      ]
+    },
+    {
+      "tip": "poredjenje",
+      "id": "uporedi",
+      "naslov": "Uporedite",
+      "naslovIstaknuto": "pakete",
+      "kolone": [
+        "Start",
+        "Rast",
+        "Premium"
+      ],
+      "redovi": [
+        [
+          "Broj mreža",
+          "1 (Instagram)",
+          "2",
+          "2–3"
+        ],
+        [
+          "Objave mesečno",
+          "8",
+          "12–16",
+          "Svakodnevno"
+        ],
+        [
+          "Reels i Stories",
+          "ne",
+          "da",
+          "da"
+        ],
+        [
+          "Strategija i kalendar objava",
+          "ne",
+          "da",
+          "da"
+        ],
+        [
+          "Odgovaranje na komentare i poruke",
+          "da",
+          "da",
+          "da"
+        ],
+        [
+          "Upravljanje zajednicom",
+          "ne",
+          "da",
+          "da"
+        ],
+        [
+          "Profesionalna foto i video produkcija",
+          "ne",
+          "ne",
+          "da"
+        ],
+        [
+          "Vođenje oglasa",
+          "ne",
+          "ne",
+          "da"
+        ],
+        [
+          "Izveštaj",
+          "Mesečni",
+          "Sa analitikom",
+          "Detaljna analitika i optimizacija"
+        ],
+        [
+          "Prioritetna podrška",
+          "ne",
+          "ne",
+          "da"
+        ]
+      ]
+    },
+    {
+      "tip": "napomena",
+      "id": "napomene",
+      "naslov": "Pre nego što",
+      "naslovIstaknuto": "izaberete",
+      "napomene": [
+        "Cene su okvirne i ne uključuju budžet za plaćeno oglašavanje (Meta i TikTok Ads). Taj budžet plaćate posebno, direktno platformi.",
+        "Svaki paket prilagođavamo Vašem brendu. Na besplatnim konsultacijama dogovaramo ponudu po meri."
+      ]
+    }
+  ],
+  "jos": [
+    "strategija",
+    "analitika",
+    "konsultacije"
+  ],
+  "poziv": {
+    "naslov": "Niste sigurni",
+    "naslovIstaknuto": "koji paket?",
+    "tekst": "Zakažite besplatne konsultacije i zajedno ćemo izabrati ono što Vašem brendu treba.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "paketi"
+}

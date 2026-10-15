@@ -1,0 +1,9 @@
+---
+import site from '../data/site.json';
+const { aktivan } = Astro.props;
+---
+<nav class="tabsC" aria-label="Glavni meni">
+  {site.jezicci.map((j) => (
+    <a class={j.kljuc === aktivan ? 'tabC on' : 'tabC'} href={j.link} aria-current={j.kljuc === aktivan ? 'page' : undefined}>{j.naziv}</a>
+  ))}
+</nav>

@@ -1,0 +1,151 @@
+{
+  "seo": {
+    "naslov": "Zakup oglasa · Story & Scroll Studio",
+    "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici. Vođenje oglasa je deo paketa Premium."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    "Zakup oglasa"
+  ],
+  "objava": "oglasi",
+  "nadnaslov": "Usluge",
+  "naslov": "Zakup",
+  "naslovIstaknuto": "oglasa",
+  "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici. Oglas vide ljudi kojima je zaista namenjen.",
+  "znaci": [
+    {
+      "ikona": "target",
+      "tekst": "Ciljana publika"
+    },
+    {
+      "ikona": "send",
+      "tekst": "Meta i TikTok oglasi"
+    },
+    {
+      "ikona": "check",
+      "tekst": "Uključeno u Premium"
+    }
+  ],
+  "link": {
+    "link": "/paketi/",
+    "tekst": "Pogledajte pakete →"
+  },
+  "istaknuto": [
+    {
+      "link": "#kako",
+      "boja": "#4F0E19",
+      "ikona": "info",
+      "naziv": "Kako rade"
+    },
+    {
+      "link": "#podesavamo",
+      "boja": "#6E1423",
+      "ikona": "target",
+      "naziv": "Podešavanja"
+    },
+    {
+      "link": "#budzet",
+      "boja": "#8C6A2A",
+      "ikona": "wallet",
+      "naziv": "Budžet"
+    },
+    {
+      "link": "#pitanja",
+      "boja": "#2B211D",
+      "ikona": "q",
+      "naziv": "Pitanja"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "kako",
+      "naslov": "Kako rade",
+      "naslovIstaknuto": "oglasi",
+      "pasusi": [
+        "Obična objava stiže uglavnom do onih koji Vas već prate. Plaćeni oglas može da stigne do ljudi koji Vas još ne znaju, a odgovaraju Vašoj publici po mestu, interesovanjima ili godinama.",
+        "Dobar oglas nije onaj koji vidi najviše ljudi, nego onaj koji vide pravi ljudi."
+      ]
+    },
+    {
+      "tip": "kartice",
+      "id": "podesavamo",
+      "naslov": "Šta",
+      "naslovIstaknuto": "podešavamo",
+      "kolone": 4,
+      "stavke": [
+        {
+          "ikona": "target",
+          "naslov": "Cilj",
+          "tekst": "Šta kampanja treba da postigne: posete, poruke, pratioce ili prodaju."
+        },
+        {
+          "ikona": "users",
+          "naslov": "Publika",
+          "tekst": "Kome se oglas prikazuje: mesto, interesovanja, godine."
+        },
+        {
+          "ikona": "image",
+          "naslov": "Oglas",
+          "tekst": "Fotografija ili video i tekst koji zaustavlja skrolovanje."
+        },
+        {
+          "ikona": "bars",
+          "naslov": "Praćenje",
+          "tekst": "Koliko košta rezultat i šta treba promeniti."
+        }
+      ]
+    },
+    {
+      "tip": "napomena",
+      "id": "budzet",
+      "naslov": "Budžet",
+      "naslovIstaknuto": "za oglase",
+      "napomene": [
+        "<b>Važno:</b> cene paketa ne uključuju budžet za plaćeno oglašavanje (Meta i TikTok Ads). Taj budžet plaćate posebno, direktno platformi."
+      ],
+      "tekst": "Vođenje oglasa je deo paketa Premium. Visinu budžeta dogovaramo prema cilju kampanje i publici.",
+      "link": {
+        "link": "/paketi/",
+        "tekst": "Pogledajte paket Premium →"
+      }
+    },
+    {
+      "tip": "pitanja",
+      "id": "pitanja",
+      "naslov": "Česta",
+      "naslovIstaknuto": "pitanja",
+      "stavke": [
+        {
+          "pitanje": "Na kojim mrežama se oglašavate?",
+          "odgovor": "Na Meta mrežama (Instagram i Facebook) i na TikTok-u."
+        },
+        {
+          "pitanje": "Koliki budžet mi treba?",
+          "odgovor": "Zavisi od cilja i publike. Budžet dogovaramo na konsultacijama, a plaćate ga direktno platformi."
+        },
+        {
+          "pitanje": "Da li mogu da uzmem samo oglase?",
+          "odgovor": "Vođenje oglasa je uključeno u paket Premium. Za drugačiju kombinaciju pitajte nas na konsultacijama."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "analitika",
+    "strategija",
+    "paketi"
+  ],
+  "poziv": {
+    "naslov": "Neka Vas vide",
+    "naslovIstaknuto": "pravi ljudi.",
+    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o kampanji za Vaš brend.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "oglasi"
+}

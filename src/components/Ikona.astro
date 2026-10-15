@@ -1,0 +1,6 @@
+---
+import ikone from '../data/ikone.json';
+const { ime, velicina = 28, debljina = 1.6, boja = 'currentColor', klasa } = Astro.props;
+const putanja = (ikone as Record<string, string>)[ime] ?? '';
+---
+<svg class={klasa} width={velicina} height={velicina} viewBox="0 0 24 24" fill="none" stroke={boja} stroke-width={debljina} stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={putanja}></svg>

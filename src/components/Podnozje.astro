@@ -1,0 +1,16 @@
+---
+import site from '../data/site.json';
+---
+<footer class="footC">
+  <div class="wrap foot-in">
+    <div><p class="foot-mark">{site.naziv}</p><p class="foot-tag">{site.slogan}</p></div>
+    <nav aria-label="Podnožje">
+      <a href={site.instagram}>@{site.handle}</a>
+      <a href="/paketi/">Paketi i cene</a>
+      <a href="/konsultacije/">Konsultacije</a>
+      <a href={site.privatnost}>Politika privatnosti</a>
+      <a href={site.uslovi}>Uslovi korišćenja</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom">© 2026 {site.naziv}</div>
+</footer>

@@ -1,0 +1,160 @@
+{
+  "seo": {
+    "naslov": "Vođenje profila · Story & Scroll Studio",
+    "opis": "Redovno objavljivanje, odgovori na komentare i poruke i upravljanje zajednicom na društvenim mrežama."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    "Vođenje profila"
+  ],
+  "objava": "profil",
+  "nadnaslov": "Usluge",
+  "naslov": "Vođenje",
+  "naslovIstaknuto": "profila",
+  "opis": "Redovno objavljivanje, moderacija i komunikacija sa pratiocima. Profil koji živi, a Vi se bavite svojim poslom.",
+  "znaci": [
+    {
+      "ikona": "cal",
+      "tekst": "Redovno objavljivanje"
+    },
+    {
+      "ikona": "chat",
+      "tekst": "Odgovori na komentare i poruke"
+    },
+    {
+      "ikona": "users",
+      "tekst": "Upravljanje zajednicom"
+    }
+  ],
+  "link": {
+    "link": "/paketi/",
+    "tekst": "Pogledajte pakete →"
+  },
+  "istaknuto": [
+    {
+      "link": "#obuhvata",
+      "boja": "#8C6A2A",
+      "ikona": "info",
+      "naziv": "Šta obuhvata"
+    },
+    {
+      "link": "#zajednica",
+      "boja": "#6E1423",
+      "ikona": "chat",
+      "naziv": "Zajednica"
+    },
+    {
+      "link": "#po-paketima",
+      "boja": "#6F6A4E",
+      "ikona": "list",
+      "naziv": "Po paketima"
+    },
+    {
+      "link": "#pitanja",
+      "boja": "#2B211D",
+      "ikona": "q",
+      "naziv": "Pitanja"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "obuhvata",
+      "naslov": "Šta",
+      "naslovIstaknuto": "obuhvata",
+      "pasusi": [
+        "Profil živi kada se na njemu stalno nešto dešava: objave stižu redovno, komentari ne ostaju bez odgovora, a poruke ne čekaju danima.",
+        "Vođenje profila znači da o tome brinemo mi, a Vi se bavite svojim poslom."
+      ]
+    },
+    {
+      "tip": "kartice",
+      "id": "koraci-vodjenja",
+      "naslov": "",
+      "naslovIstaknuto": "",
+      "kolone": 3,
+      "stavke": [
+        {
+          "ikona": "cal",
+          "naslov": "Objavljujemo po planu",
+          "tekst": "Objave izlaze po dogovorenom kalendaru, bez praznih nedelja."
+        },
+        {
+          "ikona": "chat",
+          "naslov": "Odgovaramo",
+          "tekst": "Komentari i poruke dobijaju odgovor u tonu Vašeg brenda."
+        },
+        {
+          "ikona": "eye",
+          "naslov": "Pratimo",
+          "tekst": "Vidimo šta publika pita i šta joj se dopada, i to unosimo u sledeći plan."
+        }
+      ]
+    },
+    {
+      "tip": "razgovor",
+      "id": "zajednica",
+      "naslov": "Zajednica,",
+      "naslovIstaknuto": "ne samo pratioci",
+      "tekst": "Pratilac koji dobije odgovor vraća se. Zato su komentari i poruke deo posla jednako kao i same objave. Odgovaramo u tonu Vašeg brenda, da razgovor zvuči kao Vi."
+    },
+    {
+      "tip": "nivoi",
+      "id": "po-paketima",
+      "naslov": "Vođenje",
+      "naslovIstaknuto": "po paketima",
+      "redovi": [
+        {
+          "naziv": "Start",
+          "tekst": "1 mreža (Instagram), 8 objava, odgovaranje na komentare i poruke"
+        },
+        {
+          "naziv": "Rast",
+          "tekst": "2 mreže, 12–16 objava i upravljanje zajednicom"
+        },
+        {
+          "naziv": "Premium",
+          "tekst": "2–3 mreže, svakodnevni sadržaj i prioritetna podrška"
+        }
+      ],
+      "linkPaketi": true
+    },
+    {
+      "tip": "pitanja",
+      "id": "pitanja",
+      "naslov": "Česta",
+      "naslovIstaknuto": "pitanja",
+      "stavke": [
+        {
+          "pitanje": "Da li mi treba poseban pristup profilu?",
+          "odgovor": "Da, za objavljivanje i odgovaranje potreban je pristup profilu. Način pristupa dogovaramo na početku saradnje."
+        },
+        {
+          "pitanje": "Koje mreže vodite?",
+          "odgovor": "Start pokriva Instagram. Rast dve mreže, na primer Instagram i TikTok. Premium dve do tri mreže."
+        },
+        {
+          "pitanje": "Šta ako dobijem negativan komentar?",
+          "odgovor": "Na takve komentare se ne odgovara automatski. Način reagovanja dogovaramo sa Vama."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "sadrzaj",
+    "oglasi",
+    "saradnja"
+  ],
+  "poziv": {
+    "naslov": "Neka profil",
+    "naslovIstaknuto": "radi za Vas.",
+    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o Vašem profilu.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "vodjenje-profila"
+}

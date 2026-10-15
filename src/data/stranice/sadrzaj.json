@@ -1,0 +1,175 @@
+{
+  "seo": {
+    "naslov": "Kreiranje sadržaja · Story & Scroll Studio",
+    "opis": "Foto, video, Reels i Stories u vizuelnom identitetu Vašeg brenda. Svaka objava ima zadatak."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    "Kreiranje sadržaja"
+  ],
+  "objava": "sadrzaj",
+  "nadnaslov": "Usluge",
+  "naslov": "Kreiranje",
+  "naslovIstaknuto": "sadržaja",
+  "opis": "Foto, video i dizajn koji prate vizuelni identitet profila. Svaka objava ima zadatak, i zato izgleda i zvuči kao Vaš brend.",
+  "znaci": [
+    {
+      "ikona": "image",
+      "tekst": "Foto, video i tekst"
+    },
+    {
+      "ikona": "play",
+      "tekst": "Reels i Stories"
+    },
+    {
+      "ikona": "pen",
+      "tekst": "U Vašem vizuelnom identitetu"
+    }
+  ],
+  "link": {
+    "link": "/paketi/",
+    "tekst": "Pogledajte pakete →"
+  },
+  "istaknuto": [
+    {
+      "link": "#svrha",
+      "boja": "#C4544E",
+      "ikona": "info",
+      "naziv": "Svrha"
+    },
+    {
+      "link": "#formati",
+      "boja": "#6E1423",
+      "ikona": "grid",
+      "naziv": "Formati"
+    },
+    {
+      "link": "#identitet",
+      "boja": "#8C6A2A",
+      "ikona": "eye",
+      "naziv": "Identitet"
+    },
+    {
+      "link": "#po-paketima",
+      "boja": "#6F6A4E",
+      "ikona": "list",
+      "naziv": "Po paketima"
+    },
+    {
+      "link": "#pitanja",
+      "boja": "#2B211D",
+      "ikona": "q",
+      "naziv": "Pitanja"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "svrha",
+      "naslov": "Sadržaj",
+      "naslovIstaknuto": "sa svrhom",
+      "pasusi": [
+        "Lepa fotografija nije dovoljna ako ne govori ništa o brendu. Svaki sadržaj koji pravimo ima zadatak: da predstavi proizvod, ispriča priču ili pozove na akciju.",
+        "Zato sadržaj ne nastaje nasumično, već iz plana. Znamo šta objava treba da postigne pre nego što je napravimo."
+      ]
+    },
+    {
+      "tip": "kartice",
+      "id": "formati",
+      "naslov": "Šta",
+      "naslovIstaknuto": "pravimo",
+      "kolone": 4,
+      "stavke": [
+        {
+          "ikona": "image",
+          "naslov": "Objave",
+          "tekst": "Fotografija i tekst koji zajedno nose jednu poruku."
+        },
+        {
+          "ikona": "layers",
+          "naslov": "Karuseli",
+          "tekst": "Više slajdova za priče i savete koje ljudi čuvaju."
+        },
+        {
+          "ikona": "play",
+          "naslov": "Reels",
+          "tekst": "Kratki video za doseg i nove pratioce."
+        },
+        {
+          "ikona": "circle",
+          "naslov": "Stories",
+          "tekst": "Svakodnevni kontakt sa publikom, iza kulisa."
+        }
+      ]
+    },
+    {
+      "tip": "citat",
+      "id": "identitet",
+      "slika": "koralni",
+      "alt": "Ruka drži telefon u narandžastoj maski",
+      "nadnaslov": "Vizuelni identitet",
+      "citat": "Profil koji se",
+      "citatIstaknuto": "prepoznaje",
+      "citatKraj": "na prvi pogled.",
+      "tekst": "Iste boje, isti ton, isti stil fotografija. Kada sadržaj prati vizuelni identitet, pratilac prepozna Vaš brend i pre nego što pročita ime."
+    },
+    {
+      "tip": "nivoi",
+      "id": "po-paketima",
+      "naslov": "Sadržaj",
+      "naslovIstaknuto": "po paketima",
+      "redovi": [
+        {
+          "naziv": "Start",
+          "tekst": "Osnovno kreiranje sadržaja (foto i tekst)"
+        },
+        {
+          "naziv": "Rast",
+          "tekst": "12–16 objava mesečno, uz Reels i Stories"
+        },
+        {
+          "naziv": "Premium",
+          "tekst": "Svakodnevni sadržaj i profesionalna foto i video produkcija"
+        }
+      ],
+      "linkPaketi": true
+    },
+    {
+      "tip": "pitanja",
+      "id": "pitanja",
+      "naslov": "Česta",
+      "naslovIstaknuto": "pitanja",
+      "stavke": [
+        {
+          "pitanje": "Da li moram da imam svoje fotografije?",
+          "odgovor": "Vaše fotografije su dobrodošle. Šta tačno pripremamo mi, a šta Vi, zavisi od paketa i dogovaramo na konsultacijama."
+        },
+        {
+          "pitanje": "Da li odobravam sadržaj pre objave?",
+          "odgovor": "Način odobravanja dogovaramo na početku saradnje, tako da znate šta se objavljuje."
+        },
+        {
+          "pitanje": "Šta su Reels i Stories?",
+          "odgovor": "Reels su kratki video zapisi koje Instagram prikazuje i ljudima koji Vas još ne prate. Stories su objave koje traju 24 sata i služe za svakodnevni kontakt sa pratiocima."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "strategija",
+    "profil",
+    "paketi"
+  ],
+  "poziv": {
+    "naslov": "Neka Vaš profil",
+    "naslovIstaknuto": "izgleda kao Vi.",
+    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o sadržaju za Vaš brend.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "sadrzaj"
+}

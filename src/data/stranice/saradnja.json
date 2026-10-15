@@ -1,0 +1,136 @@
+{
+  "seo": {
+    "naslov": "Kako sarađujemo · Story & Scroll Studio",
+    "opis": "Od besplatnih konsultacija do prve objave i mesečnog izveštaja. Četiri koraka saradnje sa Story & Scroll studiom."
+  },
+  "jezicak": null,
+  "putanja": [
+    "Kako sarađujemo"
+  ],
+  "objava": "saradnja",
+  "nadnaslov": "Saradnja",
+  "naslov": "Kako",
+  "naslovIstaknuto": "sarađujemo",
+  "opis": "Od prvog razgovora do prve objave na Vašem profilu. Svaki korak dogovaramo sa Vama, bez iznenađenja.",
+  "znaci": [
+    {
+      "ikona": "gift",
+      "tekst": "Prvi razgovor je besplatan"
+    },
+    {
+      "ikona": "scissors",
+      "tekst": "Ponuda po meri"
+    },
+    {
+      "ikona": "doc",
+      "tekst": "Izveštaj svakog meseca"
+    }
+  ],
+  "link": {
+    "link": "/konsultacije/",
+    "tekst": "Zakažite prvi korak →"
+  },
+  "istaknuto": [
+    {
+      "link": "#koraci",
+      "boja": "#6E1423",
+      "ikona": "list",
+      "naziv": "Koraci"
+    },
+    {
+      "link": "#od-vas",
+      "boja": "#8C6A2A",
+      "ikona": "key",
+      "naziv": "Od Vas"
+    },
+    {
+      "link": "#pitanja",
+      "boja": "#2B211D",
+      "ikona": "q",
+      "naziv": "Pitanja"
+    }
+  ],
+  "sekcije": [
+    {
+      "tip": "vremenska",
+      "id": "koraci",
+      "naslov": "Četiri",
+      "naslovIstaknuto": "koraka",
+      "stavke": [
+        {
+          "naslov": "Besplatne konsultacije",
+          "tekst": "Kratak razgovor o Vašem brendu, ciljevima i tome šta Vam je potrebno. Popunite prijavu i javljamo se da dogovorimo termin."
+        },
+        {
+          "naslov": "Ponuda po meri",
+          "tekst": "Na osnovu razgovora predlažemo paket i prilagođavamo ga obimu i ciljevima Vašeg brenda."
+        },
+        {
+          "naslov": "Strategija i kalendar",
+          "tekst": "Pre prve objave definišemo ton, teme i kalendar objavljivanja, i dogovaramo ih sa Vama."
+        },
+        {
+          "naslov": "Objave i izveštaj",
+          "tekst": "Vodimo profil po planu, a svakog meseca dobijate izveštaj sa rezultatima i predlozima za sledeći mesec."
+        }
+      ]
+    },
+    {
+      "tip": "kartice",
+      "id": "od-vas",
+      "naslov": "Šta nam",
+      "naslovIstaknuto": "treba od Vas",
+      "kolone": 3,
+      "stavke": [
+        {
+          "ikona": "key",
+          "naslov": "Pristup profilu",
+          "tekst": "Da bismo mogli da objavljujemo i odgovaramo na poruke."
+        },
+        {
+          "ikona": "image",
+          "naslov": "Materijali",
+          "tekst": "Logo, fotografije i sve što već imate o brendu."
+        },
+        {
+          "ikona": "chat",
+          "naslov": "Povratna informacija",
+          "tekst": "Vaše mišljenje, posebno na početku, dok se uhodamo."
+        }
+      ]
+    },
+    {
+      "tip": "pitanja",
+      "id": "pitanja",
+      "naslov": "Česta",
+      "naslovIstaknuto": "pitanja",
+      "stavke": [
+        {
+          "pitanje": "Koliko traje početak saradnje?",
+          "odgovor": "To zavisi od paketa i od toga koliko materijala već imate. Okvirni rok dogovaramo na konsultacijama."
+        },
+        {
+          "pitanje": "Da li prvi razgovor nešto košta?",
+          "odgovor": "Ne. Konsultacije su besplatne."
+        },
+        {
+          "pitanje": "Mogu li da promenim paket kasnije?",
+          "odgovor": "Pitajte nas na konsultacijama. Paket se dogovara prema potrebama brenda, a potrebe se menjaju."
+        }
+      ]
+    }
+  ],
+  "jos": [
+    "konsultacije",
+    "paketi",
+    "onama"
+  ],
+  "poziv": {
+    "naslov": "Prvi korak je",
+    "naslovIstaknuto": "jedan razgovor.",
+    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o Vašem brendu.",
+    "dugme": "Zakažite besplatne konsultacije",
+    "link": "/konsultacije/"
+  },
+  "slug": "saradnja"
+}
