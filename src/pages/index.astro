@@ -6,11 +6,17 @@ import objave from '../data/objave.json';
 import n from '../data/naslovna.json';
 import { slika } from '../data/slike';
 import '../styles/home.css';
+import pf400i from '@fontsource/playfair-display/files/playfair-display-latin-400-italic.woff2?url';
+import pf400ix from '@fontsource/playfair-display/files/playfair-display-latin-ext-400-italic.woff2?url';
 
 const tiles = objave.map((o, i) => ({ ...o, r: Math.floor(i / 3), c: i % 3, s: o.slika ? slika(o.slika) : null }));
 const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: p.boja, link: p.link, dugme: p.dugme, slajdovi: p.slajdovi }));
 ---
 <Base naslov={n.seo.naslov} opis={n.seo.opis} jezicak="pocetna" preducitaj="/img/telefon-1280.webp">
+  <Fragment slot="head">
+    <link rel="preload" as="font" type="font/woff2" href={pf400i} crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href={pf400ix} crossorigin>
+  </Fragment>
   <main id="sadrzaj">
     <section class="intro" data-intro aria-label="Naslovna">
       <div class="stage">

@@ -43,12 +43,13 @@
 .tile{position:relative;display:block;width:var(--cw);height:var(--ch);text-decoration:none;color:#FBF6EF;container-type:size;border-radius:4px}
 .tile .back,.tile .front{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
 .tile .front{display:none}
-.tile .back{display:flex;flex-direction:column;justify-content:flex-end;padding:9cqw;background:#6E1423;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
+.tile .back{display:flex;flex-direction:column;justify-content:flex-end;padding:max(10px, 8cqw);background:#6E1423;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
 .tile .back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tile .back.ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top, rgba(24,16,13,.72), rgba(24,16,13,0) 58%)}
-.tile .ic{position:absolute;top:6cqw;right:6cqw;z-index:2;width:9cqw;height:9cqw}
-.tile .ttl{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:11.5cqw;line-height:1.05}
-.tile .lbl{position:relative;z-index:2;margin-top:4cqw;font-size:max(7.5px, 4.6cqw);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8C98A}
+.tile .back.ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top, rgba(24,16,13,.88) 0%, rgba(24,16,13,.55) 38%, rgba(24,16,13,0) 72%)}
+.tile .ic{position:absolute;top:max(8px, 6cqw);right:max(8px, 6cqw);z-index:2;width:max(16px, 9cqw);height:max(16px, 9cqw)}
+.tile .ttl{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;font-style:normal;font-weight:600;font-size:clamp(16px, 12cqw, 28px);line-height:1.14;letter-spacing:-.005em;overflow-wrap:break-word;hyphens:manual}
+.tile .lbl{position:relative;z-index:2;margin-top:8px;font-size:13px;font-weight:500;line-height:1.3;letter-spacing:0;color:#E8C98A}
+@media (max-width: 899px){ .tile .lbl{display:none} }
 .tile .ov{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4cqw;padding:10cqw;text-align:center;background:rgba(24,16,13,.64);opacity:0;transition:opacity .25s ease;color:#FBF6EF}
 .tile .ov b{font-size:6.4cqw;font-weight:600;letter-spacing:.06em}
 .tile .ov small{font-size:5.6cqw;line-height:1.45;color:#F1E7DA}

@@ -10,6 +10,8 @@ import '../styles/global.css';
 import site from '../data/site.json';
 import Jezicci from '../components/Jezicci.astro';
 import Podnozje from '../components/Podnozje.astro';
+import pf600 from '@fontsource/playfair-display/files/playfair-display-latin-600-normal.woff2?url';
+import pf600x from '@fontsource/playfair-display/files/playfair-display-latin-ext-600-normal.woff2?url';
 
 interface Props { naslov: string; opis: string; jezicak?: string | null; bezIndeksa?: boolean; preducitaj?: string }
 const { naslov, opis, jezicak = null, bezIndeksa = false, preducitaj } = Astro.props;
@@ -37,6 +39,8 @@ const noindex = site.bezIndeksiranja || bezIndeksa;
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="sitemap" href="/sitemap-index.xml">
+  <link rel="preload" as="font" type="font/woff2" href={pf600} crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href={pf600x} crossorigin>
   {preducitaj && <link rel="preload" as="image" href={preducitaj} fetchpriority="high">}
   <slot name="head" />
 </head>

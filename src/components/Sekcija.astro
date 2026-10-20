@@ -192,7 +192,7 @@ const img = s.slika ? slika(s.slika) : null;
 {s.tip === 'vremenska' && (
   <section class="sec" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
-    <ol class="tl" style="list-style:none;margin-left:0">
+    <ol class="tl" data-linija style="list-style:none;margin-left:0">
       {s.stavke.map((k: any, i: number) => (
         <li class="tli" style={i === s.stavke.length - 1 ? 'padding-bottom:0' : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></li>
       ))}
