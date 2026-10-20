@@ -27,11 +27,13 @@ function animacija() {
     x: 0, y: 0, w: 0, h: 0,
   }));
 
-  let W = 0, H = 0, gx = 0, gy = 0, gw = 0, gh = 0;
+  let W = 0, H = 0, gx = 0, gy = 0, gw = 0, gh = 0, ke = 1;
   let poslednji = -1;
 
+  // Kartice uvek zadržavaju svoju konačnu veličinu; tokom animacije se samo pomeraju i uvećavaju
+  // (transform), a slika unutar njih ima obrnuto uvećanje da se ne bi razvukla.
   const izmeri = () => {
-    tiles.forEach((t) => { t.el.style.transform = ''; t.el.style.width = ''; t.el.style.height = ''; });
+    tiles.forEach((t) => { t.el.style.transform = ''; });
     const s = stage.getBoundingClientRect();
     W = s.width; H = s.height;
     let minX = Infinity, minY = Infinity, maxX = 0, maxY = 0;
@@ -42,6 +44,8 @@ function animacija() {
       maxX = Math.max(maxX, t.x + t.w); maxY = Math.max(maxY, t.y + t.h);
     });
     gx = minX; gy = minY; gw = maxX - minX; gh = maxY - minY;
+    ke = Math.max(gw / W, gh / H);
+    tiles.forEach((t) => { t.fimg.style.width = W + 'px'; t.fimg.style.height = H + 'px'; });
     poslednji = -1;
     crtaj();
   };
@@ -57,18 +61,16 @@ function animacija() {
     if (Math.abs(p - poslednji) < 0.0005) return;
     poslednji = p;
     const e = ease(cl(p / 0.5));
-    const iw = lerp(W, gw, e), ih = lerp(H, gh, e);
+    // Slika (veličine ekrana) na početku izgleda tačno kao hero, a na kraju se smanji da pokrije mrežu.
+    const k = lerp(1, ke, e);
+    const ix = lerp(0, gx + (gw - W * ke) / 2, e), iy = lerp(0, gy + (gh - H * ke) * 0.12, e);
     tiles.forEach((t) => {
-      const sx = (t.c * W) / 3, sy = (t.r * H) / 3;
+      const x0 = (t.c * W) / 3, y0 = (t.r * H) / 3;
       const w = lerp(W / 3, t.w, e), h = lerp(H / 3, t.h, e);
-      const x = lerp(sx, t.x, e), y = lerp(sy, t.y, e);
-      t.el.style.width = w + 'px';
-      t.el.style.height = h + 'px';
-      t.el.style.transform = `translate3d(${x - t.x}px, ${y - t.y}px, 0)`;
-      const ox = lerp(sx, t.x - gx, e), oy = lerp(sy, t.y - gy, e);
-      t.fimg.style.width = iw + 'px';
-      t.fimg.style.height = ih + 'px';
-      t.fimg.style.transform = `translate3d(${-ox}px, ${-oy}px, 0)`;
+      const x = lerp(x0, t.x, e), y = lerp(y0, t.y, e);
+      const sx = w / t.w, sy = h / t.h;
+      t.el.style.transform = `translate3d(${x - t.x}px, ${y - t.y}px, 0) scale(${sx}, ${sy})`;
+      t.fimg.style.transform = `translate3d(${(ix - x) / sx}px, ${(iy - y) / sy}px, 0) scale(${k / sx}, ${k / sy})`;
       const f = cl((p - (0.56 + (t.r + t.c) * 0.035)) / 0.12);
       if (f < 0.5) {
         t.front.style.transform = `scaleX(${1 - f * 2})`;
@@ -78,7 +80,7 @@ function animacija() {
         t.front.style.visibility = 'hidden';
         t.back.style.transform = f >= 1 ? '' : `scaleX(${f * 2 - 1})`;
       }
-      t.el.style.borderRadius = (4 * e) + 'px';
+      t.el.classList.toggle('slozena', e >= 1);
       t.el.style.pointerEvents = p > 0.86 ? 'auto' : 'none';
       t.el.tabIndex = p > 0.86 ? 0 : -1;
     });
@@ -119,7 +121,9 @@ function animacija() {
   let tok = 0;
   let vodimo = false;
   const prekini = () => { tok++; vodimo = false; };
-  const vozi = (cilj: number, trajanje: number, posle?: () => void) => {
+  const usporiNaKraju = (k: number) => 1 - Math.pow(1 - k, 3);
+  const ubrzajIUspori = (k: number) => -(Math.cos(Math.PI * k) - 1) / 2;
+  const vozi = (cilj: number, trajanje: number, posle?: () => void, kriva = ubrzajIUspori) => {
     const moj = ++tok;
     const od = window.scrollY;
     const t0 = performance.now();
@@ -127,7 +131,7 @@ function animacija() {
     const korak = (sad: number) => {
       if (moj !== tok) return;
       const k = cl((sad - t0) / trajanje);
-      const e2 = -(Math.cos(Math.PI * k) - 1) / 2;
+      const e2 = kriva(k);
       skoci(od + (cilj - od) * e2);
       if (k < 1) requestAnimationFrame(korak);
       else { vodimo = false; posle?.(); }
@@ -160,7 +164,7 @@ function animacija() {
       const napred = smer > 0 ? p > 0.1 : p > 0.9;
       const cilj = napred ? kraj() : pocetak();
       const put = Math.abs(cilj - window.scrollY);
-      vozi(cilj, Math.min(750, 320 + put * 0.35));
+      vozi(cilj, Math.min(750, 320 + put * 0.35), undefined, usporiNaKraju);
     };
     window.addEventListener('scroll', () => {
       if (vodimo) return;
