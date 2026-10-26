@@ -25,7 +25,7 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
         <div class="herobox" data-hero>
           <span class="hero-shade" data-senka aria-hidden="true"></span>
           <header class="wrap topC">
-            <a class="markC" href="/">{site.naziv}</a>
+            <a class="markC" href="/"><img src="/img/logo/logo-vodoravni-svetli.svg" alt={site.naziv} width="223" height="36"></a>
             <a class="igC" href={site.instagram} aria-label={`Instagram: @${site.handle}`}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".9"></circle></svg><span class="ig-t">@{site.handle}</span></a>
           </header>
           <div class="h-in" data-tekst>
@@ -44,7 +44,7 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
         <div class="feedwrap">
           <aside class="prof" data-profil aria-label="Profil studija">
             <div class="prof-top">
-              <button class="avb" type="button" data-prica="0" aria-label="Otvori priču: Upoznajte studio"><span class="ring" data-prsten="0"><span class="avatar">S&amp;S<small>PO MERI</small></span></span></button>
+              <button class="avb" type="button" data-prica="0" aria-label="Otvori priču: Upoznajte studio"><span class="ring" data-prsten="0"><span class="avatar"><img src="/img/logo/instagram-profilna.svg" alt="" width="96" height="96"></span></span></button>
               <p class="handle"><a href={site.instagram}>{site.handle}</a></p>
             </div>
             <div class="stats">
@@ -107,7 +107,7 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
   <div class="sv" data-prikaz role="dialog" aria-modal="true" aria-label="Priča" hidden>
     <div class="sc" data-kartica>
       <div class="bars" data-trake></div>
-      <div class="sh"><i aria-hidden="true">S&amp;S</i><span data-ime></span><button class="sx" type="button" data-zatvori aria-label="Zatvori priču">×</button></div>
+      <div class="sh"><i aria-hidden="true"><img src="/img/logo/instagram-profilna-znak.svg" alt="" width="30" height="30"></i><span data-ime></span><button class="sx" type="button" data-zatvori aria-label="Zatvori priču">×</button></div>
       <button class="zone zl" type="button" data-nazad aria-label="Prethodni slajd"></button>
       <button class="zone zr" type="button" data-dalje aria-label="Sledeći slajd"></button>
       <p class="st"><span class="snum2" data-broj></span><span data-tekst-price></span></p>
