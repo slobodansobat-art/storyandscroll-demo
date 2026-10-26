@@ -3,23 +3,24 @@ import Base from '../layouts/Base.astro';
 import Ikona from '../components/Ikona.astro';
 import Sav from '../components/Sav.astro';
 import site from '../data/site.json';
-import objave from '../data/objave.json';
+import feed from '../data/objave.json';
 import n from '../data/naslovna.json';
 import { slika } from '../data/slike';
 import '../styles/home.css';
 import pf400i from '@fontsource/playfair-display/files/playfair-display-latin-400-italic.woff2?url';
 import pf400ix from '@fontsource/playfair-display/files/playfair-display-latin-ext-400-italic.woff2?url';
 
-const tiles = objave.map((o, i) => ({ ...o, r: Math.floor(i / 3), c: i % 3, s: o.slika ? slika(o.slika) : null }));
-const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: p.boja, link: p.link, dugme: p.dugme, slajdovi: p.slajdovi }));
+const tiles = feed.objave.map((o, i) => ({ ...o, r: Math.floor(i / 3), c: i % 3, s: o.slika ? slika(o.slika) : null }));
+const hero = slika(n.hero.slika, 1200);
+const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: p.boja, link: p.link, dugme: p.dugme, slajdovi: p.slajdovi }));
 ---
-<Base naslov={n.seo.naslov} opis={n.seo.opis} jezicak="pocetna" preducitaj="/img/telefon-1280.webp">
+<Base naslov={n.seo.naslov} opis={n.seo.opis} jezicak="pocetna" preducitaj={hero.src}>
   <Fragment slot="head">
     <link rel="preload" as="font" type="font/woff2" href={pf400i} crossorigin>
     <link rel="preload" as="font" type="font/woff2" href={pf400ix} crossorigin>
   </Fragment>
   <main id="sadrzaj">
-    <section class="intro" data-intro aria-label="Naslovna">
+    <section class="intro" data-intro aria-label="Naslovna" style={`--hero:url(${hero.src})`}>
       <div class="stage">
         <div class="herobox" data-hero>
           <span class="hero-shade" data-senka aria-hidden="true"></span>
@@ -47,7 +48,7 @@ const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: 
               <p class="handle"><a href={site.instagram}>{site.handle}</a></p>
             </div>
             <div class="stats">
-              {n.profil.brojke.map((b) => <a href={b.link} data-na-feed={b.link === '#feed' ? '' : undefined}><b>{b.broj}</b>{b.tekst}</a>)}
+              {(n.profil.brojke ?? []).map((b) => <a href={b.link} data-na-feed={b.link === '#feed' ? '' : undefined}><b>{b.broj}</b>{b.tekst}</a>)}
             </div>
             <p class="bio"><b>{n.profil.bioNaslov}</b><br>{n.profil.bio}</p>
             <div class="pbtns">
@@ -84,7 +85,7 @@ const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: 
     <section class="reels-sec" aria-labelledby="kako-radimo">
       <h2 class="h2" id="kako-radimo" style="text-align:center">{n.koraci.naslov} <em>{n.koraci.naslovIstaknuto}</em></h2>
       <div class="reels">
-        {n.koraci.stavke.map((k) => (
+        {(n.koraci.stavke ?? []).map((k) => (
           <a class="reel" href="/saradnja/" style={`background:${k.boja}`}>
             <Ikona ime="play" velicina={20} debljina={1.8} klasa="ic" />
             <span class="no">{k.broj}</span>

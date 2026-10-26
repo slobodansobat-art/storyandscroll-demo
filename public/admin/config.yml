@@ -1,0 +1,530 @@
+# Decap CMS · uređivanje sadržaja sajta Story & Scroll
+# Prijava je preko GitHub naloga (Netlify je posrednik za prijavu).
+# Svako čuvanje pravi novu verziju sajta na Netlify-ju za oko minut.
+
+backend:
+  name: github
+  repo: slobodansobat-art/storyandscroll-demo
+  branch: main
+  commit_messages:
+    create: "Sadržaj: novo · {{slug}}"
+    update: "Sadržaj: izmena · {{slug}}"
+    delete: "Sadržaj: brisanje · {{slug}}"
+    uploadMedia: "Slika: dodata · {{path}}"
+    deleteMedia: "Slika: obrisana · {{path}}"
+
+# Radi samo na računaru programera (npx decap-server); na pravom sajtu se ignoriše.
+local_backend: true
+
+locale: hr
+site_url: https://storyandscroll.netlify.app
+display_url: https://storyandscroll.netlify.app
+logo_url: /favicon.svg
+
+media_folder: public/img/izvorne
+public_folder: /img/izvorne
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  # ───────────────────────── Naslovna i feed ─────────────────────────
+  - name: pocetna
+    label: Naslovna i feed
+    editor: { preview: false }
+    files:
+      - name: naslovna
+        label: Naslovna strana
+        file: src/data/naslovna.json
+        format: json
+        fields:
+          - label: Google prikaz (SEO)
+            name: seo
+            widget: object
+            fields:
+              - { label: Naslov u pretrazi, name: naslov, widget: string, hint: "Do 60 znakova." }
+              - { label: Opis u pretrazi, name: opis, widget: text, hint: "Do 160 znakova." }
+          - label: Prvi ekran (hero)
+            name: hero
+            widget: object
+            fields:
+              - { label: Mali natpis iznad naslova, name: nadnaslov, widget: string }
+              - { label: Naslov, name: naslov, widget: string }
+              - { label: Istaknuti deo naslova (kurziv), name: naslovIstaknuto, widget: string }
+              - { label: Uvodni tekst, name: uvod, widget: text }
+              - label: Prvo dugme
+                name: dugme1
+                widget: object
+                fields:
+                  - { label: Tekst, name: tekst, widget: string }
+                  - { label: Link, name: link, widget: string, hint: "#feed vodi na feed ispod." }
+              - label: Drugo dugme
+                name: dugme2
+                widget: object
+                fields:
+                  - { label: Tekst, name: tekst, widget: string }
+                  - { label: Link, name: link, widget: string }
+              - { label: Fotografija u pozadini, name: slika, widget: image, hint: "Uspravna ili široka fotografija, najmanje 1600 px. Ista slika se raspada u feed pri skrolu." }
+          - label: Profil iznad feeda
+            name: profil
+            widget: object
+            fields:
+              - label: Brojke
+                name: brojke
+                widget: list
+                summary: "{{fields.broj}} {{fields.tekst}}"
+                fields:
+                  - { label: Broj, name: broj, widget: string }
+                  - { label: Tekst ispod broja, name: tekst, widget: string }
+                  - { label: Link, name: link, widget: string }
+              - { label: Naslov opisa profila, name: bioNaslov, widget: string }
+              - { label: Opis profila, name: bio, widget: text }
+          - label: Istaknute priče (krugovi)
+            name: price
+            widget: list
+            summary: "{{fields.naziv}}"
+            hint: "Prva priča je krug sa logom; ostale su krugovi ispod feeda."
+            fields:
+              - { label: Naziv, name: naziv, widget: string }
+              - { label: Kratki natpis u krugu, name: skraceno, widget: string }
+              - label: Boja kruga
+                name: boja
+                widget: select
+                options: &boje
+                  - { label: "Bordo", value: "#6E1423" }
+                  - { label: "Tamna bordo", value: "#4F0E19" }
+                  - { label: "Tamno braon", value: "#2B211D" }
+                  - { label: "Maslinasta", value: "#6F6A4E" }
+                  - { label: "Zlatna", value: "#7A5C22" }
+                  - { label: "Svetlija zlatna", value: "#8C6A2A" }
+                  - { label: "Koralna", value: "#B04640" }
+                  - { label: "Svetlija koralna", value: "#C4544E" }
+                  - { label: "Svetlo roze", value: "#F4E3E6" }
+              - { label: Link dugmeta, name: link, widget: string }
+              - { label: Tekst dugmeta, name: dugme, widget: string }
+              - label: Slajdovi
+                name: slajdovi
+                widget: list
+                field: { label: Tekst slajda, name: tekst, widget: text }
+          - label: Kako radimo
+            name: koraci
+            widget: object
+            fields:
+              - { label: Naslov, name: naslov, widget: string }
+              - { label: Istaknuti deo naslova, name: naslovIstaknuto, widget: string }
+              - label: Koraci
+                name: stavke
+                widget: list
+                summary: "{{fields.broj}} · {{fields.naslov}}"
+                fields:
+                  - { label: Broj, name: broj, widget: string }
+                  - { label: Naslov, name: naslov, widget: string }
+                  - { label: Tekst, name: tekst, widget: text }
+                  - { label: Boja kartice, name: boja, widget: select, options: *boje }
+          - label: Poziv na dnu
+            name: poziv
+            widget: object
+            fields: &poziv
+              - { label: Naslov, name: naslov, widget: string }
+              - { label: Istaknuti deo naslova, name: naslovIstaknuto, widget: string }
+              - { label: Tekst, name: tekst, widget: text }
+              - { label: Tekst dugmeta, name: dugme, widget: string }
+              - { label: Link dugmeta, name: link, widget: string }
+
+      - name: feed
+        label: Feed (9 kartica)
+        file: src/data/objave.json
+        format: json
+        fields:
+          - label: Kartice
+            name: objave
+            widget: list
+            allow_add: false
+            summary: "{{fields.naslov}} · {{fields.oznaka}}"
+            hint: "Redosled kartica je redosled u feedu (3 u redu). Kartice se mogu prevlačiti."
+            fields:
+              - { label: Šifra kartice, name: kljuc, widget: string, hint: "Ne menjati. Povezuje karticu sa njenom stranicom." }
+              - { label: Link, name: link, widget: string, hint: "Ne menjati, osim ako se menja adresa stranice." }
+              - { label: Naslov na kartici, name: naslov, widget: string }
+              - { label: Mali natpis, name: oznaka, widget: string }
+              - { label: Opis (vidi se kad se mišem pređe preko kartice), name: opis, widget: text }
+              - { label: Boja kartice, name: boja, widget: select, options: *boje }
+              - { label: Fotografija, name: slika, widget: image, required: false, hint: "Bez fotografije kartica ostaje u boji. Najbolje uspravna (4:5), najmanje 1600 px." }
+              - { label: Opis fotografije (za slepe i Google), name: alt, widget: string, required: false, hint: "Kratko opišite šta je na fotografiji." }
+              - { label: Ikonica karusela u uglu, name: karusel, widget: boolean, required: false, default: false }
+              - { label: Tamna slova (za svetlu karticu), name: tamnoSlovo, widget: boolean, required: false, default: false }
+              - label: Boja malog natpisa
+                name: oznakaBoja
+                widget: select
+                required: false
+                options:
+                  - { label: "Krem", value: "#FBF6EF" }
+                  - { label: "Svetlo roze", value: "#F4E3E6" }
+              - label: Crtež šavom
+                name: crtez
+                widget: select
+                required: false
+                hint: "Samo za kartice bez fotografije."
+                options:
+                  - { label: "Meta sa iglom", value: "meta" }
+                  - { label: "Grafikon koji raste", value: "grafikon" }
+                  - { label: "Dva oblačića", value: "oblacici" }
+              - label: Boja šava
+                name: crtezBoja
+                widget: select
+                required: false
+                options:
+                  - { label: "Zlatna (za tamne kartice)", value: "#E8C98A" }
+                  - { label: "Krem (za koralnu karticu)", value: "#FBF6EF" }
+
+  # ───────────────────────── Stranice ─────────────────────────
+  - name: stranice
+    label: Stranice
+    label_singular: Stranica
+    folder: src/data/stranice
+    extension: json
+    format: json
+    create: false
+    delete: false
+    identifier_field: naslov
+    summary: "{{fields.naslov}} {{fields.naslovIstaknuto}}"
+    editor: { preview: false }
+    fields:
+      - { label: Adresa stranice, name: slug, widget: string, hint: "Ne menjati. Deo adrese posle storyandscroll.netlify.app/" }
+      - label: Google prikaz (SEO)
+        name: seo
+        widget: object
+        fields:
+          - { label: Naslov u pretrazi, name: naslov, widget: string, hint: "Do 60 znakova." }
+          - { label: Opis u pretrazi, name: opis, widget: text, hint: "Do 160 znakova." }
+      - label: Aktivni jezičak sa strane
+        name: jezicak
+        widget: select
+        required: false
+        options:
+          - { label: "Početna", value: "pocetna" }
+          - { label: "Usluge", value: "usluge" }
+          - { label: "Paketi", value: "paketi" }
+          - { label: "Konsultacije", value: "konsultacije" }
+      - label: Putanja na vrhu
+        name: putanja
+        widget: list
+        summary: "{{fields.naziv}}"
+        hint: "Poslednji deo je trenutna stranica i nema link."
+        fields:
+          - { label: Naziv, name: naziv, widget: string }
+          - { label: Link, name: link, widget: string, required: false }
+      - label: Kartica iz feeda na vrhu stranice
+        name: objava
+        widget: relation
+        collection: pocetna
+        file: feed
+        search_fields: ["objave.*.naslov", "objave.*.oznaka"]
+        value_field: "objave.*.kljuc"
+        display_fields: ["objave.*.oznaka"]
+      - { label: Mali natpis iznad naslova, name: nadnaslov, widget: string }
+      - { label: Naslov, name: naslov, widget: string }
+      - { label: Istaknuti deo naslova (kurziv), name: naslovIstaknuto, widget: string }
+      - { label: Uvodni tekst, name: opis, widget: text }
+      - label: Znaci poverenja (ikonica i kratak tekst)
+        name: znaci
+        widget: list
+        summary: "{{fields.tekst}}"
+        fields:
+          - label: Ikonica
+            name: ikona
+            widget: select
+            options: &ikone
+              - { label: "Kvačica", value: "check" }
+              - { label: "Kalendar", value: "cal" }
+              - { label: "Sijalica", value: "bulb" }
+              - { label: "Poruka", value: "chat" }
+              - { label: "Meta", value: "target" }
+              - { label: "Poklon", value: "gift" }
+              - { label: "Makaze", value: "scissors" }
+              - { label: "Sat", value: "clock" }
+              - { label: "Ljudi", value: "users" }
+              - { label: "Oko", value: "eye" }
+              - { label: "Dokument", value: "doc" }
+              - { label: "Upitnik", value: "q" }
+              - { label: "Info", value: "info" }
+              - { label: "Spisak", value: "list" }
+              - { label: "Mreža", value: "grid" }
+              - { label: "Kamera", value: "cam" }
+              - { label: "Plej", value: "play" }
+              - { label: "Slojevi", value: "layers" }
+              - { label: "Krug", value: "circle" }
+              - { label: "Slanje", value: "send" }
+              - { label: "Srce", value: "heart" }
+              - { label: "Grafikon", value: "bars" }
+              - { label: "Novčanik", value: "wallet" }
+              - { label: "Olovka", value: "pen" }
+              - { label: "Ključ", value: "key" }
+              - { label: "Slika", value: "image" }
+          - { label: Tekst, name: tekst, widget: string }
+      - label: Link ispod uvoda
+        name: link
+        widget: object
+        required: false
+        fields: &link
+          - { label: Tekst, name: tekst, widget: string, required: false }
+          - { label: Link, name: link, widget: string, required: false, hint: "Prazno = link se ne prikazuje." }
+      - label: Krugovi „Na ovoj stranici”
+        name: istaknuto
+        widget: list
+        summary: "{{fields.naziv}}"
+        fields:
+          - { label: Naziv, name: naziv, widget: string }
+          - { label: "Link (npr. #pitanja)", name: link, widget: string }
+          - { label: Boja, name: boja, widget: select, options: *boje }
+          - { label: Ikonica, name: ikona, widget: select, options: *ikone }
+      - label: Sekcije stranice
+        name: sekcije
+        widget: list
+        typeKey: tip
+        summary: "{{fields.naslov}} {{fields.naslovIstaknuto}}"
+        hint: "Sekcije se mogu prevlačiti, dodavati i brisati."
+        types:
+          - label: Tekst
+            name: tekst
+            widget: object
+            fields:
+              - &id { label: Oznaka sekcije (za krugove na vrhu), name: id, widget: string, hint: "Mala slova bez razmaka, npr. sta-je." }
+              - &naslov { label: Naslov, name: naslov, widget: string }
+              - &istaknuto { label: Istaknuti deo naslova, name: naslovIstaknuto, widget: string, required: false }
+              - label: Pasusi
+                name: pasusi
+                widget: list
+                field: { label: Pasus, name: pasus, widget: text }
+          - label: Kartice sa ikonicama
+            name: kartice
+            widget: object
+            fields:
+              - *id
+              - { label: Naslov, name: naslov, widget: string, required: false }
+              - *istaknuto
+              - { label: Broj kolona, name: kolone, widget: select, options: [{ label: "Dve", value: 2 }, { label: "Tri", value: 3 }] }
+              - label: Kartice
+                name: stavke
+                widget: list
+                summary: "{{fields.naslov}}"
+                fields:
+                  - { label: Ikonica, name: ikona, widget: select, options: *ikone }
+                  - { label: Naslov, name: naslov, widget: string }
+                  - { label: Tekst, name: tekst, widget: text }
+          - label: Citat sa fotografijom
+            name: citat
+            widget: object
+            fields:
+              - *id
+              - { label: Fotografija, name: slika, widget: image }
+              - { label: Opis fotografije (za slepe i Google), name: alt, widget: string }
+              - { label: Mali natpis, name: nadnaslov, widget: string }
+              - { label: Citat · početak, name: citat, widget: string }
+              - { label: Citat · istaknuti deo, name: citatIstaknuto, widget: string, required: false }
+              - { label: Citat · kraj, name: citatKraj, widget: string, required: false }
+              - { label: Tekst ispod, name: tekst, widget: text }
+              - { label: Link, name: link, widget: object, required: false, fields: *link }
+          - label: Nivoi (spisak sa nazivima)
+            name: nivoi
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - &redovi
+                label: Redovi
+                name: redovi
+                widget: list
+                summary: "{{fields.naziv}}"
+                fields:
+                  - { label: Naziv, name: naziv, widget: string }
+                  - { label: Tekst, name: tekst, widget: text }
+              - { label: Link „Uporedite pakete”, name: linkPaketi, widget: boolean, required: false, default: false }
+          - label: Karusel
+            name: karusel
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - label: Slajdovi
+                name: slajdovi
+                widget: list
+                summary: "{{fields.naslov}}"
+                fields:
+                  - { label: Naslov, name: naslov, widget: string }
+                  - { label: Tekst, name: tekst, widget: text }
+                  - { label: Boja, name: boja, widget: select, options: *boje }
+                  - { label: Ikonica, name: ikona, widget: select, options: *ikone }
+          - label: Kalendar objava
+            name: kalendar
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - &tekst { label: Tekst, name: tekst, widget: text }
+              - *redovi
+          - label: Razgovor (ilustracija)
+            name: razgovor
+            widget: object
+            fields: [*id, *naslov, *istaknuto, *tekst]
+          - label: Napomene
+            name: napomena
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - label: Napomene
+                name: napomene
+                widget: list
+                hint: "Reč između dve zvezdice, **ovako**, biće podebljana."
+                field: { label: Napomena, name: napomena, widget: text }
+              - { label: Tekst ispod, name: tekst, widget: text, required: false }
+              - { label: Link, name: link, widget: object, required: false, fields: *link }
+          - label: Izveštaj
+            name: izvestaj
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - *tekst
+              - *redovi
+              - label: Kartica izveštaja
+                name: kartica
+                widget: object
+                fields:
+                  - { label: Mala oznaka, name: oznaka, widget: string }
+                  - { label: Naslov, name: naslov, widget: string }
+                  - label: Stavke
+                    name: stavke
+                    widget: list
+                    field: { label: Stavka, name: stavka, widget: string }
+          - label: Koraci
+            name: koraci
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - &stavkeNT
+                label: Stavke
+                name: stavke
+                widget: list
+                summary: "{{fields.naslov}}"
+                fields:
+                  - { label: Naslov, name: naslov, widget: string }
+                  - { label: Tekst, name: tekst, widget: text }
+          - label: Vremenska linija
+            name: vremenska
+            widget: object
+            fields: [*id, *naslov, *istaknuto, *stavkeNT]
+          - label: Česta pitanja
+            name: pitanja
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - label: Pitanja
+                name: stavke
+                widget: list
+                summary: "{{fields.pitanje}}"
+                fields:
+                  - { label: Pitanje, name: pitanje, widget: string }
+                  - { label: Odgovor, name: odgovor, widget: text }
+          - label: Cene paketa
+            name: cene
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - label: Paketi
+                name: paketi
+                widget: list
+                summary: "{{fields.naziv}} · {{fields.cena}}"
+                fields:
+                  - { label: Naziv, name: naziv, widget: string }
+                  - { label: Cena, name: cena, widget: string, hint: "Npr. 250 €" }
+                  - { label: Period, name: period, widget: string, hint: "Npr. / mesečno" }
+                  - { label: Opis, name: opis, widget: text }
+                  - label: Šta je uključeno
+                    name: stavke
+                    widget: list
+                    field: { label: Stavka, name: stavka, widget: string }
+                  - { label: Istaknut paket, name: istaknut, widget: boolean, required: false, default: false }
+                  - { label: Oznaka na istaknutom paketu, name: oznaka, widget: string, required: false }
+          - label: Poređenje paketa (tabela)
+            name: poredjenje
+            widget: object
+            fields:
+              - *id
+              - *naslov
+              - *istaknuto
+              - label: Kolone (nazivi paketa)
+                name: kolone
+                widget: list
+                field: { label: Kolona, name: kolona, widget: string }
+              - label: Redovi
+                name: redovi
+                widget: list
+                summary: "{{fields.naziv}}"
+                hint: "U ćeliji napišite da (kvačica), ne (crtica) ili bilo koji tekst."
+                fields:
+                  - { label: Šta dobijate, name: naziv, widget: string }
+                  - label: Vrednosti (redom po kolonama)
+                    name: vrednosti
+                    widget: list
+                    field: { label: Vrednost, name: vrednost, widget: string }
+          - label: Obrazac za konsultacije
+            name: obrazac
+            widget: object
+            fields: [*id, *naslov, *istaknuto, *tekst]
+      - label: Još objava (kartice na dnu)
+        name: jos
+        widget: relation
+        collection: pocetna
+        file: feed
+        multiple: true
+        min: 3
+        max: 3
+        search_fields: ["objave.*.naslov", "objave.*.oznaka"]
+        value_field: "objave.*.kljuc"
+        display_fields: ["objave.*.oznaka"]
+      - label: Poziv na dnu
+        name: poziv
+        widget: object
+        fields: *poziv
+
+  # ───────────────────────── Podaci o studiju ─────────────────────────
+  - name: podesavanja
+    label: Podaci o studiju
+    editor: { preview: false }
+    files:
+      - name: sajt
+        label: Opšti podaci
+        file: src/data/site.json
+        format: json
+        fields:
+          - { label: Naziv studija, name: naziv, widget: string }
+          - { label: Slogan (u podnožju), name: slogan, widget: string }
+          - { label: Instagram ime (bez @), name: handle, widget: string }
+          - { label: Link ka Instagram profilu, name: instagram, widget: string }
+          - { label: Link za poruku na Instagramu, name: poruka, widget: string }
+          - { label: Link ka politici privatnosti, name: privatnost, widget: string }
+          - { label: Link ka uslovima korišćenja, name: uslovi, widget: string }
+          - { label: Sakrij sajt od Google-a, name: bezIndeksiranja, widget: boolean, hint: "Uključeno dok je ovo demo." }
+          - label: Jezičci sa strane
+            name: jezicci
+            widget: list
+            allow_add: false
+            summary: "{{fields.naziv}}"
+            fields:
+              - { label: Šifra, name: kljuc, widget: string, hint: "Ne menjati." }
+              - { label: Naziv, name: naziv, widget: string }
+              - { label: Link, name: link, widget: string }

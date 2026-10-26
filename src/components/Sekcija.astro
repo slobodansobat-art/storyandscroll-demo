@@ -5,19 +5,22 @@ import { slika } from '../data/slike';
 const { s } = Astro.props;
 const naslovHtml = s.naslov || s.naslovIstaknuto ? `${s.naslov ?? ''} <em>${s.naslovIstaknuto ?? ''}</em>` : '';
 const img = s.slika ? slika(s.slika) : null;
+const lista = (x: any) => (Array.isArray(x) ? x : []);
+// Napomene: običan tekst, a **ovako** postaje podebljano.
+const podebljano = (t: string) => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 ---
 {s.tip === 'tekst' && (
   <section class="sec two" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
-    <div class="prose">{s.pasusi.map((p: string) => <p>{p}</p>)}</div>
+    <div class="prose">{lista(s.pasusi).map((p: string) => <p>{p}</p>)}</div>
   </section>
 )}
 
 {s.tip === 'kartice' && (
   <section class="sec" id={s.id}>
     {naslovHtml && <h2 class="h2" set:html={naslovHtml}></h2>}
-    <div class={s.kolone === 3 ? 'boxes c3' : 'boxes'} style={naslovHtml ? undefined : 'margin-top:0'}>
-      {s.stavke.map((k: any) => (
+    <div class={Number(s.kolone) === 3 ? 'boxes c3' : 'boxes'} style={naslovHtml ? undefined : 'margin-top:0'}>
+      {lista(s.stavke).map((k: any) => (
         <div class="box"><span class="bi"><Ikona ime={k.ikona} velicina={24} /></span><h3>{k.naslov}</h3><p>{k.tekst}</p></div>
       ))}
     </div>
@@ -26,12 +29,12 @@ const img = s.slika ? slika(s.slika) : null;
 
 {s.tip === 'citat' && (
   <section class="sec two" id={s.id} style="align-items:center">
-    <div class="photo" style="background:#6F6A4E"><img src={img!.src} srcset={img!.srcset} sizes="(max-width: 900px) 92vw, 440px" alt={s.alt} loading="lazy" decoding="async" width="440" height="550"></div>
+    <div class="photo" style="background:#6F6A4E">{img && <img src={img.src} srcset={img.srcset} sizes="(max-width: 900px) 92vw, 440px" alt={s.alt ?? ''} loading="lazy" decoding="async" width="440" height="550">}</div>
     <div>
       <p class="eyebrow">{s.nadnaslov}</p>
       <p class="quote">{s.citat} <em>{s.citatIstaknuto}</em> {s.citatKraj}</p>
       <p class="caption">{s.tekst}</p>
-      {s.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+      {s.link?.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
     </div>
   </section>
 )}
@@ -40,7 +43,7 @@ const img = s.slika ? slika(s.slika) : null;
   <section class="sec two" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div>
-      <div class="tiers">{s.redovi.map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
+      <div class="tiers">{lista(s.redovi).map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
       {s.linkPaketi && <p style="margin: 18px 0 0; font-size: 14px"><a href="/paketi/">Uporedite pakete →</a></p>}
     </div>
   </section>
@@ -51,10 +54,10 @@ const img = s.slika ? slika(s.slika) : null;
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div class="car" data-karusel>
       <div class="track" aria-live="polite">
-        {s.slajdovi.map((k: any, i: number) => (
-          <article class="slide" style={`background:${k.boja}`} aria-label={`${i + 1} od ${s.slajdovi.length}`}>
+        {lista(s.slajdovi).map((k: any, i: number) => (
+          <article class="slide" style={`background:${k.boja}`} aria-label={`${i + 1} od ${lista(s.slajdovi).length}`}>
             <div>
-              <p class="snum">{i + 1} / {s.slajdovi.length}</p>
+              <p class="snum">{i + 1} / {lista(s.slajdovi).length}</p>
               <h3 class="stl">{k.naslov}</h3>
               <p class="stx">{k.tekst}</p>
             </div>
@@ -64,7 +67,7 @@ const img = s.slika ? slika(s.slika) : null;
       </div>
       <div class="carctl">
         <div class="dots">
-          {s.slajdovi.map((_k: any, i: number) => <button class={i === 0 ? 'dot on' : 'dot'} type="button" data-idi={i} aria-label={`Slajd ${i + 1}`}></button>)}
+          {lista(s.slajdovi).map((_k: any, i: number) => <button class={i === 0 ? 'dot on' : 'dot'} type="button" data-idi={i} aria-label={`Slajd ${i + 1}`}></button>)}
         </div>
         <div><button class="arr" type="button" data-pret aria-label="Prethodni slajd">‹</button><button class="arr" type="button" data-sled aria-label="Sledeći slajd">›</button></div>
       </div>
@@ -77,7 +80,7 @@ const img = s.slika ? slika(s.slika) : null;
     <div>
       <h2 class="h2" set:html={naslovHtml}></h2>
       <p class="caption" style="font-size: 17px">{s.tekst}</p>
-      <div class="tiers">{s.redovi.map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
+      <div class="tiers">{lista(s.redovi).map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
       <p style="margin: 18px 0 0; font-size: 14px"><a href="/paketi/">Uporedite pakete →</a></p>
     </div>
     <div class="cal">
@@ -111,9 +114,9 @@ const img = s.slika ? slika(s.slika) : null;
   <section class="sec two" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div>
-      {s.napomene.map((n: string, i: number) => <div class="note" style={i === 0 ? 'margin-top:0' : undefined} set:html={n}></div>)}
+      {lista(s.napomene).map((n: string, i: number) => <div class="note" style={i === 0 ? 'margin-top:0' : undefined} set:html={podebljano(n)}></div>)}
       {s.tekst && <p class="caption" style="font-size: 17px">{s.tekst}</p>}
-      {s.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+      {s.link?.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
     </div>
   </section>
 )}
@@ -123,13 +126,13 @@ const img = s.slika ? slika(s.slika) : null;
     <div>
       <h2 class="h2" set:html={naslovHtml}></h2>
       <p class="caption" style="font-size: 17px">{s.tekst}</p>
-      <div class="tiers">{s.redovi.map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
+      <div class="tiers">{lista(s.redovi).map((r: any) => <div class="tier"><b>{r.naziv}</b><span>{r.tekst}</span></div>)}</div>
       <p style="margin: 18px 0 0; font-size: 14px"><a href="/paketi/">Uporedite pakete →</a></p>
     </div>
     <div class="report">
-      <span class="rep-tag">{s.kartica.oznaka}</span>
-      <p class="rep-title">{s.kartica.naslov}</p>
-      <div class="rep"><ul>{s.kartica.stavke.map((x: string) => <li>{x}</li>)}</ul></div>
+      <span class="rep-tag">{s.kartica?.oznaka}</span>
+      <p class="rep-title">{s.kartica?.naslov}</p>
+      <div class="rep"><ul>{lista(s.kartica?.stavke).map((x: string) => <li>{x}</li>)}</ul></div>
     </div>
   </section>
 )}
@@ -138,7 +141,7 @@ const img = s.slika ? slika(s.slika) : null;
   <section class="sec" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div class="steps">
-      {s.stavke.map((k: any, i: number) => <div class="step"><span class="n">{i + 1}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></div>)}
+      {lista(s.stavke).map((k: any, i: number) => <div class="step"><span class="n">{i + 1}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></div>)}
     </div>
   </section>
 )}
@@ -147,7 +150,7 @@ const img = s.slika ? slika(s.slika) : null;
   <section class="sec" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div class="faq">
-      {s.stavke.map((k: any, i: number) => <details open={i === 0}><summary>{k.pitanje}</summary><p>{k.odgovor}</p></details>)}
+      {lista(s.stavke).map((k: any, i: number) => <details open={i === 0}><summary>{k.pitanje}</summary><p>{k.odgovor}</p></details>)}
     </div>
   </section>
 )}
@@ -156,13 +159,13 @@ const img = s.slika ? slika(s.slika) : null;
   <section class="sec" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div class="prices">
-      {s.paketi.map((p: any) => (
+      {lista(s.paketi).map((p: any) => (
         <article class={p.istaknut ? 'pc hi' : 'pc'}>
           {p.oznaka && <span class="badge">{p.oznaka}</span>}
           <h3 class="pn">{p.naziv}</h3>
           <p class="pr">{p.cena}<small>{p.period}</small></p>
           <p class="pd">{p.opis}</p>
-          <ul>{p.stavke.map((x: string) => <li>{x}</li>)}</ul>
+          <ul>{lista(p.stavke).map((x: string) => <li>{x}</li>)}</ul>
           <a class={p.istaknut ? 'btn btn-c' : 'btn btn-p'} href={`/konsultacije/?paket=${encodeURIComponent(p.naziv)}#prijava`}>Izaberite {p.naziv}</a>
         </article>
       ))}
@@ -175,12 +178,12 @@ const img = s.slika ? slika(s.slika) : null;
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div style="overflow-x:auto">
       <table class="cmp">
-        <thead><tr><th scope="col">Šta dobijate</th>{s.kolone.map((k: string) => <th scope="col">{k}</th>)}</tr></thead>
+        <thead><tr><th scope="col">Šta dobijate</th>{lista(s.kolone).map((k: string) => <th scope="col">{k}</th>)}</tr></thead>
         <tbody>
-          {s.redovi.map((r: string[]) => (
+          {lista(s.redovi).map((r: any) => (
             <tr>
-              <th scope="row" style="text-align:left;font:500 15px/1.4 'Poppins',sans-serif;border-bottom:1px solid #E1D2C0;padding:15px 12px">{r[0]}</th>
-              {r.slice(1).map((v) => <td>{v === 'da' ? <><span class="yes" aria-hidden="true"></span><span class="sr">Da</span></> : v === 'ne' ? <><span class="no" aria-hidden="true">—</span><span class="sr">Ne</span></> : v}</td>)}
+              <th scope="row" style="text-align:left;font:500 15px/1.4 'Poppins',sans-serif;border-bottom:1px solid #E1D2C0;padding:15px 12px">{r.naziv}</th>
+              {lista(r.vrednosti).map((v: string) => <td>{v === 'da' ? <><span class="yes" aria-hidden="true"></span><span class="sr">Da</span></> : v === 'ne' ? <><span class="no" aria-hidden="true">—</span><span class="sr">Ne</span></> : v}</td>)}
             </tr>
           ))}
         </tbody>
@@ -193,8 +196,8 @@ const img = s.slika ? slika(s.slika) : null;
   <section class="sec" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <ol class="tl" data-linija style="list-style:none;margin-left:0">
-      {s.stavke.map((k: any, i: number) => (
-        <li class="tli" style={i === s.stavke.length - 1 ? 'padding-bottom:0' : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></li>
+      {lista(s.stavke).map((k: any, i: number) => (
+        <li class="tli" style={i === lista(s.stavke).length - 1 ? 'padding-bottom:0' : undefined}><span class="n">{String(i + 1).padStart(2, '0')}</span><h3>{k.naslov}</h3><p>{k.tekst}</p></li>
       ))}
     </ol>
   </section>

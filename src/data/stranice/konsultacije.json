@@ -5,7 +5,10 @@
   },
   "jezicak": "konsultacije",
   "putanja": [
-    "Konsultacije"
+    {
+      "naziv": "Konsultacije",
+      "link": ""
+    }
   ],
   "objava": "konsultacije",
   "nadnaslov": "Konsultacije",

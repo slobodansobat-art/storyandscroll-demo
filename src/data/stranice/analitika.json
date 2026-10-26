@@ -9,7 +9,10 @@
       "naziv": "Usluge",
       "link": "/#feed"
     },
-    "Analitika i izveštavanje"
+    {
+      "naziv": "Analitika i izveštavanje",
+      "link": ""
+    }
   ],
   "objava": "analitika",
   "nadnaslov": "Usluge",

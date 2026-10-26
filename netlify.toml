@@ -6,7 +6,7 @@
   NODE_VERSION = "22"
 
 [[headers]]
-  for = "/img/*"
+  for = "/img/v/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

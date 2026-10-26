@@ -5,7 +5,10 @@
   },
   "jezicak": null,
   "putanja": [
-    "Kako sarađujemo"
+    {
+      "naziv": "Kako sarađujemo",
+      "link": ""
+    }
   ],
   "objava": "saradnja",
   "nadnaslov": "Saradnja",

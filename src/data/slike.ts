@@ -1,12 +1,13 @@
-const velicine: Record<string, number[]> = {
-  telefon: [480, 800, 1280, 1600],
-  ruza: [480, 800, 1200],
-  koralni: [362],
-  makaze: [540, 900, 1350],
-};
-export function slika(kljuc: string) {
-  const v = velicine[kljuc] ?? [];
-  const src = `/img/${kljuc}-${v[Math.min(1, v.length - 1)]}.webp`;
-  const srcset = v.map((w) => `/img/${kljuc}-${w}.webp ${w}w`).join(', ');
-  return { src, srcset };
+import meta from './slike-meta.json';
+
+type Meta = Record<string, { w: number; h: number; v: [number, string][] }>;
+const m = meta as Meta;
+
+// Vraća sve što treba za <img>: srednju verziju kao src, sve verzije za srcset i dimenzije.
+// `zeljena` je širina koja se koristi kao src (podrazumevano oko 800 px).
+export function slika(putanja: string, zeljena = 800) {
+  const p = m[putanja];
+  if (!p || !p.v.length) return { src: putanja, srcset: undefined as string | undefined, w: undefined as number | undefined, h: undefined as number | undefined };
+  const izabrana = p.v.find(([s]) => s >= zeljena) ?? p.v[p.v.length - 1];
+  return { src: izabrana[1], srcset: p.v.map(([s, u]) => `${u} ${s}w`).join(', '), w: p.w, h: p.h };
 }

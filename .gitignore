@@ -3,3 +3,5 @@ dist/
 .astro/
 .netlify/
 .DS_Store
+public/img/v/
+src/data/slike-meta.json

@@ -9,7 +9,10 @@
       "naziv": "Usluge",
       "link": "/#feed"
     },
-    "Vođenje profila"
+    {
+      "naziv": "Vođenje profila",
+      "link": ""
+    }
   ],
   "objava": "profil",
   "nadnaslov": "Usluge",

@@ -9,7 +9,10 @@
       "naziv": "Usluge",
       "link": "/#feed"
     },
-    "Zakup oglasa"
+    {
+      "naziv": "Zakup oglasa",
+      "link": ""
+    }
   ],
   "objava": "oglasi",
   "nadnaslov": "Usluge",
@@ -106,7 +109,7 @@
       "naslov": "Budžet",
       "naslovIstaknuto": "za oglase",
       "napomene": [
-        "<b>Važno:</b> cene paketa ne uključuju budžet za plaćeno oglašavanje (Meta i TikTok Ads). Taj budžet plaćate posebno, direktno platformi."
+        "**Važno:** cene paketa ne uključuju budžet za plaćeno oglašavanje (Meta i TikTok Ads). Taj budžet plaćate posebno, direktno platformi."
       ],
       "tekst": "Vođenje oglasa je deo paketa Premium. Visinu budžeta dogovaramo prema cilju kampanje i publici.",
       "link": {

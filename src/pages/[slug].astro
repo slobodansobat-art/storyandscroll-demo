@@ -6,7 +6,7 @@ import Sekcija from '../components/Sekcija.astro';
 import Ikona from '../components/Ikona.astro';
 import Sav from '../components/Sav.astro';
 import site from '../data/site.json';
-import objave from '../data/objave.json';
+import feed from '../data/objave.json';
 import { slika } from '../data/slike';
 
 export function getStaticPaths() {
@@ -14,7 +14,7 @@ export function getStaticPaths() {
   return Object.values(fajlovi).map((m: any) => ({ params: { slug: m.default.slug }, props: { s: m.default } }));
 }
 const { s } = Astro.props;
-const o = objave.find((x) => x.kljuc === s.objava)!;
+const o = feed.objave.find((x) => x.kljuc === s.objava) ?? feed.objave[0];
 const hs = o.slika ? slika(o.slika) : null;
 ---
 <Base naslov={s.seo.naslov} opis={s.seo.opis} jezicak={s.jezicak}>
@@ -22,8 +22,8 @@ const hs = o.slika ? slika(o.slika) : null;
   <main class="wrap" id="sadrzaj">
     <nav class="crumb" aria-label="Putanja">
       <a href="/">← Nazad na feed</a>
-      {s.putanja.map((p: any) => typeof p === 'string'
-        ? <><span aria-hidden="true">/</span><span aria-current="page">{p}</span></>
+      {(s.putanja ?? []).map((p: any) => !p.link
+        ? <><span aria-hidden="true">/</span><span aria-current="page">{p.naziv}</span></>
         : <><span aria-hidden="true">/</span><a href={p.link}>{p.naziv}</a></>)}
     </nav>
 
@@ -40,21 +40,21 @@ const hs = o.slika ? slika(o.slika) : null;
         <div class="stitch" aria-hidden="true"><svg class="needle" width="44" height="12" viewBox="0 0 44 12"><path d="M1 6 L35 4.8 L43 6 L35 7.2 Z" fill="#A9A39B"></path><ellipse cx="7" cy="6" rx="3.2" ry=".8" fill="#FBF6EF"></ellipse></svg></div>
         <p class="caption"><a href={site.instagram} style="color:#2B211D;font-weight:600;margin-right:6px;text-decoration:none">{site.handle}</a>{s.opis}</p>
         <ul class="trust" style="list-style:none;padding:0;margin-bottom:0">
-          {s.znaci.map((z: any) => <li class="tb"><Ikona ime={z.ikona} velicina={36} debljina={1.8} /> {z.tekst}</li>)}
+          {(s.znaci ?? []).map((z: any) => <li class="tb"><Ikona ime={z.ikona} velicina={36} debljina={1.8} /> {z.tekst}</li>)}
         </ul>
-        {s.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+        {s.link?.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
       </div>
     </section>
 
     <nav class="hls" aria-label="Na ovoj stranici">
-      {s.istaknuto.map((h: any) => <a class="hl" href={h.link}><span style={`background:${h.boja}`}><Ikona ime={h.ikona} /></span>{h.naziv}</a>)}
+      {(s.istaknuto ?? []).map((h: any) => <a class="hl" href={h.link}><span style={`background:${h.boja}`}><Ikona ime={h.ikona} /></span>{h.naziv}</a>)}
     </nav>
 
-    {s.sekcije.map((sek: any) => <Sekcija s={sek} />)}
+    {(s.sekcije ?? []).map((sek: any) => <Sekcija s={sek} />)}
 
     <section class="sec" aria-label="Još objava">
       <p class="eyebrow">Još objava</p>
-      <div class="more">{s.jos.map((k: string) => <Objava kljuc={k} />)}</div>
+      <div class="more">{(s.jos ?? []).map((k: string) => <Objava kljuc={k} />)}</div>
     </section>
   </main>
 

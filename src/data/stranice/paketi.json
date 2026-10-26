@@ -5,7 +5,10 @@
   },
   "jezicak": "paketi",
   "putanja": [
-    "Paketi i cene"
+    {
+      "naziv": "Paketi i cene",
+      "link": ""
+    }
   ],
   "objava": "paketi",
   "nadnaslov": "Paketi",
@@ -111,66 +114,86 @@
         "Premium"
       ],
       "redovi": [
-        [
-          "Broj mreža",
-          "1 (Instagram)",
-          "2",
-          "2–3"
-        ],
-        [
-          "Objave mesečno",
-          "8",
-          "12–16",
-          "Svakodnevno"
-        ],
-        [
-          "Reels i Stories",
-          "ne",
-          "da",
-          "da"
-        ],
-        [
-          "Strategija i kalendar objava",
-          "ne",
-          "da",
-          "da"
-        ],
-        [
-          "Odgovaranje na komentare i poruke",
-          "da",
-          "da",
-          "da"
-        ],
-        [
-          "Upravljanje zajednicom",
-          "ne",
-          "da",
-          "da"
-        ],
-        [
-          "Profesionalna foto i video produkcija",
-          "ne",
-          "ne",
-          "da"
-        ],
-        [
-          "Vođenje oglasa",
-          "ne",
-          "ne",
-          "da"
-        ],
-        [
-          "Izveštaj",
-          "Mesečni",
-          "Sa analitikom",
-          "Detaljna analitika i optimizacija"
-        ],
-        [
-          "Prioritetna podrška",
-          "ne",
-          "ne",
-          "da"
-        ]
+        {
+          "naziv": "Broj mreža",
+          "vrednosti": [
+            "1 (Instagram)",
+            "2",
+            "2–3"
+          ]
+        },
+        {
+          "naziv": "Objave mesečno",
+          "vrednosti": [
+            "8",
+            "12–16",
+            "Svakodnevno"
+          ]
+        },
+        {
+          "naziv": "Reels i Stories",
+          "vrednosti": [
+            "ne",
+            "da",
+            "da"
+          ]
+        },
+        {
+          "naziv": "Strategija i kalendar objava",
+          "vrednosti": [
+            "ne",
+            "da",
+            "da"
+          ]
+        },
+        {
+          "naziv": "Odgovaranje na komentare i poruke",
+          "vrednosti": [
+            "da",
+            "da",
+            "da"
+          ]
+        },
+        {
+          "naziv": "Upravljanje zajednicom",
+          "vrednosti": [
+            "ne",
+            "da",
+            "da"
+          ]
+        },
+        {
+          "naziv": "Profesionalna foto i video produkcija",
+          "vrednosti": [
+            "ne",
+            "ne",
+            "da"
+          ]
+        },
+        {
+          "naziv": "Vođenje oglasa",
+          "vrednosti": [
+            "ne",
+            "ne",
+            "da"
+          ]
+        },
+        {
+          "naziv": "Izveštaj",
+          "vrednosti": [
+            "Mesečni",
+            "Sa analitikom",
+            "Detaljna analitika i optimizacija"
+          ]
+        },
+        {
+          "naziv": "Prioritetna podrška",
+          "vrednosti": [
+            "ne",
+            "ne",
+            "da"
+          ]
+        }
       ]
     },
     {

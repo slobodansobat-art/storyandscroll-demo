@@ -1,91 +1,93 @@
-[
-  {
-    "kljuc": "onama",
-    "link": "/o-nama/",
-    "naslov": "Ko je Story & Scroll?",
-    "oznaka": "O nama",
-    "opis": "Ko smo, kako radimo i zašto je svaka objava krojena po meri.",
-    "boja": "#6E1423"
-  },
-  {
-    "kljuc": "strategija",
-    "link": "/strategija/",
-    "naslov": "Plan, ne trend.",
-    "oznaka": "Strategija i planiranje",
-    "opis": "Ciljevi, ton i kalendar objavljivanja prilagođen Vašem brendu.",
-    "boja": "#6E1423",
-    "slika": "ruza",
-    "alt": "Crvena ruža u beloj vazi pored prozora",
-    "karusel": true
-  },
-  {
-    "kljuc": "sadrzaj",
-    "link": "/sadrzaj/",
-    "naslov": "Sadržaj sa svrhom.",
-    "oznaka": "Kreiranje sadržaja",
-    "opis": "Foto, video i dizajn koji prate vizuelni identitet profila.",
-    "boja": "#C4544E",
-    "slika": "koralni",
-    "alt": "Ruka drži telefon u narandžastoj maski"
-  },
-  {
-    "kljuc": "profil",
-    "link": "/vodjenje-profila/",
-    "naslov": "Profil koji živi.",
-    "oznaka": "Vođenje profila",
-    "opis": "Redovno objavljivanje, moderacija i komunikacija sa pratiocima.",
-    "boja": "#7A5C22",
-    "oznakaBoja": "#F4E3E6"
-  },
-  {
-    "kljuc": "oglasi",
-    "link": "/oglasi/",
-    "naslov": "Prava publika.",
-    "oznaka": "Zakup oglasa",
-    "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici.",
-    "boja": "#4F0E19",
-    "crtez": "meta",
-    "crtezBoja": "#E8C98A"
-  },
-  {
-    "kljuc": "analitika",
-    "link": "/analitika/",
-    "naslov": "Brojke koje govore.",
-    "oznaka": "Analitika i izveštavanje",
-    "opis": "Šta pratimo, kako čitamo brojke i šta dobijate u izveštaju.",
-    "boja": "#2B211D",
-    "karusel": true,
-    "crtez": "grafikon",
-    "crtezBoja": "#E8C98A"
-  },
-  {
-    "kljuc": "paketi",
-    "link": "/paketi/",
-    "naslov": "Precizno.",
-    "oznaka": "Paketi i cene",
-    "opis": "Start, Rast i Premium. Šta ulazi u koji paket i koliko košta.",
-    "boja": "#6F6A4E",
-    "slika": "makaze",
-    "alt": "Ruke makazama seku maslinasto platno"
-  },
-  {
-    "kljuc": "saradnja",
-    "link": "/saradnja/",
-    "naslov": "Od ideje do objave.",
-    "oznaka": "Kako sarađujemo",
-    "opis": "Koraci od prvog razgovora do prve objave na Vašem profilu.",
-    "boja": "#F4E3E6",
-    "tamnoSlovo": true
-  },
-  {
-    "kljuc": "konsultacije",
-    "link": "/konsultacije/",
-    "naslov": "Ko vodi Vaše profile?",
-    "oznaka": "Konsultacije",
-    "opis": "Zakažite besplatan razgovor o Vašem brendu.",
-    "boja": "#B04640",
-    "oznakaBoja": "#FBF6EF",
-    "crtez": "oblacici",
-    "crtezBoja": "#FBF6EF"
-  }
-]
+{
+  "objave": [
+    {
+      "kljuc": "onama",
+      "link": "/o-nama/",
+      "naslov": "Ko je Story & Scroll?",
+      "oznaka": "O nama",
+      "opis": "Ko smo, kako radimo i zašto je svaka objava krojena po meri.",
+      "boja": "#6E1423"
+    },
+    {
+      "kljuc": "strategija",
+      "link": "/strategija/",
+      "naslov": "Plan, ne trend.",
+      "oznaka": "Strategija i planiranje",
+      "opis": "Ciljevi, ton i kalendar objavljivanja prilagođen Vašem brendu.",
+      "boja": "#6E1423",
+      "slika": "/img/izvorne/ruza.webp",
+      "alt": "Crvena ruža u beloj vazi pored prozora",
+      "karusel": true
+    },
+    {
+      "kljuc": "sadrzaj",
+      "link": "/sadrzaj/",
+      "naslov": "Sadržaj sa svrhom.",
+      "oznaka": "Kreiranje sadržaja",
+      "opis": "Foto, video i dizajn koji prate vizuelni identitet profila.",
+      "boja": "#C4544E",
+      "slika": "/img/izvorne/koralni.webp",
+      "alt": "Ruka drži telefon u narandžastoj maski"
+    },
+    {
+      "kljuc": "profil",
+      "link": "/vodjenje-profila/",
+      "naslov": "Profil koji živi.",
+      "oznaka": "Vođenje profila",
+      "opis": "Redovno objavljivanje, moderacija i komunikacija sa pratiocima.",
+      "boja": "#7A5C22",
+      "oznakaBoja": "#F4E3E6"
+    },
+    {
+      "kljuc": "oglasi",
+      "link": "/oglasi/",
+      "naslov": "Prava publika.",
+      "oznaka": "Zakup oglasa",
+      "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici.",
+      "boja": "#4F0E19",
+      "crtez": "meta",
+      "crtezBoja": "#E8C98A"
+    },
+    {
+      "kljuc": "analitika",
+      "link": "/analitika/",
+      "naslov": "Brojke koje govore.",
+      "oznaka": "Analitika i izveštavanje",
+      "opis": "Šta pratimo, kako čitamo brojke i šta dobijate u izveštaju.",
+      "boja": "#2B211D",
+      "karusel": true,
+      "crtez": "grafikon",
+      "crtezBoja": "#E8C98A"
+    },
+    {
+      "kljuc": "paketi",
+      "link": "/paketi/",
+      "naslov": "Precizno.",
+      "oznaka": "Paketi i cene",
+      "opis": "Start, Rast i Premium. Šta ulazi u koji paket i koliko košta.",
+      "boja": "#6F6A4E",
+      "slika": "/img/izvorne/makaze.webp",
+      "alt": "Ruke makazama seku maslinasto platno"
+    },
+    {
+      "kljuc": "saradnja",
+      "link": "/saradnja/",
+      "naslov": "Od ideje do objave.",
+      "oznaka": "Kako sarađujemo",
+      "opis": "Koraci od prvog razgovora do prve objave na Vašem profilu.",
+      "boja": "#F4E3E6",
+      "tamnoSlovo": true
+    },
+    {
+      "kljuc": "konsultacije",
+      "link": "/konsultacije/",
+      "naslov": "Ko vodi Vaše profile?",
+      "oznaka": "Konsultacije",
+      "opis": "Zakažite besplatan razgovor o Vašem brendu.",
+      "boja": "#B04640",
+      "oznakaBoja": "#FBF6EF",
+      "crtez": "oblacici",
+      "crtezBoja": "#FBF6EF"
+    }
+  ]
+}

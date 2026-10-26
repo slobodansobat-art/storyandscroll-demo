@@ -9,7 +9,10 @@
       "naziv": "Usluge",
       "link": "/#feed"
     },
-    "Strategija i planiranje"
+    {
+      "naziv": "Strategija i planiranje",
+      "link": ""
+    }
   ],
   "objava": "strategija",
   "nadnaslov": "Usluge",

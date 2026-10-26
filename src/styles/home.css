@@ -1,6 +1,6 @@
 .intro{position:relative}
 .stage{position:relative;background:#FBF6EF}
-.herobox{position:relative;display:flex;flex-direction:column;min-height:100svh;color:#FBF6EF;background:#2B211D url(/img/telefon-1280.webp) 50% 35%/cover no-repeat;z-index:3}
+.herobox{position:relative;display:flex;flex-direction:column;min-height:100svh;color:#FBF6EF;background:#2B211D var(--hero) 50% 35%/cover no-repeat;z-index:3}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(180deg, rgba(24,16,13,.72) 0%, rgba(24,16,13,.42) 46%, rgba(24,16,13,.84) 100%);pointer-events:none}
 .topC{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;height:88px;width:100%}
 .markC{display:inline-flex;align-items:center;min-height:44px;font-family:'Playfair Display',Georgia,serif;font-size:21px;font-weight:600;color:#FBF6EF;text-decoration:none}
@@ -71,9 +71,10 @@
 .intro.anim .herobox a,.intro.anim .herobox button{pointer-events:auto}
 .intro.anim .feedwrap{position:absolute;inset:0;padding:0 20px;justify-content:center}
 .intro.anim .tile .front{display:block;background:#2B211D}
-.intro.anim .tile .fimg{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;background:#2B211D url(/img/telefon-1280.webp) 50% 35%/cover no-repeat}
+.intro.anim .tile .fimg{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform;background:#2B211D var(--hero) 50% 35%/cover no-repeat}
 .intro.anim .tile{will-change:transform;border-radius:0;transform-origin:0 0}
 .intro.anim .tile.slozena{border-radius:4px}
+.intro.anim.na-vrhu .tile .front{overflow:visible}
 .intro.anim .tile .back,.intro.anim .tile .front{will-change:transform}
 .intro.anim .tile .back{transition:box-shadow .35s ease}
 .intro.anim .feed-anchor{top:calc(100% - 100svh)}

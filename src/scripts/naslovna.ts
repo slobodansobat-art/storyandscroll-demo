@@ -85,6 +85,8 @@ function animacija() {
       t.el.style.pointerEvents = p > 0.86 ? 'auto' : 'none';
       t.el.tabIndex = p > 0.86 ? 0 : -1;
     });
+    // Dok je stranica na vrhu, delovi se ne seku po ivicama (inače se između njih vidi tanka linija).
+    intro.classList.toggle('na-vrhu', p < 0.02);
     const to = 1 - cl(p / 0.18);
     tekst.style.opacity = String(to);
     tekst.style.transform = `translateY(${-30 * (1 - to)}px)`;

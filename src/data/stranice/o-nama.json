@@ -5,7 +5,10 @@
   },
   "jezicak": null,
   "putanja": [
-    "O nama"
+    {
+      "naziv": "O nama",
+      "link": ""
+    }
   ],
   "objava": "onama",
   "nadnaslov": "O nama",
@@ -94,7 +97,7 @@
     {
       "tip": "citat",
       "id": "nacin",
-      "slika": "makaze",
+      "slika": "/img/izvorne/makaze.webp",
       "alt": "Ruke makazama seku maslinasto platno",
       "nadnaslov": "Kako radimo",
       "citat": "Precizno.",

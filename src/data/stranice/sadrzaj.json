@@ -9,7 +9,10 @@
       "naziv": "Usluge",
       "link": "/#feed"
     },
-    "Kreiranje sadržaja"
+    {
+      "naziv": "Kreiranje sadržaja",
+      "link": ""
+    }
   ],
   "objava": "sadrzaj",
   "nadnaslov": "Usluge",
@@ -109,7 +112,7 @@
     {
       "tip": "citat",
       "id": "identitet",
-      "slika": "koralni",
+      "slika": "/img/izvorne/koralni.webp",
       "alt": "Ruka drži telefon u narandžastoj maski",
       "nadnaslov": "Vizuelni identitet",
       "citat": "Profil koji se",
