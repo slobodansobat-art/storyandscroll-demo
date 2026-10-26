@@ -43,7 +43,9 @@
     "naslov": "Prava publika.",
     "oznaka": "Zakup oglasa",
     "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici.",
-    "boja": "#4F0E19"
+    "boja": "#4F0E19",
+    "crtez": "meta",
+    "crtezBoja": "#E8C98A"
   },
   {
     "kljuc": "analitika",
@@ -52,7 +54,9 @@
     "oznaka": "Analitika i izveštavanje",
     "opis": "Šta pratimo, kako čitamo brojke i šta dobijate u izveštaju.",
     "boja": "#2B211D",
-    "karusel": true
+    "karusel": true,
+    "crtez": "grafikon",
+    "crtezBoja": "#E8C98A"
   },
   {
     "kljuc": "paketi",
@@ -80,6 +84,8 @@
     "oznaka": "Konsultacije",
     "opis": "Zakažite besplatan razgovor o Vašem brendu.",
     "boja": "#B04640",
-    "oznakaBoja": "#FBF6EF"
+    "oznakaBoja": "#FBF6EF",
+    "crtez": "oblacici",
+    "crtezBoja": "#FBF6EF"
   }
 ]

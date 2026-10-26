@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Ikona from '../components/Ikona.astro';
+import Sav from '../components/Sav.astro';
 import site from '../data/site.json';
 import objave from '../data/objave.json';
 import n from '../data/naslovna.json';
@@ -59,6 +60,7 @@ const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: 
               <a class="tile" href={t.link} data-r={t.r} data-c={t.c} aria-label={`${t.naslov} ${t.oznaka}`}>
                 <span class={t.s ? 'back ph' : 'back'} style={`background:${t.boja};${t.tamnoSlovo ? 'color:#6E1423;' : ''}`}>
                   {t.s && <img src={t.s.src} srcset={t.s.srcset} sizes="(max-width: 899px) 33vw, 240px" alt={t.alt} loading="lazy" decoding="async" width="240" height="300">}
+                  {t.crtez && <Sav vrsta={t.crtez} boja={t.crtezBoja} pozadina={t.boja} />}
                   {t.karusel && <Ikona ime="layers" velicina={20} debljina={1.8} klasa="ic" />}
                   <span class="ttl">{t.naslov}</span>
                   <span class="lbl" style={t.tamnoSlovo ? 'color:#6E5220' : t.oznakaBoja ? `color:${t.oznakaBoja}` : undefined}>{t.oznaka}</span>
@@ -117,5 +119,7 @@ const price = n.price.map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: 
 
 <script>
   import { pokreniNaslovnu } from '../scripts/naslovna';
+  import { pokreniSav } from '../scripts/sav';
+  pokreniSav();
   pokreniNaslovnu();
 </script>

@@ -80,6 +80,7 @@ function animacija() {
         t.front.style.visibility = 'hidden';
         t.back.style.transform = f >= 1 ? '' : `scaleX(${f * 2 - 1})`;
       }
+      t.el.classList.toggle('crtano', f >= 1);
       t.el.classList.toggle('slozena', e >= 1);
       t.el.style.pointerEvents = p > 0.86 ? 'auto' : 'none';
       t.el.tabIndex = p > 0.86 ? 0 : -1;

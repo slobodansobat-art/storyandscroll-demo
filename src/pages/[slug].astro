@@ -4,6 +4,7 @@ import Zaglavlje from '../components/Zaglavlje.astro';
 import Objava from '../components/Objava.astro';
 import Sekcija from '../components/Sekcija.astro';
 import Ikona from '../components/Ikona.astro';
+import Sav from '../components/Sav.astro';
 import site from '../data/site.json';
 import objave from '../data/objave.json';
 import { slika } from '../data/slike';
@@ -30,6 +31,7 @@ const hs = o.slika ? slika(o.slika) : null;
       <div class="hpost" style={`background:${o.boja};${o.tamnoSlovo ? 'color:#6E1423;' : ''}`}>
         {hs && <><img src={hs.src} srcset={hs.srcset} sizes="(max-width: 900px) 360px, 380px" alt={o.alt} width="380" height="475" fetchpriority="high" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><span style="position:absolute;inset:0;background:linear-gradient(to top, rgba(24,16,13,.75), rgba(24,16,13,.05) 60%)"></span></>}
         <div class="pt" style="position:relative"><span>{site.naziv}</span></div>
+        {o.crtez && <Sav vrsta={o.crtez} boja={o.crtezBoja} pozadina={o.boja} klasa="sav-velika" />}
         <div style="position:relative"><p class="ttl">{o.naslov}</p><p class="lbl" style={o.tamnoSlovo ? 'color:#6E5220' : o.oznakaBoja ? `color:${o.oznakaBoja}` : undefined}>{o.oznaka}</p></div>
       </div>
       <div>
@@ -67,6 +69,8 @@ const hs = o.slika ? slika(o.slika) : null;
   import { pokreniKaruseli } from '../scripts/karusel';
   import { pokreniObrazac } from '../scripts/obrazac';
   import { pokreniLiniju } from '../scripts/linija';
+  import { pokreniSav } from '../scripts/sav';
+  pokreniSav();
   pokreniKaruseli();
   pokreniObrazac();
   pokreniLiniju();

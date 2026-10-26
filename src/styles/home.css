@@ -39,13 +39,18 @@
 .pbtns .btn{min-height:42px;border-radius:10px;padding:0 18px;font-size:13px}
 .btn-g{background:#EFE6DA;color:#2B211D;border-color:#EFE6DA}.btn-g:hover{background:#E4D6C6;color:#2B211D}
 .btn-p{background:#6E1423;color:#FBF6EF}.btn-p:hover{background:#4F0E19;border-color:#4F0E19;color:#FBF6EF}
-.grid{--cw:min(30vw, 230px);--ch:calc(var(--cw) * 1.25);display:grid;grid-template-columns:repeat(3, var(--cw));grid-auto-rows:var(--ch);gap:6px}
+.grid{--cw:min(30vw, 230px);--ch:calc(var(--cw) * 1.25);display:grid;grid-template-columns:repeat(3, var(--cw));grid-auto-rows:var(--ch);gap:8px}
 .tile{position:relative;display:block;width:var(--cw);height:var(--ch);text-decoration:none;color:#FBF6EF;container-type:size;border-radius:4px}
 .tile .back,.tile .front{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
 .tile .front{display:none}
 .tile .back{display:flex;flex-direction:column;justify-content:flex-end;padding:max(10px, 8cqw);background:#6E1423;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
 .tile .back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .tile .back.ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top, rgba(24,16,13,.88) 0%, rgba(24,16,13,.55) 38%, rgba(24,16,13,0) 72%)}
+.tile .sav{position:absolute;left:7%;top:6%;z-index:1;width:62%;height:auto;aspect-ratio:1}
+.intro.anim .tile .sav-pokr{visibility:visible;stroke-dashoffset:0}
+.intro.anim .tile .sav-kas{opacity:0}
+.intro.anim .tile.crtano .sav-pokr{stroke-dashoffset:-1.15;transition:stroke-dashoffset 1.3s cubic-bezier(.22,.8,.3,1)}
+.intro.anim .tile.crtano .sav-kas{opacity:1;transition:opacity .3s ease 1s}
 .tile .ic{position:absolute;top:max(8px, 6cqw);right:max(8px, 6cqw);z-index:2;width:max(16px, 9cqw);height:max(16px, 9cqw)}
 .tile .ttl{position:relative;z-index:2;font-family:'Playfair Display',Georgia,serif;font-style:normal;font-weight:600;font-size:clamp(16px, 12cqw, 28px);line-height:1.14;letter-spacing:-.005em;overflow-wrap:break-word;hyphens:manual}
 .tile .lbl{position:relative;z-index:2;margin-top:8px;font-size:13px;font-weight:500;line-height:1.3;letter-spacing:0;color:#E8C98A}
@@ -75,11 +80,11 @@
 .intro.anim .prof{will-change:opacity,transform}
 @media (min-width: 900px){
   .feedwrap{flex-direction:row;justify-content:center;gap:64px}
-  .grid{--ch:min(calc((100svh - 140px) / 3), 290px);--cw:calc(var(--ch) * .8)}
+  .grid{--ch:min(calc((100svh - 140px) / 3), 290px);--cw:calc(var(--ch) * .8);gap:12px}
 }
 @media (max-width: 899px){
-  .prof{max-width:none;width:calc(var(--cw) * 3 + 12px)}
-  .grid{--cw:min(calc((100vw - 34px) / 3), calc((100svh - 300px) / 3 * .8), 220px)}
+  .prof{max-width:none;width:calc(var(--cw) * 3 + 16px)}
+  .grid{--cw:min(calc((100vw - 38px) / 3), calc((100svh - 300px) / 3 * .8), 220px)}
   .avatar{width:64px;height:64px;font-size:17px;border-width:3px}
   .avatar small{display:none}
   .prof-top{gap:14px}
@@ -99,7 +104,7 @@
 .hl2:hover{transform:translateY(-3px)}
 .hl2 i{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:14px;color:#FBF6EF;border:3px solid #FBF6EF}
 .reels-sec{max-width:1080px;margin:0 auto;padding:90px 20px 0}
-.reels{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:6px;margin-top:36px}
+.reels{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:12px;margin-top:36px}
 .reel{position:relative;aspect-ratio:9/16;overflow:hidden;display:flex;flex-direction:column;padding:26px 22px;color:#FBF6EF;text-decoration:none;border-radius:4px;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
 @media (hover:hover){.reel:hover{transform:translateY(-8px);box-shadow:0 26px 34px -20px rgba(43,33,29,.6);color:#FBF6EF}}
 .reel:active{transform:scale(.97)}
@@ -109,7 +114,7 @@
 .reel p{margin:12px 0 0;font-size:14px;line-height:1.55;color:#F1E7DA}
 .reel .more2{margin-top:16px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#F1E7DA}
 @media (max-width: 760px){
-  .reels{grid-template-columns:repeat(2, minmax(0,1fr));gap:4px}
+  .reels{grid-template-columns:repeat(2, minmax(0,1fr));gap:8px}
   .reel{padding:18px 14px}
   .reel .no{font-size:40px;margin-top:18px}
   .reel h3{font-size:18px}

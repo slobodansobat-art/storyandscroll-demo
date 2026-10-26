@@ -81,7 +81,13 @@ a{color:#6E1423}a:hover{color:#4F0E19}
 .faq summary::after{content:"+";font-family:'Poppins',sans-serif;font-size:26px;font-weight:400;color:#6E1423}
 .faq details[open] summary::after{content:"–"}
 .faq p{margin:0 0 26px;max-width:62ch;font-size:16.5px;line-height:1.75;color:#4A3E38}
-.more{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:6px;margin-top:36px}
+.more{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:12px;margin-top:36px}
+.sav{display:block;overflow:visible;pointer-events:none}
+.sav-st{stroke-linecap:round;stroke-linejoin:round}
+.sav-osa{opacity:.4}
+.sav-pokr{visibility:hidden;stroke-linecap:square;stroke-dasharray:1 1;stroke-dashoffset:-1.15}
+.mpost .sav{position:absolute;left:7%;top:6%;z-index:1;width:62%;height:auto;aspect-ratio:1}
+.hpost .sav-velika{position:absolute;left:28px;top:58px;width:52%;height:auto;aspect-ratio:1}
 .mpost{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:#FBF6EF;text-decoration:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}
 .mpost > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .mpost.ph::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top, rgba(24,16,13,.88) 0%, rgba(24,16,13,.55) 38%, rgba(24,16,13,0) 72%)}
@@ -106,6 +112,7 @@ a{color:#6E1423}a:hover{color:#4F0E19}
 @media (max-width: 900px){
   .head,.two{grid-template-columns:minmax(0,1fr);gap:44px}
   .hpost{max-width:360px}
+  .hpost .sav-velika{width:32%;top:52px}
   .steps{grid-template-columns:minmax(0,1fr)}
   .slide{flex-basis:88%;grid-template-columns:minmax(0,1fr);padding:32px}
   .sico{justify-self:start;width:84px;height:84px}
@@ -120,7 +127,8 @@ a{color:#6E1423}a:hover{color:#4F0E19}
   .footC nav a{display:block;padding:11px 0}
   .hls{gap:20px}
   .hl span{width:62px;height:62px}
-  .more{gap:3px}
+  .more{gap:8px}
+  .mpost .sav{width:44%;left:8%;top:5%}
   .mpost{padding:10px}
   .mpost .ttl{font-size:16px}
   .mpost .lbl{display:none}

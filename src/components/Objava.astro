@@ -1,11 +1,13 @@
 ---
 import objave from '../data/objave.json';
 import { slika } from '../data/slike';
+import Sav from './Sav.astro';
 const { kljuc, klasa = 'mpost', velicine = '(max-width: 760px) 33vw, 360px' } = Astro.props;
 const o = objave.find((x) => x.kljuc === kljuc)!;
 const s = o.slika ? slika(o.slika) : null;
 ---
 <a class={s ? `${klasa} ph` : klasa} href={o.link} style={`background:${o.boja};${o.tamnoSlovo ? 'color:#6E1423;' : ''}`}>
   {s && <img src={s.src} srcset={s.srcset} sizes={velicine} alt={o.alt} loading="lazy" decoding="async" width="400" height="500">}
+  {o.crtez && <Sav vrsta={o.crtez} boja={o.crtezBoja} pozadina={o.boja} />}
   <span class="ttl">{o.naslov}</span><span class="lbl" style={o.tamnoSlovo ? 'color:#6E5220' : o.oznakaBoja ? `color:${o.oznakaBoja}` : undefined}>{o.oznaka}</span>
 </a>
