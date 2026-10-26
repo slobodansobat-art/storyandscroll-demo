@@ -123,8 +123,6 @@ function animacija() {
   // Glatko pomeranje skrola koje sami vodimo (animacija prati skrol, pa se i ona odvrti).
   let tok = 0;
   let vodimo = false;
-  const prekini = () => { tok++; vodimo = false; };
-  const usporiNaKraju = (k: number) => 1 - Math.pow(1 - k, 3);
   const ubrzajIUspori = (k: number) => -(Math.cos(Math.PI * k) - 1) / 2;
   const vozi = (cilj: number, trajanje: number, posle?: () => void, kriva = ubrzajIUspori) => {
     const moj = ++tok;
@@ -142,7 +140,6 @@ function animacija() {
     requestAnimationFrame(korak);
   };
 
-  const nacin = izaberiNacin();
   let smer = 1;
   let zadnjiY = window.scrollY;
   let dodir = false;
@@ -155,86 +152,47 @@ function animacija() {
   window.addEventListener('touchend', () => { dodir = false; }, { passive: true });
   window.addEventListener('touchcancel', () => { dodir = false; }, { passive: true });
 
-  let doFeeda: () => void;
-
-  if (nacin === 'b') {
-    // B · Dovršavanje: animacija prati prst, a kad korisnik stane, sama se dovrši.
-    let mir: number | undefined;
-    const dovrsi = () => {
+  // Okidač: jedan pokret skrola pokreće celu animaciju do kraja (i unazad, kad se vrati skroz gore).
+  const TRAJANJE = 1300;
+  const igraj = (cilj: number) => { if (!vodimo) vozi(cilj, TRAJANJE); };
+  const namera = (dir: number, ev: Event) => {
+    if (vodimo) { if (ev.cancelable) ev.preventDefault(); return; }
+    const y = window.scrollY, a = pocetak(), b = kraj();
+    if (dir > 0 && y < b - 1 && y >= a - 1) { if (ev.cancelable) ev.preventDefault(); igraj(b); }
+    else if (dir < 0 && y <= b + 1 && y > a + 1) { if (ev.cancelable) ev.preventDefault(); igraj(a); }
+  };
+  window.addEventListener('wheel', (e) => { if (Math.abs(e.deltaY) > 0) namera(Math.sign(e.deltaY), e); }, { passive: false });
+  let y0 = 0;
+  window.addEventListener('touchstart', (e) => { y0 = e.touches[0].clientY; }, { passive: true });
+  window.addEventListener('touchmove', (e) => {
+    const dy = y0 - e.touches[0].clientY;
+    if (vodimo) { if (e.cancelable) e.preventDefault(); return; }
+    if (Math.abs(dy) > 6) namera(Math.sign(dy), e);
+  }, { passive: false });
+  window.addEventListener('keydown', (e) => {
+    const el = e.target as HTMLElement;
+    if (el && (el.isContentEditable || /input|textarea|select/i.test(el.tagName))) return;
+    const dole = ['ArrowDown', 'PageDown', 'End'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
+    const gore = ['ArrowUp', 'PageUp', 'Home'].includes(e.key) || (e.key === ' ' && e.shiftKey);
+    if (dole) namera(1, e); else if (gore) namera(-1, e);
+  });
+  // Ako se stranica ipak nađe na pola (inercija prsta, prevlačenje trake za skrol), dovrši u smeru kretanja.
+  let mir: number | undefined;
+  window.addEventListener('scroll', () => {
+    if (vodimo) return;
+    clearTimeout(mir);
+    mir = window.setTimeout(() => {
       if (dodir || vodimo) return;
       const p = napredak();
-      if (p <= 0.002 || p >= 0.998) return;
-      const napred = smer > 0 ? p > 0.1 : p > 0.9;
-      const cilj = napred ? kraj() : pocetak();
-      const put = Math.abs(cilj - window.scrollY);
-      vozi(cilj, Math.min(750, 320 + put * 0.35), undefined, usporiNaKraju);
-    };
-    window.addEventListener('scroll', () => {
-      if (vodimo) return;
-      clearTimeout(mir);
-      mir = window.setTimeout(dovrsi, 170);
-    }, { passive: true });
-    window.addEventListener('touchend', () => { clearTimeout(mir); mir = window.setTimeout(dovrsi, 170); }, { passive: true });
-    const korisnikPreuzima = () => { if (vodimo) prekini(); };
-    window.addEventListener('wheel', korisnikPreuzima, { passive: true });
-    window.addEventListener('touchstart', korisnikPreuzima, { passive: true });
-    window.addEventListener('keydown', korisnikPreuzima);
-    doFeeda = () => vozi(kraj(), 900);
-  } else {
-    // A · Okidač: jedan pokret skrola pokreće celu animaciju do kraja.
-    const TRAJANJE = 1300;
-    const igraj = (cilj: number) => { if (!vodimo) vozi(cilj, TRAJANJE); };
-    const namera = (dir: number, ev: Event) => {
-      if (vodimo) { if (ev.cancelable) ev.preventDefault(); return; }
-      const y = window.scrollY, a = pocetak(), b = kraj();
-      if (dir > 0 && y < b - 1 && y >= a - 1) { if (ev.cancelable) ev.preventDefault(); igraj(b); }
-      else if (dir < 0 && y <= b + 1 && y > a + 1) { if (ev.cancelable) ev.preventDefault(); igraj(a); }
-    };
-    window.addEventListener('wheel', (e) => { if (Math.abs(e.deltaY) > 0) namera(Math.sign(e.deltaY), e); }, { passive: false });
-    let y0 = 0;
-    window.addEventListener('touchstart', (e) => { y0 = e.touches[0].clientY; }, { passive: true });
-    window.addEventListener('touchmove', (e) => {
-      const dy = y0 - e.touches[0].clientY;
-      if (vodimo) { if (e.cancelable) e.preventDefault(); return; }
-      if (Math.abs(dy) > 6) namera(Math.sign(dy), e);
-    }, { passive: false });
-    window.addEventListener('keydown', (e) => {
-      const el = e.target as HTMLElement;
-      if (el && (el.isContentEditable || /input|textarea|select/i.test(el.tagName))) return;
-      const dole = ['ArrowDown', 'PageDown', 'End'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
-      const gore = ['ArrowUp', 'PageUp', 'Home'].includes(e.key) || (e.key === ' ' && e.shiftKey);
-      if (dole) namera(1, e); else if (gore) namera(-1, e);
-    });
-    // Ako se stranica ipak nađe na pola (inercija prsta, prevlačenje trake za skrol), dovrši u smeru kretanja.
-    let mir: number | undefined;
-    window.addEventListener('scroll', () => {
-      if (vodimo) return;
-      clearTimeout(mir);
-      mir = window.setTimeout(() => {
-        if (dodir || vodimo) return;
-        const p = napredak();
-        if (p > 0.002 && p < 0.998) igraj(smer > 0 ? kraj() : pocetak());
-      }, 90);
-    }, { passive: true });
-    doFeeda = () => igraj(kraj());
-  }
+      if (p > 0.002 && p < 0.998) igraj(smer > 0 ? kraj() : pocetak());
+    }, 90);
+  }, { passive: true });
+  const doFeeda = () => igraj(kraj());
 
   if (location.hash === '#feed') requestAnimationFrame(() => skoci(kraj()));
   document.querySelectorAll<HTMLAnchorElement>('[data-na-feed]').forEach((a) => {
     a.addEventListener('click', (ev) => { ev.preventDefault(); doFeeda(); });
   });
-}
-
-// Za test se varijanta bira linkom: /?animacija=a (okidač) ili /?animacija=b (dovršavanje).
-// Izbor se pamti dok je kartica pregledača otvorena; podrazumevano je B.
-function izaberiNacin(): 'a' | 'b' {
-  const iz = new URLSearchParams(location.search).get('animacija');
-  try {
-    if (iz === 'a' || iz === 'b') sessionStorage.setItem('ss-animacija', iz);
-    const s = sessionStorage.getItem('ss-animacija');
-    if (s === 'a' || s === 'b') return s;
-  } catch { /* bez memorije */ }
-  return iz === 'a' ? 'a' : 'b';
 }
 
 function price() {
