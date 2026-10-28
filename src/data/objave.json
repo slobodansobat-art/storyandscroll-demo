@@ -6,7 +6,9 @@
       "naslov": "Ko je Story & Scroll?",
       "oznaka": "O nama",
       "opis": "Ko smo, kako radimo i zašto je svaka objava krojena po meri.",
-      "boja": "#6E1423"
+      "boja": "#6E1423",
+      "slika": "/img/izvorne/o-nama.webp",
+      "alt": "Ruke provlače bordo konac kroz iglu, pored telefona, makaza i otvorene sveske"
     },
     {
       "kljuc": "strategija",
@@ -36,7 +38,9 @@
       "oznaka": "Vođenje profila",
       "opis": "Redovno objavljivanje, moderacija i komunikacija sa pratiocima.",
       "boja": "#7A5C22",
-      "oznakaBoja": "#F4E3E6"
+      "oznakaBoja": "#F4E3E6",
+      "slika": "/img/izvorne/vodjenje-profila.webp",
+      "alt": "Ruke kucaju odgovor na telefonu pored šolje kafe na drvenom stolu"
     },
     {
       "kljuc": "oglasi",
@@ -76,7 +80,8 @@
       "oznaka": "Kako sarađujemo",
       "opis": "Koraci od prvog razgovora do prve objave na Vašem profilu.",
       "boja": "#F4E3E6",
-      "tamnoSlovo": true
+      "slika": "/img/izvorne/saradnja.webp",
+      "alt": "Ruka na svesci sa skicom plana, pored telefona, olovke i šolje čaja"
     },
     {
       "kljuc": "konsultacije",
