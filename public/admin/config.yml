@@ -501,6 +501,47 @@ collections:
         widget: object
         fields: *poziv
 
+  # ───────────────────────── Pravne stranice ─────────────────────────
+  - name: pravno
+    label: Pravne stranice
+    label_singular: Pravna stranica
+    folder: src/data/pravno
+    extension: json
+    format: json
+    create: false
+    delete: false
+    identifier_field: naslov
+    summary: "{{fields.naslov}} {{fields.naslovIstaknuto}}"
+    editor: { preview: false }
+    fields:
+      - { label: Adresa stranice, name: slug, widget: string, hint: "Ne menjati." }
+      - label: Google prikaz (SEO)
+        name: seo
+        widget: object
+        fields:
+          - { label: Naslov u pretrazi, name: naslov, widget: string }
+          - { label: Opis u pretrazi, name: opis, widget: text }
+      - { label: Naslov, name: naslov, widget: string }
+      - { label: Istaknuti deo naslova (kurziv), name: naslovIstaknuto, widget: string }
+      - { label: Datum poslednje izmene, name: izmenjeno, widget: string, hint: "Npr. 2. novembar 2026." }
+      - { label: Uvod, name: uvod, widget: text }
+      - label: Delovi
+        name: delovi
+        widget: list
+        summary: "{{fields.naslov}}"
+        hint: "Delovi se automatski numerišu. „@storyandscrollstudio” u tekstu postaje link ka Instagramu."
+        fields:
+          - { label: Naslov dela, name: naslov, widget: string }
+          - label: Pasusi
+            name: pasusi
+            widget: list
+            field: { label: Pasus, name: pasus, widget: text }
+          - label: Nabrajanje (neobavezno)
+            name: stavke
+            widget: list
+            required: false
+            field: { label: Stavka, name: stavka, widget: string }
+
   # ───────────────────────── Podaci o studiju ─────────────────────────
   - name: podesavanja
     label: Podaci o studiju
@@ -516,8 +557,8 @@ collections:
           - { label: Instagram ime (bez @), name: handle, widget: string }
           - { label: Link ka Instagram profilu, name: instagram, widget: string }
           - { label: Link za poruku na Instagramu, name: poruka, widget: string }
-          - { label: Link ka politici privatnosti, name: privatnost, widget: string }
-          - { label: Link ka uslovima korišćenja, name: uslovi, widget: string }
+          - { label: Link ka politici privatnosti, name: privatnost, widget: string, hint: "Stranica na ovom sajtu: /privatnost/" }
+          - { label: Link ka uslovima korišćenja, name: uslovi, widget: string, hint: "Stranica na ovom sajtu: /uslovi-koriscenja/" }
           - { label: Sakrij sajt od Google-a, name: bezIndeksiranja, widget: boolean, hint: "Uključeno dok je ovo demo." }
           - label: Jezičci sa strane
             name: jezicci

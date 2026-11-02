@@ -236,3 +236,18 @@ a{color:#6E1423}a:hover{color:#4F0E19}
   .cmp td,.cmp tbody th{padding:11px 6px !important}
   .more .mpost .ttl{font-size:16px}
 }
+/* Pravne stranice (privatnost, uslovi) */
+.pravno{padding-bottom:110px}
+.pr-head{padding:56px 0 0;max-width:760px}
+.pr-datum{margin:18px 0 0;font-size:13.5px;color:#6B5C54}
+.pr-list{max-width:760px;margin:56px 0 0;padding:0;list-style:none;counter-reset:pr}
+.pr-list > li{counter-increment:pr;padding:30px 0;border-top:1px solid #E1D2C0}
+.pr-list > li:last-child{border-bottom:1px solid #E1D2C0}
+.pr-list h2{display:flex;align-items:baseline;gap:14px;margin:0 0 12px;font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:600;line-height:1.25}
+.pr-list h2::before{content:counter(pr);font-style:italic;font-weight:500;font-size:18px;color:#8C6A2A;min-width:1.4em}
+.pr-list p,.pr-list ul{margin:0 0 12px;font-size:16.5px;line-height:1.75;color:#4A3E38}
+.pr-list p:last-child,.pr-list ul:last-child{margin-bottom:0}
+.pr-list ul{padding-left:1.2em}
+.pr-list ul li{margin:4px 0}
+.pr-list a{color:#6E1423}
+@media (max-width: 760px){ .pr-head{padding-top:36px;padding-right:54px} .pr-list{padding-right:54px} .pr-list h2{font-size:21px} .pr-list p,.pr-list ul{font-size:16px} }

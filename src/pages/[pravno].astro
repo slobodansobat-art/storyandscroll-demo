@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import Zaglavlje from '../components/Zaglavlje.astro';
+import site from '../data/site.json';
+
+export function getStaticPaths() {
+  const fajlovi = import.meta.glob('../data/pravno/*.json', { eager: true });
+  return Object.values(fajlovi).map((m: any) => ({ params: { pravno: m.default.slug }, props: { s: m.default } }));
+}
+const { s } = Astro.props;
+const lista = (x: any) => (Array.isArray(x) ? x : []);
+// Instagram ime u tekstu postaje link.
+const handle = `@${site.handle}`;
+const delovi = (t: string) => String(t ?? '').split(handle);
+---
+<Base naslov={s.seo.naslov} opis={s.seo.opis}>
+  <Zaglavlje />
+  <main class="wrap pravno" id="sadrzaj">
+    <nav class="crumb" aria-label="Putanja"><a href="/">← Nazad na feed</a><span aria-hidden="true">/</span><span aria-current="page">{s.naslov} {s.naslovIstaknuto}</span></nav>
+    <header class="pr-head">
+      <h1 class="h1">{s.naslov} <em>{s.naslovIstaknuto}</em></h1>
+      <div class="stitch" aria-hidden="true"></div>
+      {s.izmenjeno && <p class="pr-datum">Poslednja izmena: {s.izmenjeno}</p>}
+      {s.uvod && <p class="caption">{s.uvod}</p>}
+    </header>
+    <ol class="pr-list">
+      {lista(s.delovi).map((d: any) => (
+        <li>
+          <h2>{d.naslov}</h2>
+          {lista(d.pasusi).map((p: string) => <p>{delovi(p).map((x, i) => i === 0 ? x : <><a href={site.instagram}>{handle}</a>{x}</>)}</p>)}
+          {lista(d.stavke).length > 0 && <ul>{lista(d.stavke).map((x: string) => <li>{x}</li>)}</ul>}
+        </li>
+      ))}
+    </ol>
+  </main>
+</Base>

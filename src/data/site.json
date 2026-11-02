@@ -4,13 +4,29 @@
   "handle": "storyandscrollstudio",
   "instagram": "https://www.instagram.com/storyandscrollstudio/",
   "poruka": "https://ig.me/m/storyandscrollstudio",
-  "privatnost": "https://willowy-rabanadas-58ac53.netlify.app/privatnost",
-  "uslovi": "https://willowy-rabanadas-58ac53.netlify.app/uslovi-koriscenja",
+  "privatnost": "/privatnost/",
+  "uslovi": "/uslovi-koriscenja/",
   "bezIndeksiranja": true,
   "jezicci": [
-    { "kljuc": "pocetna", "naziv": "Početna", "link": "/" },
-    { "kljuc": "usluge", "naziv": "Usluge", "link": "/#feed" },
-    { "kljuc": "paketi", "naziv": "Paketi", "link": "/paketi/" },
-    { "kljuc": "konsultacije", "naziv": "Konsultacije", "link": "/konsultacije/" }
+    {
+      "kljuc": "pocetna",
+      "naziv": "Početna",
+      "link": "/"
+    },
+    {
+      "kljuc": "usluge",
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    {
+      "kljuc": "paketi",
+      "naziv": "Paketi",
+      "link": "/paketi/"
+    },
+    {
+      "kljuc": "konsultacije",
+      "naziv": "Konsultacije",
+      "link": "/konsultacije/"
+    }
   ]
 }

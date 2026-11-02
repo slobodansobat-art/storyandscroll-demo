@@ -1,0 +1,98 @@
+{
+  "slug": "privatnost",
+  "seo": {
+    "naslov": "Politika privatnosti · Story & Scroll Studio",
+    "opis": "Koje podatke prikuplja sajt Story & Scroll Studio, zašto, koliko ih čuvamo i koja su Vaša prava."
+  },
+  "naslov": "Politika",
+  "naslovIstaknuto": "privatnosti",
+  "izmenjeno": "2. novembar 2026.",
+  "uvod": "Ova politika objašnjava koje podatke prikupljamo kada koristite sajt Story & Scroll Studio, zašto ih prikupljamo i kako ih štitimo. Primenjuje se u skladu sa Zakonom o zaštiti podataka o ličnosti Republike Srbije.",
+  "delovi": [
+    {
+      "naslov": "Ko obrađuje podatke",
+      "pasusi": [
+        "Podatke obrađuje Story & Scroll Studio, studio za društvene mreže.",
+        "Za sva pitanja o Vašim podacima pišite nam na Instagramu: @storyandscrollstudio."
+      ]
+    },
+    {
+      "naslov": "Koje podatke prikupljamo",
+      "pasusi": [
+        "Prikupljamo samo podatke koje sami unesete u obrazac za konsultacije:"
+      ],
+      "stavke": [
+        "ime i prezime",
+        "email adresu",
+        "broj telefona (neobavezno)",
+        "Instagram profil ili naziv brenda (neobavezno)",
+        "paket koji Vas zanima (neobavezno)",
+        "poruku o Vašem brendu i ciljevima (neobavezno)"
+      ]
+    },
+    {
+      "naslov": "Šta ne prikupljamo",
+      "pasusi": [
+        "Sajt ne koristi alate za praćenje posetilaca, kao što je Google Analytics, i ne prikazuje oglase.",
+        "Da bi se priče na početnoj strani označile kao pogledane, Vaš pregledač pamti koje ste priče otvorili. Ta informacija ostaje samo u Vašem pregledaču i ne šalje se nama."
+      ]
+    },
+    {
+      "naslov": "Zašto koristimo podatke",
+      "pasusi": [
+        "Podatke iz obrasca koristimo da bismo odgovorili na Vaš upit, dogovorili konsultacije i razgovarali o mogućoj saradnji. Ne koristimo ih za slanje reklamnih poruka i ne prodajemo ih."
+      ]
+    },
+    {
+      "naslov": "Pravni osnov",
+      "pasusi": [
+        "Podatke obrađujemo na osnovu Vašeg pristanka, koji dajete slanjem obrasca, i našeg opravdanog interesa da odgovorimo na upit i zaštitimo sajt od zloupotrebe."
+      ]
+    },
+    {
+      "naslov": "Ko još ima pristup podacima",
+      "pasusi": [
+        "Sajt i obrazac rade preko servisa Netlify, koji podatke iz obrasca čuva i prosleđuje nama. Netlify može da čuva podatke na serverima van Republike Srbije.",
+        "Obrazac je zaštićen od automatskog slanja bez spoljnih servisa za proveru."
+      ]
+    },
+    {
+      "naslov": "Koliko dugo čuvamo podatke",
+      "pasusi": [
+        "Podatke čuvamo onoliko koliko je potrebno da odgovorimo na upit i dogovorimo saradnju. Posle toga ih brišemo, osim ako zakon ne zahteva duže čuvanje."
+      ]
+    },
+    {
+      "naslov": "Vaša prava",
+      "pasusi": [
+        "U svakom trenutku imate pravo da:"
+      ],
+      "stavke": [
+        "saznate koje podatke o Vama imamo",
+        "tražite ispravku netačnih podataka",
+        "tražite brisanje podataka",
+        "tražite ograničenje obrade ili uložite prigovor",
+        "povučete pristanak, bez uticaja na obradu pre povlačenja",
+        "podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti (poverenik.rs)"
+      ]
+    },
+    {
+      "naslov": "Zaštita podataka",
+      "pasusi": [
+        "Primenjujemo razumne tehničke i organizacione mere da podatke zaštitimo od neovlašćenog pristupa, gubitka ili zloupotrebe. Sajt radi isključivo preko šifrovane veze (HTTPS)."
+      ]
+    },
+    {
+      "naslov": "Deca",
+      "pasusi": [
+        "Sajt nije namenjen osobama mlađim od 16 godina i svesno ne prikupljamo njihove podatke."
+      ]
+    },
+    {
+      "naslov": "Izmene politike",
+      "pasusi": [
+        "Ovu politiku možemo povremeno da izmenimo. Datum poslednje izmene uvek je naveden na vrhu stranice."
+      ]
+    }
+  ]
+}
