@@ -3,96 +3,92 @@
     {
       "kljuc": "onama",
       "link": "/o-nama/",
-      "naslov": "Ko je Story & Scroll?",
-      "oznaka": "O nama",
-      "opis": "Ko smo, kako radimo i zašto je svaka objava krojena po meri.",
+      "naslov": "O nama",
+      "oznaka": "Ko je Story & Scroll?",
+      "opis": "Kreativni studio za digitalno predstavljanje malih biznisa i brendova.",
       "boja": "#6E1423",
-      "slika": "/img/izvorne/o-nama.webp",
-      "alt": "Ruke provlače bordo konac kroz iglu, pored telefona, makaza i otvorene sveske"
+      "slika": "/img/izvorne/o-nama-stolica.jpg",
+      "alt": "Kožna stolica i otvorena sveska sa olovkom na belom stolu"
     },
     {
-      "kljuc": "strategija",
-      "link": "/strategija/",
-      "naslov": "Plan, ne trend.",
-      "oznaka": "Strategija i planiranje",
-      "opis": "Ciljevi, ton i kalendar objavljivanja prilagođen Vašem brendu.",
+      "kljuc": "instagram",
+      "link": "/vodjenje-instagrama/",
+      "naslov": "Vođenje Instagrama",
+      "oznaka": "Profil koji ima doslednost.",
+      "opis": "Plan objava, dizajn, tekstovi i zakazivanje sadržaja.",
       "boja": "#6E1423",
-      "slika": "/img/izvorne/ruza.webp",
-      "alt": "Crvena ruža u beloj vazi pored prozora",
-      "karusel": true
-    },
-    {
-      "kljuc": "sadrzaj",
-      "link": "/sadrzaj/",
-      "naslov": "Sadržaj sa svrhom.",
-      "oznaka": "Kreiranje sadržaja",
-      "opis": "Foto, video i dizajn koji prate vizuelni identitet profila.",
-      "boja": "#C4544E",
-      "slika": "/img/izvorne/koralni.webp",
-      "alt": "Ruka drži telefon u narandžastoj maski"
-    },
-    {
-      "kljuc": "profil",
-      "link": "/vodjenje-profila/",
-      "naslov": "Profil koji živi.",
-      "oznaka": "Vođenje profila",
-      "opis": "Redovno objavljivanje, moderacija i komunikacija sa pratiocima.",
-      "boja": "#7A5C22",
-      "oznakaBoja": "#F4E3E6",
-      "slika": "/img/izvorne/vodjenje-profila.webp",
-      "alt": "Ruke kucaju odgovor na telefonu pored šolje kafe na drvenom stolu"
+      "slika": "/img/izvorne/instagram-telefon.jpg",
+      "alt": "Ruke sa prstenjem drže telefon sa otvorenim Instagram profilom"
     },
     {
       "kljuc": "oglasi",
       "link": "/oglasi/",
-      "naslov": "Prava publika.",
-      "oznaka": "Zakup oglasa",
-      "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici.",
+      "naslov": "Plaćeno oglašavanje",
+      "oznaka": "Prava poruka. Pravoj publici.",
+      "opis": "Kampanje na Instagramu i Facebooku za pravu publiku.",
       "boja": "#4F0E19",
-      "crtez": "meta",
-      "crtezBoja": "#E8C98A"
+      "slika": "/img/izvorne/oglasi-igla.webp",
+      "alt": "Ruka zabada krojačku iglu u krug nacrtan kredom na bordo tkanini"
     },
     {
-      "kljuc": "analitika",
-      "link": "/analitika/",
-      "naslov": "Brojke koje govore.",
-      "oznaka": "Analitika i izveštavanje",
-      "opis": "Šta pratimo, kako čitamo brojke i šta dobijate u izveštaju.",
+      "kljuc": "montaza",
+      "link": "/montaza/",
+      "naslov": "Montaža video materijala",
+      "oznaka": "Vi snimate. Mi montiramo.",
+      "opis": "Vaš snimljeni materijal pretvaramo u gotove Reels videe.",
       "boja": "#2B211D",
-      "karusel": true,
-      "crtez": "grafikon",
-      "crtezBoja": "#E8C98A"
+      "slika": "/img/izvorne/montaza-masina.jpg",
+      "alt": "Ruke vode platno kroz šivaću mašinu"
+    },
+    {
+      "kljuc": "sajtovi",
+      "link": "/izrada-sajtova/",
+      "naslov": "Izrada sajtova",
+      "oznaka": "Prezentacioni sajtovi",
+      "opis": "Jednostavni, pregledni sajtovi za male biznise.",
+      "boja": "#4F0E19",
+      "slika": "/img/izvorne/sajtovi-laptop.jpg",
+      "alt": "Laptop na bordo plišanoj sofi ispred bordo zavese"
+    },
+    {
+      "kljuc": "radovi",
+      "link": "/#prica-radovi",
+      "naslov": "Naši radovi",
+      "oznaka": "Izbor naših feedova",
+      "opis": "Pogledajte feedove koje smo kreirali.",
+      "boja": "#7A5C22",
+      "slika": "/img/izvorne/radovi-krojac.jpg",
+      "alt": "Ruke krojačkim metrom mere beli sako na krojačkoj lutki"
     },
     {
       "kljuc": "paketi",
       "link": "/paketi/",
-      "naslov": "Precizno.",
-      "oznaka": "Paketi i cene",
-      "opis": "Start, Rast i Premium. Šta ulazi u koji paket i koliko košta.",
+      "naslov": "Paketi",
+      "oznaka": "Essential, Grow, Signature",
+      "opis": "Paketi prilagođeni vašem brendu.",
       "boja": "#6F6A4E",
-      "slika": "/img/izvorne/makaze.webp",
-      "alt": "Ruke makazama seku maslinasto platno"
+      "slika": "/img/izvorne/paketi-alat.jpg",
+      "alt": "Krojački pribor složen na bež platnu: konac, makaze, šilo i dugmad"
     },
     {
       "kljuc": "saradnja",
       "link": "/saradnja/",
-      "naslov": "Od ideje do objave.",
-      "oznaka": "Kako sarađujemo",
-      "opis": "Koraci od prvog razgovora do prve objave na Vašem profilu.",
-      "boja": "#F4E3E6",
-      "slika": "/img/izvorne/saradnja.webp",
-      "alt": "Ruka na svesci sa skicom plana, pored telefona, olovke i šolje čaja"
+      "naslov": "Kako sarađujemo",
+      "oznaka": "Četiri koraka",
+      "opis": "Od prvog kontakta do realizacije.",
+      "boja": "#2B211D",
+      "slika": "/img/izvorne/saradnja-papirici.jpg",
+      "alt": "Ruke lepe narandžaste papiriće na zid obasjan suncem"
     },
     {
-      "kljuc": "konsultacije",
-      "link": "/konsultacije/",
-      "naslov": "Ko vodi Vaše profile?",
-      "oznaka": "Konsultacije",
-      "opis": "Zakažite besplatan razgovor o Vašem brendu.",
-      "boja": "#B04640",
-      "oznakaBoja": "#FBF6EF",
-      "crtez": "oblacici",
-      "crtezBoja": "#FBF6EF"
+      "kljuc": "kontakt",
+      "link": "/kontakt/",
+      "naslov": "Kontakt",
+      "oznaka": "Hajde da pričamo o vašem brendu.",
+      "opis": "Pošaljite nam upit.",
+      "boja": "#4F0E19",
+      "slika": "/img/izvorne/kontakt-vrata.jpg",
+      "alt": "Tamna drvena dvokrilna vrata sa mesinganim kvakama"
     }
   ]
 }

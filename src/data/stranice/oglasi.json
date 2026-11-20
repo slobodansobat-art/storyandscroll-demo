@@ -1,7 +1,7 @@
 {
   "seo": {
-    "naslov": "Zakup oglasa · Story & Scroll Studio",
-    "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici. Vođenje oglasa je deo paketa Premium."
+    "naslov": "Plaćeno oglašavanje · Story & Scroll Studio",
+    "opis": "Plaćene kampanje na Instagramu i Facebooku: cilj, priprema kampanje, izbor publike i praćenje rezultata."
   },
   "jezicak": "usluge",
   "putanja": [
@@ -10,145 +10,76 @@
       "link": "/#feed"
     },
     {
-      "naziv": "Zakup oglasa",
+      "naziv": "Plaćeno oglašavanje",
       "link": ""
     }
   ],
   "objava": "oglasi",
-  "nadnaslov": "Usluge",
-  "naslov": "Zakup",
-  "naslovIstaknuto": "oglasa",
-  "opis": "Plaćene kampanje na Meta i TikTok mrežama, usmerene ka pravoj publici. Oglas vide ljudi kojima je zaista namenjen.",
+  "nadnaslov": "Plaćeno oglašavanje",
+  "naslov": "Prava poruka.",
+  "naslovIstaknuto": "Pravoj publici.",
+  "opis": "Želite da više ljudi sazna za vaše usluge, poseti profil ili vam pošalje upit?",
+  "znaciNaslov": "Šta obuhvata usluga?",
   "znaci": [
     {
       "ikona": "target",
-      "tekst": "Ciljana publika"
+      "tekst": "Meta Ads"
     },
     {
-      "ikona": "send",
-      "tekst": "Meta i TikTok oglasi"
+      "ikona": "key",
+      "tekst": "Podešavanje kampanja"
     },
     {
-      "ikona": "check",
-      "tekst": "Uključeno u Premium"
+      "ikona": "users",
+      "tekst": "Izbor publike"
+    },
+    {
+      "ikona": "bars",
+      "tekst": "Praćenje i optimizacija"
     }
   ],
   "link": {
-    "link": "/paketi/",
-    "tekst": "Pogledajte pakete →"
+    "link": "/kontakt/?usluga=Plaćeno oglašavanje#prijava",
+    "tekst": "Pošaljite upit za oglašavanje →"
   },
-  "istaknuto": [
-    {
-      "link": "#kako",
-      "boja": "#4F0E19",
-      "ikona": "info",
-      "naziv": "Kako rade"
-    },
-    {
-      "link": "#podesavamo",
-      "boja": "#6E1423",
-      "ikona": "target",
-      "naziv": "Podešavanja"
-    },
-    {
-      "link": "#budzet",
-      "boja": "#8C6A2A",
-      "ikona": "wallet",
-      "naziv": "Budžet"
-    },
-    {
-      "link": "#pitanja",
-      "boja": "#2B211D",
-      "ikona": "q",
-      "naziv": "Pitanja"
-    }
-  ],
+  "istaknuto": [],
   "sekcije": [
     {
       "tip": "tekst",
       "id": "kako",
-      "naslov": "Kako rade",
-      "naslovIstaknuto": "oglasi",
+      "naslov": "",
+      "naslovIstaknuto": "",
       "pasusi": [
-        "Obična objava stiže uglavnom do onih koji Vas već prate. Plaćeni oglas može da stigne do ljudi koji Vas još ne znaju, a odgovaraju Vašoj publici po mestu, interesovanjima ili godinama.",
-        "Dobar oglas nije onaj koji vidi najviše ljudi, nego onaj koji vide pravi ljudi."
-      ]
-    },
-    {
-      "tip": "kartice",
-      "id": "podesavamo",
-      "naslov": "Šta",
-      "naslovIstaknuto": "podešavamo",
-      "kolone": 4,
-      "stavke": [
-        {
-          "ikona": "target",
-          "naslov": "Cilj",
-          "tekst": "Šta kampanja treba da postigne: posete, poruke, pratioce ili prodaju."
-        },
-        {
-          "ikona": "users",
-          "naslov": "Publika",
-          "tekst": "Kome se oglas prikazuje: mesto, interesovanja, godine."
-        },
-        {
-          "ikona": "image",
-          "naslov": "Oglas",
-          "tekst": "Fotografija ili video i tekst koji zaustavlja skrolovanje."
-        },
-        {
-          "ikona": "bars",
-          "naslov": "Praćenje",
-          "tekst": "Koliko košta rezultat i šta treba promeniti."
-        }
+        "Pomažemo vam da kroz plaćene kampanje na Instagramu i Facebooku predstavite svoju ponudu ljudima kojima bi ona mogla biti relevantna.",
+        "Dogovaramo cilj oglašavanja, pripremamo kampanju, biramo publiku i pratimo rezultate kako bismo naredne korake zasnivali na podacima."
       ]
     },
     {
       "tip": "napomena",
       "id": "budzet",
-      "naslov": "Budžet",
-      "naslovIstaknuto": "za oglase",
+      "naslov": "",
+      "naslovIstaknuto": "",
       "napomene": [
-        "**Važno:** cene paketa ne uključuju budžet za plaćeno oglašavanje (Meta i TikTok Ads). Taj budžet plaćate posebno, direktno platformi."
+        "**Budžet za oglašavanje** dogovara se posebno i nije uključen u cenu usluge."
       ],
-      "tekst": "Vođenje oglasa je deo paketa Premium. Visinu budžeta dogovaramo prema cilju kampanje i publici.",
+      "tekst": "",
       "link": {
-        "link": "/paketi/",
-        "tekst": "Pogledajte paket Premium →"
+        "link": "",
+        "tekst": ""
       }
-    },
-    {
-      "tip": "pitanja",
-      "id": "pitanja",
-      "naslov": "Česta",
-      "naslovIstaknuto": "pitanja",
-      "stavke": [
-        {
-          "pitanje": "Na kojim mrežama se oglašavate?",
-          "odgovor": "Na Meta mrežama (Instagram i Facebook) i na TikTok-u."
-        },
-        {
-          "pitanje": "Koliki budžet mi treba?",
-          "odgovor": "Zavisi od cilja i publike. Budžet dogovaramo na konsultacijama, a plaćate ga direktno platformi."
-        },
-        {
-          "pitanje": "Da li mogu da uzmem samo oglase?",
-          "odgovor": "Vođenje oglasa je uključeno u paket Premium. Za drugačiju kombinaciju pitajte nas na konsultacijama."
-        }
-      ]
     }
   ],
   "jos": [
-    "analitika",
-    "strategija",
-    "paketi"
+    "instagram",
+    "montaza",
+    "sajtovi"
   ],
   "poziv": {
-    "naslov": "Neka Vas vide",
-    "naslovIstaknuto": "pravi ljudi.",
-    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o kampanji za Vaš brend.",
-    "dugme": "Zakažite besplatne konsultacije",
-    "link": "/konsultacije/"
+    "naslov": "Hajde da pričamo",
+    "naslovIstaknuto": "o vašem brendu.",
+    "tekst": "Pošaljite nam kratak opis onoga što vam je potrebno. Javićemo vam se sa informacijama o mogućnostima saradnje i ponudi.",
+    "dugme": "Pošaljite upit",
+    "link": "/kontakt/#prijava"
   },
   "slug": "oglasi"
 }

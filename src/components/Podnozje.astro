@@ -6,8 +6,9 @@ import site from '../data/site.json';
     <div><p class="foot-mark"><img src="/img/logo/logo-svetli.svg" alt={site.naziv} width="180" height="119" loading="lazy" decoding="async"></p><p class="foot-tag">{site.slogan}</p></div>
     <nav aria-label="Podnožje">
       <a href={site.instagram}>@{site.handle}</a>
-      <a href="/paketi/">Paketi i cene</a>
-      <a href="/konsultacije/">Konsultacije</a>
+      <a href="/paketi/">Paketi</a>
+      <a href="/kontakt/">Kontakt</a>
+      {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
       <a href={site.privatnost}>Politika privatnosti</a>
       <a href={site.uslovi}>Uslovi korišćenja</a>
     </nav>

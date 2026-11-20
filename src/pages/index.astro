@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Ikona from '../components/Ikona.astro';
 import Sav from '../components/Sav.astro';
 import site from '../data/site.json';
 import feed from '../data/objave.json';
@@ -12,7 +11,21 @@ import pf400ix from '@fontsource/playfair-display/files/playfair-display-latin-e
 
 const tiles = feed.objave.map((o, i) => ({ ...o, r: Math.floor(i / 3), c: i % 3, s: o.slika ? slika(o.slika) : null }));
 const hero = slika(n.hero.slika, 1200);
-const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno, boja: p.boja, link: p.link, dugme: p.dugme, slajdovi: p.slajdovi }));
+// Priče: slajd može da ima tekst, sliku ili oboje (npr. snimci profila u priči „Naši radovi”).
+const price = (n.price ?? []).map((p: any) => ({
+  kljuc: p.kljuc ?? '', naziv: p.naziv, skraceno: p.skraceno, boja: p.boja, link: p.link, dugme: p.dugme,
+  slajdovi: (p.slajdovi ?? []).map((sl: any) => {
+    const x = typeof sl === 'string' ? { tekst: sl } : sl;
+    return { t: x.tekst ?? '', s: x.slika ? slika(x.slika, 800).src : '', a: x.alt ?? '' };
+  }),
+}));
+// Link oblika „#prica-radovi” ili „/#prica-radovi” otvara priču sa tim ključem.
+const pricaZa = (link?: string) => {
+  const m = /^\/?#prica-(.+)$/.exec(link ?? '');
+  if (!m) return undefined;
+  const i = price.findIndex((p) => p.kljuc === m[1]);
+  return i >= 0 ? String(i) : undefined;
+};
 ---
 <Base naslov={n.seo.naslov} opis={n.seo.opis} jezicak="pocetna" preducitaj={hero.src}>
   <Fragment slot="head">
@@ -34,8 +47,8 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
             <div class="stitchC" aria-hidden="true"></div>
             <p class="leadC">{n.hero.uvod}</p>
             <div class="hbtns">
-              <a class="btn btn-c" href={n.hero.dugme1.link} data-na-feed>{n.hero.dugme1.tekst}</a>
-              <a class="btn btn-o2" href={n.hero.dugme2.link}>{n.hero.dugme2.tekst}</a>
+              <a class="btn btn-c" href={n.hero.dugme1.link} data-na-feed={n.hero.dugme1.link === '#feed' ? '' : undefined} data-prica={pricaZa(n.hero.dugme1.link)}>{n.hero.dugme1.tekst}</a>
+              <a class="btn btn-o2" href={n.hero.dugme2.link} data-na-feed={n.hero.dugme2.link === '#feed' ? '' : undefined} data-prica={pricaZa(n.hero.dugme2.link)}>{n.hero.dugme2.tekst}</a>
             </div>
           </div>
           <a class="hint" href="#feed" data-na-feed data-strelica><span>Skrolujte</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></a>
@@ -44,7 +57,7 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
         <div class="feedwrap">
           <aside class="prof" data-profil aria-label="Profil studija">
             <div class="prof-top">
-              <button class="avb" type="button" data-prica="0" aria-label="Otvori priču: Upoznajte studio"><span class="ring" data-prsten="0"><span class="avatar"><img src="/img/logo/instagram-profilna.svg" alt="" width="96" height="96"></span></span></button>
+              <button class="avb" type="button" data-prica="0" aria-label={`Otvori priču: ${price[0]?.naziv ?? ''}`}><span class="ring" data-prsten="0"><span class="avatar"><img src="/img/logo/instagram-profilna.svg" alt="" width="96" height="96"></span></span></button>
               <p class="handle"><a href={site.instagram}>{site.handle}</a></p>
             </div>
             <div class="stats">
@@ -52,20 +65,19 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
             </div>
             <p class="bio"><b>{n.profil.bioNaslov}</b><br>{n.profil.bio}</p>
             <div class="pbtns">
-              <a class="btn btn-p" href="/konsultacije/">Zakažite konsultacije</a>
+              <a class="btn btn-p" href="/kontakt/#prijava">Pošaljite upit</a>
               <a class="btn btn-g" href={site.poruka}>Pišite nam</a>
             </div>
           </aside>
           <div class="grid" data-mreza>
             {tiles.map((t) => (
-              <a class="tile" href={t.link} data-r={t.r} data-c={t.c} aria-label={`${t.naslov} ${t.oznaka}`}>
+              <a class="tile" href={t.link} data-r={t.r} data-c={t.c} data-prica={pricaZa(t.link)} aria-label={`${t.naslov}. ${t.oznaka}`}>
                 <span class={t.s ? 'back ph' : 'back'} style={`background:${t.boja};${(t.tamnoSlovo && !t.s) ? 'color:#6E1423;' : ''}`}>
                   {t.s && <img src={t.s.src} srcset={t.s.srcset} sizes="(max-width: 899px) 33vw, 240px" alt={t.alt} loading="lazy" decoding="async" width="240" height="300">}
                   {t.crtez && <Sav vrsta={t.crtez} boja={t.crtezBoja} pozadina={t.boja} />}
-                  {t.karusel && <Ikona ime="layers" velicina={20} debljina={1.8} klasa="ic" />}
                   <span class="ttl">{t.naslov}</span>
                   <span class="lbl" style={(t.tamnoSlovo && !t.s) ? 'color:#6E5220' : t.oznakaBoja ? `color:${t.oznakaBoja}` : undefined}>{t.oznaka}</span>
-                  <span class="ov" aria-hidden="true"><b>Otvori →</b><small>{t.opis}</small></span>
+                  <span class="ov" aria-hidden="true"><b>{pricaZa(t.link) ? 'Pogledaj →' : 'Otvori →'}</b><small>{t.opis}</small></span>
                 </span>
                 <span class="front" aria-hidden="true"><span class="fimg"></span></span>
               </a>
@@ -78,23 +90,23 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
 
     <nav class="hls2" aria-label="Istaknute priče">
       {price.slice(1).map((p, i) => (
-        <button class="hl2" type="button" data-prica={i + 1}><span class="ring" data-prsten={i + 1}><i style={`background:${p.boja}`}>{p.skraceno}</i></span>{p.naziv}</button>
+        <button class="hl2" type="button" data-prica={i + 1} aria-label={`Otvori priču: ${p.naziv}`}><span class="ring" data-prsten={i + 1}><i style={`background:${p.boja}`}>{p.skraceno}</i></span>{p.naziv}</button>
       ))}
     </nav>
 
-    <section class="reels-sec" aria-labelledby="kako-radimo">
-      <h2 class="h2" id="kako-radimo" style="text-align:center">{n.koraci.naslov} <em>{n.koraci.naslovIstaknuto}</em></h2>
-      <div class="reels">
-        {(n.koraci.stavke ?? []).map((k) => (
-          <a class="reel" href="/saradnja/" style={`background:${k.boja}`}>
-            <Ikona ime="play" velicina={20} debljina={1.8} klasa="ic" />
+    <section class="reels-sec" aria-labelledby="kako-saradjujemo">
+      <h2 class="h2" id="kako-saradjujemo" style="text-align:center">{n.koraci.naslov} <em>{n.koraci.naslovIstaknuto}</em></h2>
+      <ol class="reels" data-koraci>
+        {(n.koraci.stavke ?? []).map((k: any, i: number) => (
+          <li class="reel" style={`background:${k.boja};--d:${i * 0.15}s`}>
             <span class="no">{k.broj}</span>
+            {k.crtez && <Sav vrsta={k.crtez} boja={k.crtezBoja || '#E8C98A'} pozadina={k.boja} />}
             <h3>{k.naslov}</h3>
             <p>{k.tekst}</p>
-            <span class="more2">Ceo proces →</span>
-          </a>
+          </li>
         ))}
-      </div>
+      </ol>
+      {n.koraci.link?.link && <div class="reels-link"><a class="btn btn-p" href={n.koraci.link.link}>{n.koraci.link.tekst}</a></div>}
     </section>
 
     <section class="cta">
@@ -110,6 +122,7 @@ const price = (n.price ?? []).map((p) => ({ naziv: p.naziv, skraceno: p.skraceno
       <div class="sh"><i aria-hidden="true"><img src="/img/logo/instagram-profilna-znak.svg" alt="" width="30" height="30"></i><span data-ime></span><button class="sx" type="button" data-zatvori aria-label="Zatvori priču">×</button></div>
       <button class="zone zl" type="button" data-nazad aria-label="Prethodni slajd"></button>
       <button class="zone zr" type="button" data-dalje aria-label="Sledeći slajd"></button>
+      <img class="simg" data-slika-price alt="" hidden>
       <p class="st"><span class="snum2" data-broj></span><span data-tekst-price></span></p>
       <a class="sopen" data-otvori href="/">Pogledajte stranicu →</a>
       <p class="stip">Dodirnite desno za dalje, levo za nazad</p>

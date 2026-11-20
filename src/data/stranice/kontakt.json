@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "naslov": "Kontakt · Story & Scroll Studio",
+    "opis": "Pošaljite upit za vođenje Instagrama, plaćeno oglašavanje, montažu ili izradu sajta. Javićemo vam se sa ponudom."
+  },
+  "jezicak": "kontakt",
+  "putanja": [
+    {
+      "naziv": "Kontakt",
+      "link": ""
+    }
+  ],
+  "objava": "kontakt",
+  "nadnaslov": "Kontakt",
+  "naslov": "Hajde da pričamo",
+  "naslovIstaknuto": "o vašem brendu.",
+  "opis": "Želite da uredite Instagram, pokrenete reklamu, prepustite nam montažu ili napravite sajt za svoj biznis?",
+  "znaciNaslov": "",
+  "znaci": [],
+  "link": {
+    "link": "#prijava",
+    "tekst": "Pošaljite upit →"
+  },
+  "istaknuto": [],
+  "sekcije": [
+    {
+      "tip": "obrazac",
+      "id": "prijava",
+      "naslov": "Pošaljite",
+      "naslovIstaknuto": "upit",
+      "tekst": "Pošaljite nam kratak opis onoga što vam je potrebno. Javićemo vam se sa informacijama o mogućnostima saradnje i ponudi."
+    }
+  ],
+  "jos": [
+    "instagram",
+    "paketi",
+    "saradnja"
+  ],
+  "poziv": {
+    "naslov": "Više volite",
+    "naslovIstaknuto": "poruku?",
+    "tekst": "Pišite nam direktno na Instagramu, odgovaramo i tamo.",
+    "dugme": "Pišite nam na Instagramu",
+    "link": "https://ig.me/m/storyandscrollstudio"
+  },
+  "slug": "kontakt"
+}

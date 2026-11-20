@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "naslov": "Vođenje Instagram profila · Story & Scroll Studio",
+    "opis": "Planiranje sadržaja, dizajn singlova i karusela, pisanje tekstova i zakazivanje objava. Instagram profil koji ima doslednost, kroz mesečne pakete."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    {
+      "naziv": "Vođenje Instagrama",
+      "link": ""
+    }
+  ],
+  "objava": "instagram",
+  "nadnaslov": "Vođenje Instagram profila",
+  "naslov": "Profil koji ima",
+  "naslovIstaknuto": "doslednost.",
+  "opis": "Instagram je često prvo mesto na kojem potencijalni klijenti upoznaju vaš biznis. Zato je važno da sadržaj jasno predstavi ono što nudite i ostavi dobar prvi utisak.",
+  "znaciNaslov": "Šta obuhvata usluga?",
+  "znaci": [
+    {
+      "ikona": "cal",
+      "tekst": "Plan objava"
+    },
+    {
+      "ikona": "layers",
+      "tekst": "Dizajn singlova i karusela"
+    },
+    {
+      "ikona": "pen",
+      "tekst": "Pisanje tekstova"
+    },
+    {
+      "ikona": "clock",
+      "tekst": "Zakazivanje sadržaja"
+    }
+  ],
+  "link": {
+    "link": "/paketi/",
+    "tekst": "Pogledajte pakete →"
+  },
+  "istaknuto": [],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "kako",
+      "naslov": "",
+      "naslovIstaknuto": "",
+      "pasusi": [
+        "U Story & Scroll studiju preuzimamo planiranje sadržaja, od izbora tema i pisanja tekstova do dizajna objava i njihovog objavljivanja.",
+        "Svaki profil dobija vizuelni pravac i način komunikacije prilagođen brendu, a saradnja se organizuje kroz mesečne pakete sa unapred dogovorenim obimom posla."
+      ]
+    }
+  ],
+  "jos": [
+    "paketi",
+    "montaza",
+    "radovi"
+  ],
+  "poziv": {
+    "naslov": "Hajde da pričamo",
+    "naslovIstaknuto": "o vašem brendu.",
+    "tekst": "Pošaljite nam kratak opis onoga što vam je potrebno. Javićemo vam se sa informacijama o mogućnostima saradnje i ponudi.",
+    "dugme": "Pošaljite upit",
+    "link": "/kontakt/#prijava"
+  },
+  "slug": "vodjenje-instagrama"
+}

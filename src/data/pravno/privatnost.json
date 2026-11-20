@@ -2,7 +2,7 @@
   "slug": "privatnost",
   "seo": {
     "naslov": "Politika privatnosti · Story & Scroll Studio",
-    "opis": "Koje podatke prikuplja sajt Story & Scroll Studio, zašto, koliko ih čuvamo i koja su Vaša prava."
+    "opis": "Koje podatke prikuplja sajt Story & Scroll Studio, zašto, koliko ih čuvamo i koja su vaša prava."
   },
   "naslov": "Politika",
   "naslovIstaknuto": "privatnosti",
@@ -12,41 +12,41 @@
     {
       "naslov": "Ko obrađuje podatke",
       "pasusi": [
-        "Podatke obrađuje Story & Scroll Studio, studio za društvene mreže.",
-        "Za sva pitanja o Vašim podacima pišite nam na Instagramu: @storyandscrollstudio."
+        "Podatke obrađuje Story & Scroll Studio, kreativni studio za digitalno predstavljanje malih biznisa i brendova.",
+        "Za sva pitanja o vašim podacima pišite nam na mejl storyandscrollstudio@gmail.com ili na Instagramu: @storyandscrollstudio."
       ]
     },
     {
       "naslov": "Koje podatke prikupljamo",
       "pasusi": [
-        "Prikupljamo samo podatke koje sami unesete u obrazac za konsultacije:"
+        "Prikupljamo samo podatke koje sami unesete u obrazac za upit:"
       ],
       "stavke": [
         "ime i prezime",
         "email adresu",
         "broj telefona (neobavezno)",
         "Instagram profil ili naziv brenda (neobavezno)",
-        "paket koji Vas zanima (neobavezno)",
-        "poruku o Vašem brendu i ciljevima (neobavezno)"
+        "usluga koja vas zanima (neobavezno)",
+        "kratak opis onoga što vam je potrebno (neobavezno)"
       ]
     },
     {
       "naslov": "Šta ne prikupljamo",
       "pasusi": [
         "Sajt ne koristi alate za praćenje posetilaca, kao što je Google Analytics, i ne prikazuje oglase.",
-        "Da bi se priče na početnoj strani označile kao pogledane, Vaš pregledač pamti koje ste priče otvorili. Ta informacija ostaje samo u Vašem pregledaču i ne šalje se nama."
+        "Da bi se priče na početnoj strani označile kao pogledane, vaš pregledač pamti koje ste priče otvorili. Ta informacija ostaje samo u vašem pregledaču i ne šalje se nama."
       ]
     },
     {
       "naslov": "Zašto koristimo podatke",
       "pasusi": [
-        "Podatke iz obrasca koristimo da bismo odgovorili na Vaš upit, dogovorili konsultacije i razgovarali o mogućoj saradnji. Ne koristimo ih za slanje reklamnih poruka i ne prodajemo ih."
+        "Podatke iz obrasca koristimo da bismo odgovorili na vaš upit, poslali informacije o mogućnostima saradnje i ponudi. Ne koristimo ih za slanje reklamnih poruka i ne prodajemo ih."
       ]
     },
     {
       "naslov": "Pravni osnov",
       "pasusi": [
-        "Podatke obrađujemo na osnovu Vašeg pristanka, koji dajete slanjem obrasca, i našeg opravdanog interesa da odgovorimo na upit i zaštitimo sajt od zloupotrebe."
+        "Podatke obrađujemo na osnovu vašeg pristanka, koji dajete slanjem obrasca, i našeg opravdanog interesa da odgovorimo na upit i zaštitimo sajt od zloupotrebe."
       ]
     },
     {

@@ -1,0 +1,116 @@
+{
+  "seo": {
+    "naslov": "Montaža video materijala · Story & Scroll Studio",
+    "opis": "Vi snimate, mi montiramo. Osnovna montaža, muzička podloga i titlovi za Reels videe. Paketi od 3, 6 i 9 videa."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    {
+      "naziv": "Montaža video materijala",
+      "link": ""
+    }
+  ],
+  "objava": "montaza",
+  "nadnaslov": "Montaža video sadržaja",
+  "naslov": "Vi snimate.",
+  "naslovIstaknuto": "Mi montiramo.",
+  "opis": "Imate galeriju punu snimaka, ali ne stižete da ih pretvorite u gotove Reels videe? Pošaljite nam svoj video materijal, a mi ćemo ga montirati i pripremiti za objavljivanje na društvenim mrežama.",
+  "znaciNaslov": "",
+  "znaci": [
+    {
+      "ikona": "scissors",
+      "tekst": "Osnovna montaža"
+    },
+    {
+      "ikona": "play",
+      "tekst": "Muzička podloga"
+    },
+    {
+      "ikona": "doc",
+      "tekst": "Titlovi"
+    }
+  ],
+  "link": {
+    "link": "/kontakt/?usluga=Montaža video materijala#prijava",
+    "tekst": "Zatražite ponudu za montažu →"
+  },
+  "istaknuto": [],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "usluga",
+      "naslov": "",
+      "naslovIstaknuto": "",
+      "pasusi": [
+        "Usluga uključuje osnovnu montažu, dodavanje muzičke podloge i titlova. Dodatne animacije dostupne su uz doplatu."
+      ]
+    },
+    {
+      "tip": "cene",
+      "id": "paketi-montaze",
+      "naslov": "Paketi",
+      "naslovIstaknuto": "montaže",
+      "paketi": [
+        {
+          "naziv": "3 Reels videa",
+          "cena": "60 €",
+          "period": "",
+          "opis": "",
+          "stavke": [],
+          "dugme": "Zatražite ponudu za montažu",
+          "link": "/kontakt/?usluga=Montaža: 3 Reels videa#prijava"
+        },
+        {
+          "naziv": "6 Reels videa",
+          "cena": "100 €",
+          "period": "",
+          "opis": "",
+          "stavke": [],
+          "dugme": "Zatražite ponudu za montažu",
+          "link": "/kontakt/?usluga=Montaža: 6 Reels videa#prijava"
+        },
+        {
+          "naziv": "9 Reels videa",
+          "cena": "150 €",
+          "period": "",
+          "opis": "",
+          "stavke": [],
+          "dugme": "Zatražite ponudu za montažu",
+          "link": "/kontakt/?usluga=Montaža: 9 Reels videa#prijava"
+        }
+      ]
+    },
+    {
+      "tip": "napomena",
+      "id": "napomene",
+      "naslov": "",
+      "naslovIstaknuto": "",
+      "napomene": [
+        "**Dodatne animacije:** +15 € po videu.",
+        "**Snimanje nije uključeno u cenu.** Materijal dostavlja klijent."
+      ],
+      "tekst": "",
+      "link": {
+        "link": "",
+        "tekst": ""
+      }
+    }
+  ],
+  "jos": [
+    "instagram",
+    "oglasi",
+    "paketi"
+  ],
+  "poziv": {
+    "naslov": "Hajde da pričamo",
+    "naslovIstaknuto": "o vašem brendu.",
+    "tekst": "Pošaljite nam kratak opis onoga što vam je potrebno. Javićemo vam se sa informacijama o mogućnostima saradnje i ponudi.",
+    "dugme": "Pošaljite upit",
+    "link": "/kontakt/#prijava"
+  },
+  "slug": "montaza"
+}

@@ -7,12 +7,20 @@ const naslovHtml = s.naslov || s.naslovIstaknuto ? `${s.naslov ?? ''} <em>${s.na
 const img = s.slika ? slika(s.slika) : null;
 const lista = (x: any) => (Array.isArray(x) ? x : []);
 // Napomene: običan tekst, a **ovako** postaje podebljano.
+// Linkovi iz CMS-a mogu da imaju razmake i slova sa kvačicama; pregledaču ih šaljemo kodirane.
+const href = (l?: string) => (l && /[\s\u0080-\uFFFF]/.test(l) ? encodeURI(l) : l);
 const podebljano = (t: string) => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 ---
-{s.tip === 'tekst' && (
+{s.tip === 'tekst' && naslovHtml && (
   <section class="sec two" id={s.id}>
     <h2 class="h2" set:html={naslovHtml}></h2>
     <div class="prose">{lista(s.pasusi).map((p: string) => <p>{p}</p>)}</div>
+  </section>
+)}
+
+{s.tip === 'tekst' && !naslovHtml && (
+  <section class="sec sec-tesno" id={s.id}>
+    <div class="prose prose-solo">{lista(s.pasusi).map((p: string) => <p>{p}</p>)}</div>
   </section>
 )}
 
@@ -111,12 +119,12 @@ const podebljano = (t: string) => String(t ?? '').replace(/&/g, '&amp;').replace
 )}
 
 {s.tip === 'napomena' && (
-  <section class="sec two" id={s.id}>
-    <h2 class="h2" set:html={naslovHtml}></h2>
-    <div>
+  <section class={naslovHtml ? 'sec two' : 'sec sec-tesno'} id={s.id}>
+    {naslovHtml && <h2 class="h2" set:html={naslovHtml}></h2>}
+    <div class={naslovHtml ? undefined : 'notes-solo'}>
       {lista(s.napomene).map((n: string, i: number) => <div class="note" style={i === 0 ? 'margin-top:0' : undefined} set:html={podebljano(n)}></div>)}
       {s.tekst && <p class="caption" style="font-size: 17px">{s.tekst}</p>}
-      {s.link?.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+      {s.link?.link && <a class="golink" href={href(s.link.link)}>{s.link.tekst}</a>}
     </div>
   </section>
 )}
@@ -163,10 +171,10 @@ const podebljano = (t: string) => String(t ?? '').replace(/&/g, '&amp;').replace
         <article class={p.istaknut ? 'pc hi' : 'pc'}>
           {p.oznaka && <span class="badge">{p.oznaka}</span>}
           <h3 class="pn">{p.naziv}</h3>
-          <p class="pr">{p.cena}<small>{p.period}</small></p>
-          <p class="pd">{p.opis}</p>
-          <ul>{lista(p.stavke).map((x: string) => <li>{x}</li>)}</ul>
-          <a class={p.istaknut ? 'btn btn-c' : 'btn btn-p'} href={`/konsultacije/?paket=${encodeURIComponent(p.naziv)}#prijava`}>Izaberite {p.naziv}</a>
+          {p.cena && <p class="pr">{p.cena}{p.period && <small>{p.period}</small>}</p>}
+          {p.opis && <p class="pd">{p.opis}</p>}
+          {lista(p.stavke).length > 0 ? <ul>{lista(p.stavke).map((x: string) => <li>{x}</li>)}</ul> : <span class="pc-razmak" aria-hidden="true"></span>}
+          <a class={p.istaknut ? 'btn btn-c' : 'btn btn-p'} href={href(p.link || `/kontakt/?usluga=${encodeURIComponent(p.naziv)}#prijava`)}>{p.dugme || `Izaberite ${p.naziv}`}</a>
         </article>
       ))}
     </div>
@@ -208,27 +216,37 @@ const podebljano = (t: string) => String(t ?? '').replace(/&/g, '&amp;').replace
     <div class="side">
       <h2 class="h2" set:html={naslovHtml}></h2>
       <p style="margin-top:22px">{s.tekst}</p>
+      {site.email && <p>Ili nam pišite direktno na mejl <a href={`mailto:${site.email}`}>{site.email}</a></p>}
       <p>Više volite poruku? <a href={site.poruka}>Pišite nam na Instagramu: @{site.handle}</a></p>
     </div>
     <div class="form">
       <form name="konsultacije" method="POST" action="/hvala/" data-netlify="true" netlify-honeypot="bot-field" data-obrazac>
         <input type="hidden" name="form-name" value="konsultacije">
-        <input type="hidden" name="subject" value="Nova prijava za konsultacije (demo sajt)">
+        <input type="hidden" name="subject" value="Novi upit sa sajta (demo)">
         <p class="sr"><label>Ne popunjavajte ovo polje <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <label>Ime i prezime<input type="text" name="ime" autocomplete="name" required></label>
         <label>Email<input type="email" name="email" autocomplete="email" required></label>
         <label>Telefon <span>(neobavezno)</span><input type="tel" name="telefon" autocomplete="tel"></label>
         <label>Instagram profil ili naziv brenda <span>(neobavezno)</span><input type="text" name="brend"></label>
-        <label>Paket koji Vas zanima <span>(neobavezno)</span><input type="text" name="paket" data-paket></label>
-        <label>Recite nam više o brendu i ciljevima <span>(neobavezno)</span><textarea name="poruka"></textarea></label>
-        <button class="btn btn-p" type="submit">Pošaljite prijavu</button>
+        <label>Usluga koja vas zanima <span>(neobavezno)</span><input type="text" name="usluga" list="usluge-lista" data-usluga></label>
+        <datalist id="usluge-lista">
+          <option value="Vođenje Instagrama"></option>
+          <option value="Plaćeno oglašavanje"></option>
+          <option value="Montaža video materijala"></option>
+          <option value="Izrada sajta"></option>
+          <option value="Paket Essential"></option>
+          <option value="Paket Grow"></option>
+          <option value="Paket Signature"></option>
+        </datalist>
+        <label>Kratak opis onoga što vam je potrebno <span>(neobavezno)</span><textarea name="poruka"></textarea></label>
+        <button class="btn btn-p" type="submit">Pošaljite upit</button>
         <p class="ftiny">Slanjem prihvatate <a href={site.privatnost}>politiku privatnosti</a>.</p>
-        <p class="ftiny" data-greska hidden style="color:#C4544E">Slanje nije uspelo. Pokušajte ponovo ili nam pišite na Instagramu.</p>
+        <p class="ftiny" data-greska hidden style="color:#C4544E">Slanje nije uspelo. Pokušajte ponovo ili nam pišite na mejl ili Instagramu.</p>
       </form>
       <div class="thanks" data-hvala hidden tabindex="-1">
         <span class="ok"><Ikona ime="check" velicina={30} debljina={2} /></span>
-        <h3>Hvala na prijavi!</h3>
-        <p>Javićemo Vam se uskoro na navedeni email ili telefon.</p>
+        <h3>Hvala na upitu!</h3>
+        <p>Javićemo vam se uskoro na navedeni email ili telefon.</p>
       </div>
     </div>
   </section>

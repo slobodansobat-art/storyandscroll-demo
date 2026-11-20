@@ -1,7 +1,7 @@
 {
   "seo": {
     "naslov": "O nama · Story & Scroll Studio",
-    "opis": "Story & Scroll je studio za društvene mreže. Pomažemo brendovima kroz jasnu strategiju, promišljen sadržaj i storytelling."
+    "opis": "Story & Scroll je kreativni studio posvećen digitalnom predstavljanju malih biznisa i brendova. Više od 50 Instagram feedova za brendove iz različitih industrija."
   },
   "jezicak": null,
   "putanja": [
@@ -13,135 +13,39 @@
   "objava": "onama",
   "nadnaslov": "O nama",
   "naslov": "Ko je",
-  "naslovIstaknuto": "Story & Scroll",
-  "opis": "Vaša priča, ispričana pažljivo. Spajamo strategiju, sadržaj i storytelling u jednu celinu, tako da svaka objava na Vašem profilu ima svrhu.",
-  "znaci": [
-    {
-      "ikona": "users",
-      "tekst": "30+ klijenata"
-    },
-    {
-      "ikona": "target",
-      "tekst": "Strategija pre objave"
-    },
-    {
-      "ikona": "gift",
-      "tekst": "Besplatne konsultacije"
-    }
-  ],
+  "naslovIstaknuto": "Story & Scroll?",
+  "opis": "Story & Scroll je kreativni studio posvećen digitalnom predstavljanju malih biznisa i brendova.",
+  "znaciNaslov": "",
+  "znaci": [],
   "link": {
-    "link": "/#feed",
-    "tekst": "Pogledajte naš feed →"
+    "link": "/#prica-radovi",
+    "tekst": "Pogledajte naše radove →"
   },
-  "istaknuto": [
-    {
-      "link": "#ko",
-      "boja": "#6E1423",
-      "ikona": "info",
-      "naziv": "Ko smo"
-    },
-    {
-      "link": "#stubovi",
-      "boja": "#6F6A4E",
-      "ikona": "grid",
-      "naziv": "Tri stuba"
-    },
-    {
-      "link": "#nacin",
-      "boja": "#8C6A2A",
-      "ikona": "scissors",
-      "naziv": "Kako radimo"
-    },
-    {
-      "link": "#za-koga",
-      "boja": "#4F0E19",
-      "ikona": "users",
-      "naziv": "Za koga"
-    }
-  ],
+  "istaknuto": [],
   "sekcije": [
     {
       "tip": "tekst",
-      "id": "ko",
-      "naslov": "Studio",
-      "naslovIstaknuto": "po meri",
+      "id": "o-nama",
+      "naslov": "",
+      "naslovIstaknuto": "",
       "pasusi": [
-        "Story & Scroll je studio za društvene mreže. Pomažemo brendovima da izgrade prisustvo na mrežama kroz jasnu strategiju, promišljen sadržaj i storytelling.",
-        "Ne radimo šablonske objave. Svaku saradnju počinjemo razgovorom, jer plan, sadržaj i ton moraju da prate ciljeve Vašeg brenda, a ne trendove koji prolaze."
+        "Do sada smo kreirali više od 50 Instagram feedova za brendove iz različitih industrija: od beauty i wellness sektora, preko venčanja i događaja, do arhitekture, enterijera i porodičnih biznisa.",
+        "Verujemo da svaki brend ima svoj način komunikacije. Zato sadržaj prilagođavamo njegovim uslugama, publici i vizuelnom identitetu.",
+        "Bilo da tek pokrećete biznis, želite uređeniji Instagram ili vam je potrebna pomoć oko oglasa, montaže i sajta, tu smo da pronađemo rešenje koje odgovara vašim potrebama."
       ]
-    },
-    {
-      "tip": "kartice",
-      "id": "stubovi",
-      "naslov": "Tri",
-      "naslovIstaknuto": "stuba našeg rada",
-      "kolone": 3,
-      "stavke": [
-        {
-          "ikona": "target",
-          "naslov": "Strategija",
-          "tekst": "Plan koji prati ciljeve brenda, a ne trendove."
-        },
-        {
-          "ikona": "image",
-          "naslov": "Sadržaj",
-          "tekst": "Foto, video i tekst usklađeni sa vizuelnim identitetom."
-        },
-        {
-          "ikona": "heart",
-          "naslov": "Storytelling",
-          "tekst": "Priča koja gradi poverenje i prepoznatljivost."
-        }
-      ]
-    },
-    {
-      "tip": "citat",
-      "id": "nacin",
-      "slika": "/img/izvorne/makaze.webp",
-      "alt": "Ruke makazama seku maslinasto platno",
-      "nadnaslov": "Kako radimo",
-      "citat": "Precizno.",
-      "citatIstaknuto": "Režemo višak,",
-      "citatKraj": "ostavljamo suštinu.",
-      "tekst": "Svaka objava ima svrhu, od prve ideje do trenutka kada se pojavi na profilu. Zato pre objavljivanja uvek znamo kome se obraćamo i šta želimo da postignemo.",
-      "link": {
-        "link": "/saradnja/",
-        "tekst": "Pogledajte kako sarađujemo →"
-      }
-    },
-    {
-      "tip": "nivoi",
-      "id": "za-koga",
-      "naslov": "Za koga",
-      "naslovIstaknuto": "radimo",
-      "redovi": [
-        {
-          "naziv": "Start",
-          "tekst": "Za brendove koji grade prisustvo na jednoj mreži."
-        },
-        {
-          "naziv": "Rast",
-          "tekst": "Za brendove koji stabilno rastu na dve mreže uz jasnu strategiju."
-        },
-        {
-          "naziv": "Premium",
-          "tekst": "Za brendove kojima treba sveobuhvatno vođenje na više mreža."
-        }
-      ],
-      "linkPaketi": true
     }
   ],
   "jos": [
-    "strategija",
-    "sadrzaj",
+    "instagram",
+    "radovi",
     "saradnja"
   ],
   "poziv": {
-    "naslov": "Upoznajmo",
-    "naslovIstaknuto": "Vaš brend.",
-    "tekst": "Zakažite besplatne konsultacije i porazgovarajmo o Vašim ciljevima.",
-    "dugme": "Zakažite besplatne konsultacije",
-    "link": "/konsultacije/"
+    "naslov": "Hajde da pričamo",
+    "naslovIstaknuto": "o vašem brendu.",
+    "tekst": "Pošaljite nam kratak opis onoga što vam je potrebno. Javićemo vam se sa informacijama o mogućnostima saradnje i ponudi.",
+    "dugme": "Pošaljite upit",
+    "link": "/kontakt/#prijava"
   },
   "slug": "o-nama"
 }

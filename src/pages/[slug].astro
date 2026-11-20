@@ -16,6 +16,10 @@ export function getStaticPaths() {
 const { s } = Astro.props;
 const o = feed.objave.find((x) => x.kljuc === s.objava) ?? feed.objave[0];
 const hs = o.slika ? slika(o.slika) : null;
+// Linkovi iz CMS-a mogu da imaju razmake i slova sa kvačicama (npr. ?usluga=Montaža); pregledaču ih šaljemo kodirane.
+const href = (l?: string) => (l && /[\s\u0080-\uFFFF]/.test(l) ? encodeURI(l) : l);
+const znaci = Array.isArray(s.znaci) ? s.znaci : [];
+const istaknuto = Array.isArray(s.istaknuto) ? s.istaknuto : [];
 ---
 <Base naslov={s.seo.naslov} opis={s.seo.opis} jezicak={s.jezicak}>
   <Zaglavlje />
@@ -38,17 +42,22 @@ const hs = o.slika ? slika(o.slika) : null;
         <p class="eyebrow">{s.nadnaslov}</p>
         <h1 class="h1">{s.naslov} <em>{s.naslovIstaknuto}</em></h1>
         <div class="stitch" aria-hidden="true"><svg class="needle" width="44" height="12" viewBox="0 0 44 12"><path d="M1 6 L35 4.8 L43 6 L35 7.2 Z" fill="#A9A39B"></path><ellipse cx="7" cy="6" rx="3.2" ry=".8" fill="#FBF6EF"></ellipse></svg></div>
-        <p class="caption"><a href={site.instagram} style="color:#2B211D;font-weight:600;margin-right:6px;text-decoration:none">{site.handle}</a>{s.opis}</p>
-        <ul class="trust" style="list-style:none;padding:0;margin-bottom:0">
-          {(s.znaci ?? []).map((z: any) => <li class="tb"><Ikona ime={z.ikona} velicina={36} debljina={1.8} /> {z.tekst}</li>)}
-        </ul>
-        {s.link?.link && <a class="golink" href={s.link.link}>{s.link.tekst}</a>}
+        {s.opis && <p class="caption"><a href={site.instagram} style="color:#2B211D;font-weight:600;margin-right:6px;text-decoration:none">{site.handle}</a>{s.opis}</p>}
+        {znaci.length > 0 && s.znaciNaslov && <p class="trust-naslov">{s.znaciNaslov}</p>}
+        {znaci.length > 0 && (
+          <ul class="trust" style="list-style:none;padding:0;margin-bottom:0">
+            {znaci.map((z: any) => <li class="tb"><Ikona ime={z.ikona} velicina={36} debljina={1.8} /> {z.tekst}</li>)}
+          </ul>
+        )}
+        {s.link?.link && <a class="golink" href={href(s.link.link)}>{s.link.tekst}</a>}
       </div>
     </section>
 
-    <nav class="hls" aria-label="Na ovoj stranici">
-      {(s.istaknuto ?? []).map((h: any) => <a class="hl" href={h.link}><span style={`background:${h.boja}`}><Ikona ime={h.ikona} /></span>{h.naziv}</a>)}
-    </nav>
+    {istaknuto.length > 0 && (
+      <nav class="hls" aria-label="Na ovoj stranici">
+        {istaknuto.map((h: any) => <a class="hl" href={h.link}><span style={`background:${h.boja}`}><Ikona ime={h.ikona} /></span>{h.naziv}</a>)}
+      </nav>
+    )}
 
     {(s.sekcije ?? []).map((sek: any) => <Sekcija s={sek} />)}
 
@@ -61,7 +70,7 @@ const hs = o.slika ? slika(o.slika) : null;
   <section class="ctab">
     <h2>{s.poziv.naslov} <em>{s.poziv.naslovIstaknuto}</em></h2>
     <p>{s.poziv.tekst}</p>
-    <div style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-c" href={s.poziv.link}>{s.poziv.dugme}</a></div>
+    <div style="display:flex;justify-content:center;margin-top:30px"><a class="btn btn-c" href={href(s.poziv.link)}>{s.poziv.dugme}</a></div>
   </section>
 </Base>
 

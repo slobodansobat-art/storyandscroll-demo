@@ -1,4 +1,5 @@
-type Prica = { naziv: string; skraceno: string; boja: string; link: string; dugme: string; slajdovi: string[] };
+type Slajd = { t: string; s: string; a: string };
+type Prica = { kljuc: string; naziv: string; skraceno: string; boja: string; link: string; dugme: string; slajdovi: Slajd[] };
 
 const cl = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v);
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -215,6 +216,7 @@ function price() {
   const broj = prikaz.querySelector<HTMLElement>('[data-broj]')!;
   const tekst = prikaz.querySelector<HTMLElement>('[data-tekst-price]')!;
   const otvori = prikaz.querySelector<HTMLAnchorElement>('[data-otvori]')!;
+  const slikaEl = prikaz.querySelector<HTMLImageElement>('[data-slika-price]')!;
   let k = -1, s = 0;
   let izvor: HTMLElement | null = null;
 
@@ -222,10 +224,25 @@ function price() {
     const p = lista[k];
     kartica.style.background = p.boja;
     ime.textContent = p.naziv;
+    const sl = p.slajdovi[s];
     broj.textContent = `${s + 1} / ${p.slajdovi.length}`;
-    tekst.textContent = p.slajdovi[s];
+    tekst.textContent = sl.t;
+    // Slajd sa slikom (npr. snimak profila): slika zauzima karticu, tekst ide ispod kao potpis.
+    if (sl.s) {
+      slikaEl.src = sl.s;
+      slikaEl.alt = sl.a || sl.t || '';
+      slikaEl.hidden = false;
+    } else {
+      slikaEl.hidden = true;
+      slikaEl.removeAttribute('src');
+      slikaEl.alt = '';
+    }
+    kartica.classList.toggle('ima-sliku', !!sl.s);
+    kartica.classList.toggle('uz-sliku', !!sl.s && !!sl.t);
     otvori.href = p.link;
     otvori.textContent = `${p.dugme} →`;
+    const spolja = /^https?:/i.test(p.link);
+    if (spolja) { otvori.target = '_blank'; otvori.rel = 'noopener'; } else { otvori.removeAttribute('target'); otvori.removeAttribute('rel'); }
     trake.innerHTML = '';
     p.slajdovi.forEach((_x, i) => {
       const seg = document.createElement('span');
@@ -256,7 +273,18 @@ function price() {
     prikaz.querySelector<HTMLElement>('[data-zatvori]')!.focus();
   };
 
-  document.querySelectorAll<HTMLElement>('[data-prica]').forEach((el) => el.addEventListener('click', () => pokreni(Number(el.dataset.prica), el)));
+  document.querySelectorAll<HTMLElement>('[data-prica]').forEach((el) => el.addEventListener('click', (e) => {
+    // Link (dugme u heroju, kartica u feedu) otvara priču umesto da menja adresu.
+    if (el.tagName === 'A') e.preventDefault();
+    pokreni(Number(el.dataset.prica), el);
+  }));
+  // Dolazak sa druge stranice preko /#prica-<ključ>: otvori tu priču i ukloni oznaku iz adrese.
+  const m = /^#prica-(.+)$/.exec(location.hash);
+  if (m) {
+    const i = lista.findIndex((p) => p.kljuc === decodeURIComponent(m[1]));
+    history.replaceState(null, '', location.pathname + location.search);
+    if (i >= 0) requestAnimationFrame(() => pokreni(i, document.querySelector<HTMLElement>(`[data-prica="${i}"]`) ?? document.body));
+  }
   prikaz.querySelector('[data-zatvori]')!.addEventListener('click', zatvori);
   prikaz.querySelector('[data-dalje]')!.addEventListener('click', dalje);
   prikaz.querySelector('[data-nazad]')!.addEventListener('click', nazad);
@@ -269,7 +297,22 @@ function price() {
   });
 }
 
+// Kartice „Kako sarađujemo”: crtež koncem se iscrta kad kartica uđe u ekran (jedna po jedna).
+function koraci() {
+  const lista = document.querySelector<HTMLElement>('[data-koraci]');
+  if (!lista) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  lista.classList.add('anim');
+  const io = new IntersectionObserver((unosi) => {
+    unosi.forEach((u) => {
+      if (u.isIntersecting) { lista.classList.add('crtano'); io.disconnect(); }
+    });
+  }, { threshold: 0.35 });
+  io.observe(lista);
+}
+
 export function pokreniNaslovnu() {
   animacija();
   price();
+  koraci();
 }

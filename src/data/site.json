@@ -24,9 +24,10 @@
       "link": "/paketi/"
     },
     {
-      "kljuc": "konsultacije",
-      "naziv": "Konsultacije",
-      "link": "/konsultacije/"
+      "kljuc": "kontakt",
+      "naziv": "Kontakt",
+      "link": "/kontakt/"
     }
-  ]
+  ],
+  "email": "storyandscrollstudio@gmail.com"
 }

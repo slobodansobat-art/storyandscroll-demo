@@ -1,9 +1,11 @@
 export function pokreniObrazac() {
   const forma = document.querySelector<HTMLFormElement>('[data-obrazac]');
   if (!forma) return;
-  const paket = new URLSearchParams(location.search).get('paket');
-  const polje = forma.querySelector<HTMLInputElement>('[data-paket]');
-  if (paket && polje) polje.value = paket;
+  // Dugmad „Zatražite ponudu…” šalju ?usluga=… (stari linkovi ?paket=…) i to se upisuje u obrazac.
+  const q = new URLSearchParams(location.search);
+  const usluga = q.get('usluga') || q.get('paket');
+  const polje = forma.querySelector<HTMLInputElement>('[data-usluga]');
+  if (usluga && polje) polje.value = usluga.slice(0, 120);
   const hvala = document.querySelector<HTMLElement>('[data-hvala]')!;
   const greska = forma.querySelector<HTMLElement>('[data-greska]')!;
   forma.addEventListener('submit', async (e) => {

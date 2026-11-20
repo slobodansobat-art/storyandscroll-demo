@@ -14,3 +14,29 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Stare adrese posle nove strukture sajta (novembar 2026)
+[[redirects]]
+  from = "/konsultacije/*"
+  to = "/kontakt/"
+  status = 301
+
+[[redirects]]
+  from = "/vodjenje-profila/*"
+  to = "/vodjenje-instagrama/"
+  status = 301
+
+[[redirects]]
+  from = "/strategija/*"
+  to = "/vodjenje-instagrama/"
+  status = 301
+
+[[redirects]]
+  from = "/sadrzaj/*"
+  to = "/vodjenje-instagrama/"
+  status = 301
+
+[[redirects]]
+  from = "/analitika/*"
+  to = "/vodjenje-instagrama/"
+  status = 301

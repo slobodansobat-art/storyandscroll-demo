@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "naslov": "Izrada prezentacionih sajtova · Story & Scroll Studio",
+    "opis": "Jednostavni, vizuelno usklađeni i pregledni prezentacioni sajtovi za male biznise, prilagođeni telefonu i računaru."
+  },
+  "jezicak": "usluge",
+  "putanja": [
+    {
+      "naziv": "Usluge",
+      "link": "/#feed"
+    },
+    {
+      "naziv": "Izrada sajtova",
+      "link": ""
+    }
+  ],
+  "objava": "sajtovi",
+  "nadnaslov": "Izrada prezentacionih sajtova",
+  "naslov": "Vaš biznis zaslužuje",
+  "naslovIstaknuto": "svoje mesto na internetu.",
+  "opis": "Instagram je odličan za svakodnevnu komunikaciju, ali sajt omogućava da sve važne informacije o vašem biznisu budu dostupne na jednom mestu.",
+  "znaciNaslov": "Šta obuhvata usluga?",
+  "znaci": [
+    {
+      "ikona": "list",
+      "tekst": "Struktura sajta"
+    },
+    {
+      "ikona": "pen",
+      "tekst": "Vizuelni dizajn"
+    },
+    {
+      "ikona": "grid",
+      "tekst": "Prikaz usluga"
+    },
+    {
+      "ikona": "send",
+      "tekst": "Kontakt sekcija"
+    },
+    {
+      "ikona": "phone",
+      "tekst": "Mobilna verzija"
+    }
+  ],
+  "link": {
+    "link": "/kontakt/?usluga=Izrada sajta#prijava",
+    "tekst": "Zatražite ponudu za sajt →"
+  },
+  "istaknuto": [],
+  "sekcije": [
+    {
+      "tip": "tekst",
+      "id": "sajt",
+      "naslov": "",
+      "naslovIstaknuto": "",
+      "pasusi": [
+        "Kreiramo jednostavne, vizuelno usklađene i pregledne prezentacione sajtove koji predstavljaju vašu ponudu, usluge, radove i kontakt informacije.",
+        "Posebnu pažnju posvećujemo jasnoj strukturi, izgledu sajta i jednostavnom korišćenju na telefonu i računaru.",
+        "Usluga je namenjena malim biznisima kojima je potreban sajt za predstavljanje, bez složenih funkcionalnosti internet prodavnica."
+      ]
+    }
+  ],
+  "jos": [
+    "instagram",
+    "oglasi",
+    "kontakt"
+  ],
+  "poziv": {
+    "naslov": "Hajde da pričamo",
+    "naslovIstaknuto": "o vašem brendu.",
+    "tekst": "Pošaljite nam kratak opis onoga što vam je potrebno. Javićemo vam se sa informacijama o mogućnostima saradnje i ponudi.",
+    "dugme": "Pošaljite upit",
+    "link": "/kontakt/#prijava"
+  },
+  "slug": "izrada-sajtova"
+}
